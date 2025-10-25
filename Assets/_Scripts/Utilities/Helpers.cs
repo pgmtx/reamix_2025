@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -5,14 +6,19 @@ using UnityEngine;
 /// </summary>
 public static class Helpers 
 {
-    /// <summary>
-    /// Destroy all child objects of this transform (Unintentionally evil sounding).
-    /// Use it like so:
-    /// <code>
-    /// transform.DestroyChildren();
-    /// </code>
-    /// </summary>
     public static void DestroyChildren(this Transform t) {
         foreach (Transform child in t) Object.Destroy(child.gameObject);
+    }
+
+    public static List<T> GetComponentsInDirectChildren<T>(Transform parent) where T : Component
+    {
+        List<T> components = new List<T>();
+        foreach (Transform child in parent)
+        {
+            T component = child.GetComponent<T>();
+            if (component != null)
+                components.Add(component);
+        }
+        return components;
     }
 }
