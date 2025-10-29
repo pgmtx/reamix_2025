@@ -53,7 +53,7 @@ public class Player_ZQSD: MonoBehaviour
         GatherInputs();
         HandleCamera();
         HandleMovement();
-        HandleJump();
+        HandleJumpCrouch();
     }
 
     // FixedUpdate est comme update mais utile pour la physique
@@ -123,7 +123,7 @@ public class Player_ZQSD: MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void HandleJump()
+    void HandleJumpCrouch()
     {
         if (Input.GetButtonDown("Jump"))
         {
@@ -131,6 +131,23 @@ public class Player_ZQSD: MonoBehaviour
             if (isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * 2f * -gravity);
+            }
+        }
+        // Disgusting temporaire
+        if (Input.GetButtonDown("Crouch"))
+        {
+            Debug.Log("S'accroupir");
+            if (isGrounded)
+            {
+                transform.localScale = new Vector3(transform.localScale.x, 0.5f, transform.localScale.z);
+            }
+        }
+        if (Input.GetButtonUp("Crouch"))
+        {
+            Debug.Log("Se lever");
+            if (isGrounded)
+            {
+                transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
             }
         }
     }
