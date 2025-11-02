@@ -19,7 +19,7 @@ public class Player_ZQSD: MonoBehaviour
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float fallGravityMultiplier = 2f;
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.2f;
+    [SerializeField] private float groundDistance = 0.1f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField][ReadOnly] private bool isGrounded;
 
