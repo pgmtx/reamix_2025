@@ -1,9 +1,39 @@
 fileFormatVersion: 2
-guid: 7775ebc78961bae4bbc5e39ceb8110c5
+guid: 3d63545565401474c9bbd1102f871673
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_basecolor
+    second: {fileID: 2800000, guid: e8ccefcc1de60d547843f18c5868ac6d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_normal
+    second: {fileID: 2800000, guid: 91303baf38ea91b439ca0ebf170efdbd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic02_diffuse
+    second: {fileID: 2800000, guid: c2b07dffb644d0147b7b6d3bc308e458, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic_metallic
+    second: {fileID: 2800000, guid: f1924558ecf69084aba6e653a63aef27, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic_normal_opengl
+    second: {fileID: 2800000, guid: c912f6be4d7f3674bafc4fb5a6ea76df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic_specular
+    second: {fileID: 2800000, guid: 60e0961fba45b4b44b76ab3a91663514, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -31,36 +61,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Planetarium_spin
-      takeName: Scene
-      internalID: -623603649343465320
-      firstFrame: 1
-      lastFrame: 3600
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
