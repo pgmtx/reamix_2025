@@ -3,37 +3,7 @@ guid: 3d63545565401474c9bbd1102f871673
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Metal_basecolor
-    second: {fileID: 2800000, guid: e8ccefcc1de60d547843f18c5868ac6d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Metal_normal
-    second: {fileID: 2800000, guid: 91303baf38ea91b439ca0ebf170efdbd, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: plastic02_diffuse
-    second: {fileID: 2800000, guid: c2b07dffb644d0147b7b6d3bc308e458, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: plastic_metallic
-    second: {fileID: 2800000, guid: f1924558ecf69084aba6e653a63aef27, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: plastic_normal_opengl
-    second: {fileID: 2800000, guid: c912f6be4d7f3674bafc4fb5a6ea76df, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: plastic_specular
-    second: {fileID: 2800000, guid: 60e0961fba45b4b44b76ab3a91663514, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
