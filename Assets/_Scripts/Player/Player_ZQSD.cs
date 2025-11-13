@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_ZQSD: MonoBehaviour
+public class Player_ZQSD : MonoBehaviour
 {
     // Header affiche dans l'inspecteur un titre
     [Header("Movement")]
-    public float Speed = 6f;
+    public const float DefaultSpeed = 6f;
+    public float Speed = DefaultSpeed;
     // SerializeField pour montrer les valeurs dans l'inspecteur même si elles sont privées
     [SerializeField] private float accelerationDamping = 25f;
     [SerializeField] private float decelerationDamping = 15f;
@@ -44,7 +45,7 @@ public class Player_ZQSD: MonoBehaviour
     // Start est appelée juste après Awake
     private void Start()
     {
-        
+
     }
 
     // Update est appelée à toutes les frames
@@ -53,7 +54,7 @@ public class Player_ZQSD: MonoBehaviour
         GatherInputs();
         HandleCamera();
         HandleMovement();
-        HandleJumpCrouch();
+        HandleCrouch();
     }
 
     // FixedUpdate est comme update mais utile pour la physique
@@ -123,16 +124,8 @@ public class Player_ZQSD: MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void HandleJumpCrouch()
+    void HandleCrouch()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Sauter");
-            if (isGrounded)
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * 2f * -gravity);
-            }
-        }
         // Disgusting temporaire
         if (Input.GetButtonDown("Crouch"))
         {
@@ -140,14 +133,16 @@ public class Player_ZQSD: MonoBehaviour
             if (isGrounded)
             {
                 transform.localScale = new Vector3(transform.localScale.x, 0.5f, transform.localScale.z);
+                Speed = DefaultSpeed / 2;
             }
         }
-        if (Input.GetButtonUp("Crouch"))
+        else if (Input.GetButtonUp("Crouch"))
         {
             Debug.Log("Se lever");
             if (isGrounded)
             {
                 transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
+                Speed = DefaultSpeed;
             }
         }
     }
