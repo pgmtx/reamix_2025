@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8312783461364329059}
   m_Layer: 0
   m_Name: Balle.001
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 1125748344394023352}
   m_Layer: 0
   m_Name: Balle.006
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 8471530871012902271}
   m_Layer: 0
   m_Name: Balle.002
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 2381408677455963304}
   m_Layer: 0
   m_Name: Balle.005
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 6392001136043417768}
   m_Layer: 0
   m_Name: Balle.009
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 1894360623708553014}
   m_Layer: 0
   m_Name: Balle.008
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 5698989303434861683}
   m_Layer: 0
   m_Name: Balle.011
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 5251493181783885884}
   m_Layer: 0
   m_Name: Balle.010
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 4163133506824226166}
   m_Layer: 0
   m_Name: Balle.004
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 5718881838072407604}
   m_Layer: 0
   m_Name: Balle.007
-  m_TagString: Untagged
+  m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
