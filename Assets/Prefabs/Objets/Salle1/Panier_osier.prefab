@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 1391769385842296226}
   - component: {fileID: 240030986982469146}
   - component: {fileID: 8484853195593969904}
-  - component: {fileID: 7688769987548446681}
   m_Layer: 0
   m_Name: Panier_osier
   m_TagString: Untagged
@@ -209,35 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basketFullEvent: {fileID: 11400000, guid: 3c395307bbdc9c741a0c5658876e8096, type: 2}
+  ballIsInBasket: {fileID: 11400000, guid: 3877d1170d4a2664c95eba7df797898a, type: 2}
   ballsNeeded: 3
---- !u!114 &7688769987548446681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744219108185618469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 3c395307bbdc9c741a0c5658876e8096, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8576721389729557295, guid: 0e8746255b611e049819f951e613f4af, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: OpenDoor
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8915085582988505335
 GameObject:
   m_ObjectHideFlags: 0
