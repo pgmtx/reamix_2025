@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: 3d63545565401474c9bbd1102f871673
+guid: c7e5054b0f7b83e4dab289cdc94d2a9a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bois
+    second: {fileID: 2800000, guid: b693893eb775ba34ea88ba9c38d73ec5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_normal_opengl
+    second: {fileID: 2800000, guid: 4a58458daa0d31d4bba7f05fb7a8b41c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_red_diffuse
+    second: {fileID: 2800000, guid: b8b904afc4e98804fa7e03bcd0263479, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_specular
+    second: {fileID: 2800000, guid: 9bf69bf8e8fa918489e651fbc65dda84, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
