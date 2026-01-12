@@ -33,4 +33,9 @@ public class Whack_a_mole : MonoBehaviour
             yield return new WaitForSeconds(3f);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
 }

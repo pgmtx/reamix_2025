@@ -10,7 +10,7 @@ public class BasketLogic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // 1. Check if it's a ball
-        Balles ball = other.GetComponent<Balles>();
+        Balle ball = other.GetComponent<Balle>();
 
         // 2. Only proceed if it IS a ball AND it hasn't been counted yet
         if (ball != null && !ball.isAlreadyInBasket)
