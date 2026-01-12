@@ -33,6 +33,12 @@ public class BallDistributor : MonoBehaviour
 
     public void DistributeBall()
     {
+        if (InactiveBalls.Count == 0)
+        {
+            Debug.Log("Plus de balles");
+            return;
+        }
+
         int randomIndex = Random.Range(0, InactiveBalls.Count);
 
         GameObject ball = InactiveBalls[randomIndex];
