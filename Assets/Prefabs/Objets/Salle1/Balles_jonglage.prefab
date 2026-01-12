@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &3275912896597934308
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &3333712692993515761
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &3824453566293414039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &4435653350689966298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &6227259320532417608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &6596796735013074782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,6 +2147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
 --- !u!1 &6961598843175216024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,6 +2448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &7194607185633736157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
 --- !u!1 &8787986982144492692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,3 +3050,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
+  BallPickedUp: {fileID: 0}
