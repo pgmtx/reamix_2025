@@ -7,18 +7,25 @@ public class Balle : MonoBehaviour
 {
     public bool isAlreadyInBasket = false;
     public GameEvent BallPickedUp;
-    bool ballPickedUpTriggered;
+
+    XRGrabInteractable grabInteractable;
+    bool wasSelectedLastFrame = false;
+
+    void Awake()
+    {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+    }
 
     void Update()
     {
-        if (ballPickedUpTriggered)
-        {
-            return;
-        }
+        bool isSelectedNow = grabInteractable.isSelected;
 
-        if (GetComponent<XRGrabInteractable>().isSelected)
+        // Déclenché UNIQUEMENT la frame du pickup
+        if (!wasSelectedLastFrame && isSelectedNow)
         {
             BallPickedUp.TriggerEvent();
         }
+
+        wasSelectedLastFrame = isSelectedNow;
     }
 }

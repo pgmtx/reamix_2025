@@ -7,31 +7,22 @@ public class Dialogues : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMPro.TextMeshProUGUI textObject;
-    public GameEvent PlayerOutBabypark;
 
     [Header("Print")]
     [SerializeField] private float timeBetweenChar = 0.05f;
 
-    [Header("Sentences")]
-    public List<string> sentences;
-
-    private void Awake()
-    {
-        // Testing
-        PlayerOutBabypark.TriggerEvent();
-    }
-
     // Wrapper obligatoire pour que ce soit affiché dans l'inspecteur
-    public void PrintSentence(int sentenceId)
+    public void PrintSentence(string sentence)
     {
-        StartCoroutine(PrintSentenceEnnumerator(sentenceId));
+        StopCoroutine("PrintSentenceEnnumerator");
+        StartCoroutine(PrintSentenceEnnumerator(sentence));
     }
 
-    IEnumerator PrintSentenceEnnumerator(int sentenceId)
+    IEnumerator PrintSentenceEnnumerator(string sentence)
     {
         textObject.text = "";
 
-        foreach (char c in sentences[sentenceId])
+        foreach (char c in sentence)
         {
             textObject.text += c;
             yield return new WaitForSeconds(timeBetweenChar);

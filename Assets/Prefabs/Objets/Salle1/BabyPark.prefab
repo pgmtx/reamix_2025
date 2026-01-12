@@ -426,6 +426,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2401969814275814675}
+  - component: {fileID: 3492016478485243880}
+  - component: {fileID: 3851538542714943924}
   m_Layer: 0
   m_Name: BabyPark
   m_TagString: Untagged
@@ -456,6 +458,41 @@ Transform:
   - {fileID: 4482712542813632999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &3492016478485243880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625338643112930426}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5660374, y: 3.6350036, z: 5.994709}
+  m_Center: {x: 2.4267364, y: 1.709286, z: 0.026128888}
+--- !u!114 &3851538542714943924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625338643112930426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546acede297e78b4f8d4377b935b9c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Poignee: {fileID: 6684039736624304190}
+  PlayerOutBabyPark: {fileID: 11400000, guid: 3620b77e97e216142a3cec68df9e12ca, type: 2}
 --- !u!1 &4504287520511698922
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +591,6 @@ GameObject:
   - component: {fileID: 8936430901508003671}
   - component: {fileID: 2293201412138372617}
   - component: {fileID: 618911240113598932}
-  - component: {fileID: 7032244117772814393}
   m_Layer: 0
   m_Name: Poignee
   m_TagString: Untagged
@@ -932,18 +968,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &7032244117772814393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6684039736624304190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546acede297e78b4f8d4377b935b9c2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8351558681188279710
 GameObject:
   m_ObjectHideFlags: 0

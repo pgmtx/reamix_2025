@@ -207,9 +207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bcdc832b2d70b74885b19a65d3e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basketFullEvent: {fileID: 11400000, guid: 3c395307bbdc9c741a0c5658876e8096, type: 2}
-  ballIsInBasket: {fileID: 11400000, guid: 3877d1170d4a2664c95eba7df797898a, type: 2}
-  ballsNeeded: 3
+  BasketFullEvent: {fileID: 11400000, guid: 3c395307bbdc9c741a0c5658876e8096, type: 2}
+  BallInBasket: {fileID: 11400000, guid: 3877d1170d4a2664c95eba7df797898a, type: 2}
+  BallOutBasket: {fileID: 11400000, guid: 877232a4f981a1344bc7a294928c587d, type: 2}
+  OtherInBasket: {fileID: 11400000, guid: 6c35498b9a672914cbdda40e061e649a, type: 2}
+  BallsNeeded: 3
 --- !u!1 &8915085582988505335
 GameObject:
   m_ObjectHideFlags: 0
