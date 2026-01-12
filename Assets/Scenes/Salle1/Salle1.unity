@@ -704,9 +704,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 15
+  m_Intensity: 12
   m_Range: 12
-  m_SpotAngle: 45
+  m_SpotAngle: 50
   m_InnerSpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
@@ -913,9 +913,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 98604893}
+  - component: {fileID: 98604896}
+  - component: {fileID: 98604897}
   - component: {fileID: 98604895}
   - component: {fileID: 98604894}
-  - component: {fileID: 98604896}
   m_Layer: 0
   m_Name: EventsHandler
   m_TagString: Untagged
@@ -1021,6 +1022,46 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 71216689}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &98604897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98604892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578400596}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!4 &105093987 stripped
 Transform:
@@ -10599,9 +10640,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 15
+  m_Intensity: 12
   m_Range: 12
-  m_SpotAngle: 45
+  m_SpotAngle: 50
   m_InnerSpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
