@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Balles
+  - Marteau
+  - Taupe
   layers:
   - Default
   - TransparentFX
