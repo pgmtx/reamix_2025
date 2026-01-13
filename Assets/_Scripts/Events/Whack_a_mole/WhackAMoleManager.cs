@@ -17,18 +17,18 @@ public class WhackAMoleManager : MonoBehaviour
         StartCoroutine(MoleLoop());
     }
 
-    private void Update()
+    private void EndGame()
     {
-        if (Score == 5 && !win)
+        win = true;
+        StopAllCoroutines();
+
+        for (int i = 0; i < taupes.Length; i++)
         {
-            for (int i = 0; i < taupes.Length; i++)
-            {
-                taupes[i].GoUp();
-            }
-            Debug.Log("Bien joué tu as gagné !");
-            win = true;
+            taupes[i].ShowUpFinal();
+            taupes[i].DisableTaupe();
         }
     }
+
 
     IEnumerator MoleLoop()
     {
@@ -36,27 +36,38 @@ public class WhackAMoleManager : MonoBehaviour
         {
             // Choisir une taupe
             currentTaupe = taupes[Random.Range(0, taupes.Length)];
+            
+            float timeUp = Random.Range(1f, 2f);
+            yield return new WaitForSeconds(timeUp);
 
             currentTaupe.GoUp();
 
-            float timeUp = Random.Range(1f, 6f);
+            timeUp = Random.Range(1f, 3f);
             yield return new WaitForSeconds(timeUp);
 
             currentTaupe.GoDown();
 
             yield return new WaitForSeconds(3f);
         }
+
     }
 
-    
     public void OnTaupeHit(Taupe taupe)
     {
         if (taupe != currentTaupe || Score >= 5 || win) return;
-
+        
         Score++;
         Debug.Log("Score : " + Score);
-
-        currentTaupe.GoDown();
+        
+        StopAllCoroutines();
+        
         TaupeFrappe.TriggerEvent();
+        if (Score >= 5)
+        {
+            EndGame();
+            return;
+        }
+        currentTaupe.GoDown();
+        StartCoroutine(MoleLoop());
     }
 }

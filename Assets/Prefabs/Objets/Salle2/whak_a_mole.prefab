@@ -659,7 +659,6 @@ GameObject:
   - component: {fileID: 6902595667291501622}
   - component: {fileID: 2346476960085134987}
   - component: {fileID: 4351799247793267699}
-  - component: {fileID: 6928745817483372050}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Taupe
@@ -769,28 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &6928745817483372050
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931085320919611431}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &943473386370380879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1289,6 @@ GameObject:
   - component: {fileID: 6518049782017849458}
   - component: {fileID: 2361858720506913695}
   - component: {fileID: 930906814149446320}
-  - component: {fileID: 5518999692128675483}
   m_Layer: 0
   m_Name: Armature.007
   m_TagString: Taupe
@@ -1422,28 +1398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &5518999692128675483
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048651282195466511}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2247150978669059056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,7 +2448,6 @@ GameObject:
   - component: {fileID: 7056149668881576218}
   - component: {fileID: 539600590608315723}
   - component: {fileID: 4549674335346913331}
-  - component: {fileID: 674931468567555070}
   m_Layer: 0
   m_Name: Armature.008
   m_TagString: Taupe
@@ -2604,28 +2557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &674931468567555070
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4920802312398453229}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4948222514569131731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,7 +3485,6 @@ GameObject:
   - component: {fileID: 3939276129771417892}
   - component: {fileID: 1309833299471406502}
   - component: {fileID: 3199212349335164138}
-  - component: {fileID: 7023400048942672489}
   m_Layer: 0
   m_Name: Armature.003
   m_TagString: Taupe
@@ -3664,28 +3594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &7023400048942672489
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6747802709073904868}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &6761629662101718101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,7 +3772,6 @@ GameObject:
   - component: {fileID: 1996823757701247313}
   - component: {fileID: 6467285463734129046}
   - component: {fileID: 1460757819092446233}
-  - component: {fileID: 4984381566332751182}
   m_Layer: 0
   m_Name: Armature.005
   m_TagString: Taupe
@@ -3974,28 +3881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &4984381566332751182
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7211809796490428686}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7213990563229041621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,7 +4051,6 @@ GameObject:
   - component: {fileID: 7444584569369271329}
   - component: {fileID: 2867898453332997910}
   - component: {fileID: 4947699339016955950}
-  - component: {fileID: 2396919615009449086}
   m_Layer: 0
   m_Name: Armature.002
   m_TagString: Taupe
@@ -4276,28 +4160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &2396919615009449086
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7685643862938060276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7857380854368928817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4646,7 +4508,6 @@ GameObject:
   - component: {fileID: 6902875162257461487}
   - component: {fileID: 7952911210699982676}
   - component: {fileID: 8186289238740195253}
-  - component: {fileID: 3838110176875726876}
   m_Layer: 0
   m_Name: Armature.004
   m_TagString: Taupe
@@ -4756,28 +4617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &3838110176875726876
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8546783897533319276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &8552551081708989973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4823,7 +4662,6 @@ GameObject:
   - component: {fileID: 2076758455493072765}
   - component: {fileID: 4440554589882500572}
   - component: {fileID: 1189776171050207557}
-  - component: {fileID: 7388547836385426553}
   m_Layer: 0
   m_Name: Armature.001
   m_TagString: Taupe
@@ -4933,28 +4771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1898b34e004fc304da6b6e4f667fe99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &7388547836385426553
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8562354011552760336}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &8575535658694961476
 GameObject:
   m_ObjectHideFlags: 0
