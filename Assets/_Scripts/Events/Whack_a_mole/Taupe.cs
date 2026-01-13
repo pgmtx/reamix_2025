@@ -28,7 +28,7 @@ public class Taupe : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isUp || manager.score >= 5) return;
+        if (!isUp || WhackAMoleManager.Score >= 5) return;
 
         XRGrabInteractable grab = other.GetComponentInParent<XRGrabInteractable>();
 

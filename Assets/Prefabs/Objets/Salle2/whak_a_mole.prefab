@@ -2732,7 +2732,7 @@ GameObject:
   - component: {fileID: 321093802242242103}
   - component: {fileID: 5324314890544675493}
   - component: {fileID: 6476942620208461370}
-  - component: {fileID: 8901792525581070629}
+  - component: {fileID: 5505582012961356786}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -2807,7 +2807,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8901792525581070629
+--- !u!114 &5505582012961356786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2816,14 +2816,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5203030096809177837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28ae49203d3e5334a89b7c5ac133c364, type: 3}
+  m_Script: {fileID: 11500000, guid: f1cdc3eab6b207246ab0caa00836a8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 7372074964961515839}
-  PlayerOutBabypark: {fileID: 11400000, guid: 3620b77e97e216142a3cec68df9e12ca, type: 2}
-  timeBetweenChar: 0.06
-  sentences:
-  - Ehhhhhh salut a tous les amis c'est David Lafarge Pokemon
 --- !u!1 &5288935363358210977
 GameObject:
   m_ObjectHideFlags: 0
@@ -5238,7 +5234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174b65451c1229545ba3fec5be1e78be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  TaupeFrappe: {fileID: 11400000, guid: 9e5fe3bcabfeb6f4eb778ce788ac048d, type: 2}
 --- !u!1 &9154115800893402844
 GameObject:
   m_ObjectHideFlags: 0

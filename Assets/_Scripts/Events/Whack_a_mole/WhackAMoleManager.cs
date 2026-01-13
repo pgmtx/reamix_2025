@@ -6,13 +6,28 @@ public class WhackAMoleManager : MonoBehaviour
 {
     private Taupe[] taupes;
     private Taupe currentTaupe;
-    public int score = 0;
+    public static int Score = 0;
     private bool win = false;
+
+    public GameEvent TaupeFrappe;
 
     void Start()
     {
         taupes = FindObjectsOfType<Taupe>();
         StartCoroutine(MoleLoop());
+    }
+
+    private void Update()
+    {
+        if (Score == 5 && !win)
+        {
+            for (int i = 0; i < taupes.Length; i++)
+            {
+                taupes[i].GoUp();
+            }
+            Debug.Log("Bien joué tu as gagné !");
+            win = true;
+        }
     }
 
     IEnumerator MoleLoop()
@@ -33,26 +48,15 @@ public class WhackAMoleManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (score == 5 && !win)
-        {
-            for (int i = 0; i < taupes.Length; i++)
-            {
-                taupes[i].GoUp();
-            }
-            Debug.Log("Bien joué tu as gagné !");
-            win = true;
-            return;
-        }
-    }
+    
     public void OnTaupeHit(Taupe taupe)
     {
-        if (taupe != currentTaupe || score >= 5 || win) return;
+        if (taupe != currentTaupe || Score >= 5 || win) return;
 
-        score++;
-        Debug.Log("Score : " + score);
+        Score++;
+        Debug.Log("Score : " + Score);
 
         currentTaupe.GoDown();
+        TaupeFrappe.TriggerEvent();
     }
 }

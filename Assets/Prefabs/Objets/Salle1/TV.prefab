@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2204666826791032181}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7665064, z: 0.6422367, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7665042, z: 0.64223933, w: 0}
   m_LocalPosition: {x: 0.26973343, y: 5.3970895, z: 12.24}
   m_LocalScale: {x: 300, y: 300, z: 300}
   m_ConstrainProportionsScale: 1
@@ -99,10 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 7507284305270171999}
-  PlayerOutBabypark: {fileID: 11400000, guid: 3620b77e97e216142a3cec68df9e12ca, type: 2}
   timeBetweenChar: 0.06
-  sentences:
-  - Ehhhhhh salut a tous les amis c'est David Lafarge Pokemon
 --- !u!1 &2841743901829115864
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bonjour
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b86a8c1b10d1ec45ada788a8e97c1ff, type: 2}
   m_sharedMaterial: {fileID: -9156715881458460004, guid: 1b86a8c1b10d1ec45ada788a8e97c1ff, type: 2}

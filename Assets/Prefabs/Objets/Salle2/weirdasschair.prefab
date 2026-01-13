@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4307115002735527118}
   - component: {fileID: 7800419814196323683}
   - component: {fileID: 636330696359067205}
+  - component: {fileID: 8484984521803209201}
   m_Layer: 0
   m_Name: "B\xE9zierCurve"
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8484984521803209201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968910914440542002}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.022551572, y: 0.022728294, z: 0.0015567418}
+  m_Center: {x: 0.00081696437, y: -0.006303348, z: 0.0007467167}
 --- !u!1 &2303629959269405146
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794371806702778689}
+  - component: {fileID: 2110496949603455393}
   m_Layer: 0
   m_Name: weirdasschair
   m_TagString: Untagged
@@ -288,6 +311,27 @@ Transform:
   - {fileID: 2056064487389807374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2110496949603455393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369950788128395355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0308151, y: 1.5612037, z: 1.7868931}
+  m_Center: {x: 0.001373081, y: -0.675564, z: 0.13715501}
 --- !u!1 &4904131264613727107
 GameObject:
   m_ObjectHideFlags: 0
