@@ -14,28 +14,30 @@ public class BasketLogic : MonoBehaviour
         // 1. Check if it's a ball
         Balle ball = other.GetComponent<Balle>();
 
-        if (ball == null )
+        if (ball == null)
         {
             OtherInBasket.TriggerEvent();
         }
 
         // 2. Only proceed if it IS a ball AND it hasn't been counted yet
-        else if (!ball.isAlreadyInBasket)
+        else
         {
-            ball.isAlreadyInBasket = true; // Mark it so it can't be counted again
             currentBalls++;
-
             Debug.Log("Unique ball added! Count: " + currentBalls);
+
+            // Mark it so it can't be counted again
+            if (!ball.isAlreadyInBasket)
+            {
+                ball.isAlreadyInBasket = true;
+                BallInBasket.TriggerEvent();
+            }
 
             if (currentBalls >= BallsNeeded)
             {
                 Debug.Log("Door Open");
                 BasketFullEvent.TriggerEvent();
             }
-            else
-            {
-                BallInBasket.TriggerEvent();
-            }
+            
         }
     }
 
@@ -45,10 +47,9 @@ public class BasketLogic : MonoBehaviour
         Balle ball = other.GetComponent<Balle>();
 
         // 2. Only proceed if it IS a ball AND it hasn't been counted yet
-        if (ball != null && ball.isAlreadyInBasket)
+        if (ball != null)
         {
             BallOutBasket.TriggerEvent();
-            ball.isAlreadyInBasket = false;
             currentBalls--;
 
             Debug.Log("Unique ball removed! Count: " + currentBalls);
