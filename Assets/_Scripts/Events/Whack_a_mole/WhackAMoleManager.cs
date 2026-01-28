@@ -10,6 +10,7 @@ public class WhackAMoleManager : MonoBehaviour
     private bool win = false;
 
     public GameEvent TaupeFrappe;
+    [SerializeField] private GameEvent WhackTermine;
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class WhackAMoleManager : MonoBehaviour
     {
         win = true;
         StopAllCoroutines();
+
+        WhackTermine.TriggerEvent();
 
         for (int i = 0; i < taupes.Length; i++)
         {

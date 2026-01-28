@@ -920,6 +920,7 @@ GameObject:
   - component: {fileID: 98604899}
   - component: {fileID: 98604894}
   - component: {fileID: 98604900}
+  - component: {fileID: 98604901}
   m_Layer: 0
   m_Name: EventsHandler
   m_TagString: Untagged
@@ -1184,6 +1185,34 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &98604901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98604892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: f9269659dea7e624daf2cdeb0020b536, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132148504867263}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OpenDoorLeft
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &105093987 stripped
@@ -16478,6 +16507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 975336005340496602, guid: f69ca07ab9d22394da83c062478dffbb, type: 3}
+      propertyPath: WhackTermine
+      value: 
+      objectReference: {fileID: 11400000, guid: f9269659dea7e624daf2cdeb0020b536, type: 2}
     - target: {fileID: 6988412900902864621, guid: f69ca07ab9d22394da83c062478dffbb, type: 3}
       propertyPath: m_Name
       value: whak_a_mole
