@@ -5,17 +5,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FermerJeu : MonoBehaviour
 {
-
     private XRSimpleInteractable interactable;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        
+        interactable = GetComponent<XRSimpleInteractable>();
+        interactable.selectEntered.AddListener(OnPressed);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnPressed(SelectEnterEventArgs args)
     {
-        
+        Debug.Log("Le jeu se ferme !!!!!");
+        Application.Quit();
     }
 }
