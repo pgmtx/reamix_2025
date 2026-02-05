@@ -8,6 +8,8 @@ public class AudioSystem : StaticInstance<AudioSystem> {
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _soundsSource;
 
+    [SerializeField] 
+
     public void PlayMusic(AudioClip clip) {
         _musicSource.clip = clip;
         _musicSource.Play();
