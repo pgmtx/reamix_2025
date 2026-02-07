@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class XRHoverHighlight : MonoBehaviour
+public class XRHoverHighlightFirstChild : MonoBehaviour
 {
     private XRGrabInteractable grabInteractable;
     private Material material;
-    private Renderer renderer;
     private Color originalEmission;
     private Color hoverEmission = Color.cyan;
 
@@ -16,20 +15,8 @@ public class XRHoverHighlight : MonoBehaviour
     private void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
+        material = GetComponentInChildren<Renderer>().material;
 
-        // Recuperation du renderer ou le premier trouvé chez les enfants
-        renderer = GetComponent<Renderer>();
-        if (renderer == null)
-        {
-            renderer = GetComponentInChildren<Renderer>();
-            if (renderer == null)
-            {
-                Debug.Log("Material non trouvé !!!!!!!!!");
-                this.enabled = false;
-            }
-        }
-        material = renderer.material;
-        
         originalEmission = material.GetColor("_Color");
 
         grabInteractable.hoverEntered.AddListener(OnHoverEnter);

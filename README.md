@@ -1,5 +1,5 @@
 # reamix_2025
-
+Rappel push 07/02 sur la distance de grab. Le paramètre c'est XR Interaction Setup/XR Origin/Left Controller/Ray Interactor/XR Ray Interactor/Raycast Configuration/Max Raycast Distance
 
 
 ## Getting started
