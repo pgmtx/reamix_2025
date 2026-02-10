@@ -1,5 +1,5 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
-- Project name: reamix_2025
+- Project name: unity
 - Unity version: Unity 2022.3.9f1
 - Active scene:
   - Name: Salle1

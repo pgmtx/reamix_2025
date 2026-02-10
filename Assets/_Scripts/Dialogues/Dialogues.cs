@@ -7,11 +7,20 @@ public class Dialogues : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMPro.TextMeshProUGUI textObject;
+    [SerializeField] private AudioSource typingAudio;
+    private float typingPitch;
+    private float typingVolume;
 
     [Header("Print")]
     [SerializeField] private float timeBetweenChar = 0.05f;
 
     Coroutine currentCoroutine;
+
+    private void Awake()
+    {
+        typingPitch = typingAudio.pitch;
+        typingVolume = typingAudio.volume;
+    }
 
     // Wrapper obligatoire pour que ce soit affiché dans l'inspecteur
     public void PrintSentence(string sentence)
@@ -33,6 +42,11 @@ public class Dialogues : MonoBehaviour
         foreach (char c in sentence)
         {
             textObject.text += c;
+            // Play sound
+            typingAudio.Play();
+            typingAudio.pitch = typingPitch + UnityEngine.Random.Range(-0.007f, 0.007f);
+            typingAudio.volume = typingVolume + UnityEngine.Random.Range(-0.01f, 0.01f);
+
             yield return new WaitForSeconds(timeBetweenChar);
         }
 
