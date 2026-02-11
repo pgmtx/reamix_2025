@@ -5757,6 +5757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771936917}
+  - component: {fileID: 771936918}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -5782,6 +5783,25 @@ Transform:
   - {fileID: 1170567144}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &771936918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771936916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115e9da686cedc6428ffacf7ce9562c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boutonJouer: {fileID: 855314040}
+  boutonQuitter: {fileID: 1426945580}
+  eclairagePlanetarium: {fileID: 7415249367107672534}
+  menu: {fileID: 771936916}
+  barriere: {fileID: 766774368}
+  spotlight: {fileID: 1170567141}
+  deplacement: {fileID: 74022001}
 --- !u!4 &787893616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5871439320657721487, guid: a29d790459d3ae744a913359515e1bd8, type: 3}
@@ -6352,7 +6372,6 @@ GameObject:
   m_Component:
   - component: {fileID: 855314041}
   - component: {fileID: 855314044}
-  - component: {fileID: 855314046}
   - component: {fileID: 855314045}
   - component: {fileID: 855314043}
   - component: {fileID: 855314042}
@@ -6553,23 +6572,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &855314046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855314040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f80d1bfd5313f4ba2f650ac55dd8c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eclairage: {fileID: 7415249367107672534}
-  menu: {fileID: 771936916}
-  barriere: {fileID: 766774368}
-  spotlight: {fileID: 1170567141}
-  deplacement: {fileID: 74022001}
 --- !u!1 &877468465
 GameObject:
   m_ObjectHideFlags: 0
@@ -10542,7 +10544,6 @@ GameObject:
   - component: {fileID: 1426945584}
   - component: {fileID: 1426945583}
   - component: {fileID: 1426945586}
-  - component: {fileID: 1426945585}
   - component: {fileID: 1426945587}
   m_Layer: 0
   m_Name: Quitter
@@ -10617,18 +10618,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426945580}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1426945585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426945580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa02ee6d16aba9f46a5204e3522b1743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1426945586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20943,6 +20932,10 @@ PrefabInstance:
     - target: {fileID: 6297500186100846430, guid: feae37bdba7e3b64594317a5d48a9dfd, type: 3}
       propertyPath: m_Intensity
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297500186100846430, guid: feae37bdba7e3b64594317a5d48a9dfd, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7274177244579834827, guid: feae37bdba7e3b64594317a5d48a9dfd, type: 3}
       propertyPath: m_Name
