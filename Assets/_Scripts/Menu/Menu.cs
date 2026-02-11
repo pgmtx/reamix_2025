@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
     private XRSimpleInteractable quitterInteractable;
 
     [SerializeField] private GameObject eclairagePlanetarium;
-    private Light light;
+    private Light lightCompPlanetarium;
     private bool updateLight = false;
 
     [SerializeField] private GameObject menu;
@@ -21,6 +21,7 @@ public class Menu : MonoBehaviour
     private XRGrabInteractable barriereInteractable;
 
     [SerializeField] private GameObject spotlight;
+    private Light lightCompSpotlight;
 
     [SerializeField] private GameObject deplacement;
 
@@ -34,9 +35,12 @@ public class Menu : MonoBehaviour
         barriereInteractable.enabled = false;
 
         // Eclairage eteint
-        // Valeur defaut du planetarium -> light.intensity = 6;
-        light = eclairagePlanetarium.GetComponent<Light>();
-        light.intensity = 0;
+        // Valeur defaut du planetarium -> lightCompPlanetarium.intensity = 6;
+        lightCompPlanetarium = eclairagePlanetarium.GetComponent<Light>();
+        lightCompPlanetarium.intensity = 0;
+
+        // Valeur defaut du spotlight -> lightCompSpotlight.intensity = 8;
+        lightCompSpotlight = spotlight.GetComponent<Light>();
         spotlight.SetActive(true);
 
         // Mettre l'interaction sur le bouton Jouer
@@ -52,12 +56,19 @@ public class Menu : MonoBehaviour
     {
         if (updateLight)
         {
-            if (light.intensity < 6)
+            if (lightCompPlanetarium.intensity < 6)
             {
-                light.intensity += Time.deltaTime;
+                lightCompPlanetarium.intensity += Time.deltaTime;
             }
-            else
+
+            if (lightCompSpotlight.intensity > 0)
+            { 
+                lightCompSpotlight.intensity -= Time.deltaTime;
+            }
+
+            if (lightCompPlanetarium.intensity >= 6 && lightCompSpotlight.intensity <= 0)
             {
+                Debug.Log("Menu desactive !");
                 menu.SetActive(false);
             }
         }
@@ -67,13 +78,11 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Le bouton Jouer a ete presse !");
 
-        //allumerLumiere();
         updateLight = true;
 
-        // On desac le menu et remet les valeurs a defaut
+        // On desac les boutons et remet a defaut
         boutonJouer.SetActive(false);
         boutonQuitter.SetActive(false);
-        spotlight.SetActive(false);
         barriereInteractable.enabled = true;
         deplacement.SetActive(true);
     }
