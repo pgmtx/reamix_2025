@@ -11,25 +11,25 @@ public class FootstepAudio : MonoBehaviour
     private float footstepVolume;
     public AudioClip[] footstepSounds;
     public float distanceThreshold = 1.5f; // Distance avant de jouer le bruit de pas
-    [SerializeField] private Transform playerPos;
 
-    [SerializeField] private CharacterController characterController;
+    private CharacterController characterController;
     private Vector2 lastPosition2D;        // position XZ
     private float distanceTraveled = 0f;
 
     void Awake()
     {
+        characterController = GetComponent<CharacterController>();
         footstepAudio = GetComponent<AudioSource>();
         footstepPitch = footstepAudio.pitch;
         footstepVolume = footstepAudio.volume;
-        Vector3 startPos = playerPos.position;
+        Vector3 startPos = transform.position;
         lastPosition2D = new Vector2(startPos.x, startPos.z);
     }
 
     void FixedUpdate()
     {
         // Position actuelle en XZ
-        Vector3 currentPos3D = playerPos.position;
+        Vector3 currentPos3D = transform.position;
         Vector2 currentPos2D = new Vector2(currentPos3D.x, currentPos3D.z);
 
         // Calcul du déplacement horizontal

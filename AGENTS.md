@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground
 - Active game object:
-  - Name: Player
-  - Tag: Player
+  - Name: Balle
+  - Tag: Balles
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -31,6 +31,21 @@ public class BallDistributor : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartCoroutine(OnStartDistribute());
+    }
+
+    private IEnumerator OnStartDistribute()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            DistributeBall();
+            yield return new WaitForSeconds(1f);
+        }
+            
+    }
+
     public void DistributeBall()
     {
         if (InactiveBalls.Count == 0)
