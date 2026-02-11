@@ -764,6 +764,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8238432229869096519, guid: bb34c7f1ec80c82408b7c28012abd164, type: 3}
   m_PrefabInstance: {fileID: 1319099974672318762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &74022001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9067829889149138881, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1731298970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &94437710
 GameObject:
   m_ObjectHideFlags: 0
@@ -5774,6 +5779,7 @@ Transform:
   m_Children:
   - {fileID: 855314041}
   - {fileID: 1426945581}
+  - {fileID: 1170567144}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &787893616 stripped
@@ -6366,7 +6372,7 @@ Transform:
   m_GameObject: {fileID: 855314040}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.97, z: -0.537}
+  m_LocalPosition: {x: 0.07, y: 0.97, z: -0.537}
   m_LocalScale: {x: 0.1, y: 1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6563,6 +6569,7 @@ MonoBehaviour:
   menu: {fileID: 771936916}
   barriere: {fileID: 766774368}
   spotlight: {fileID: 1170567141}
+  deplacement: {fileID: 74022001}
 --- !u!1 &877468465
 GameObject:
   m_ObjectHideFlags: 0
@@ -8354,11 +8361,11 @@ Transform:
   m_GameObject: {fileID: 1170567141}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.534, y: 8, z: -2.451}
+  m_LocalPosition: {x: 1.2674282, y: 7.31, z: -1.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 771936917}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1178526979
 GameObject:
@@ -10553,7 +10560,7 @@ Transform:
   m_GameObject: {fileID: 1426945580}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.202, y: 0.97, z: -0.53699994}
+  m_LocalPosition: {x: 1.73, y: 0.97, z: -0.53699994}
   m_LocalScale: {x: 0.11228884, y: 1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17179,6 +17186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lampeEnfant
       objectReference: {fileID: 0}
+    - target: {fileID: 2691980477470985605, guid: abd8bca353b330342960e9df777a1e63, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5539810003822006965, guid: abd8bca353b330342960e9df777a1e63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3660306
@@ -21992,4 +22003,3 @@ SceneRoots:
   - {fileID: 217656014}
   - {fileID: 1075250032}
   - {fileID: 771936917}
-  - {fileID: 1170567144}

@@ -7,18 +7,28 @@ public class Jouer : MonoBehaviour
 {
     private XRSimpleInteractable interactable;
 
-    public GameObject eclairage;
+    [SerializeField]
+    private GameObject eclairage;
 
-    public GameObject menu;
+    [SerializeField]
+    private GameObject menu;
 
-    public GameObject barriere;
+    [SerializeField]
+    private GameObject barriere;
     private XRGrabInteractable barriereInteractable;
 
-    public GameObject spotlight;
+    [SerializeField]
+    private GameObject spotlight;
+
+    [SerializeField]
+    private GameObject deplacement;
 
     void Awake()
     {
-        // On desactive les interactions avec la barriere
+        // Bloquer les deplacements du joueur
+        deplacement.SetActive(false);
+
+        // Pas d'interactions avec la barrière du babypark
         barriereInteractable = barriere.GetComponent<XRGrabInteractable>();
         barriereInteractable.enabled = false;
 
@@ -40,5 +50,6 @@ public class Jouer : MonoBehaviour
         eclairage.SetActive(true);
         spotlight.SetActive(false);
         barriereInteractable.enabled = true;
+        deplacement.SetActive(true);
     }
 }
