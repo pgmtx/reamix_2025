@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogues : MonoBehaviour
+public class TVDialogues : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMPro.TextMeshProUGUI textObject;

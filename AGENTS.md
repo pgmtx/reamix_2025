@@ -1,5 +1,5 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
-- Project name: unity
+- Project name: reamix_2025
 - Unity version: Unity 2022.3.9f1
 - Active scene:
   - Name: Salle1
@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground
 - Active game object:
-  - Name: BabyPark
-  - Tag: Untagged
-  - Layer: Default
+  - Name: XR Origin (XR Rig)
+  - Tag: Player
+  - Layer: Ignore Raycast
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
