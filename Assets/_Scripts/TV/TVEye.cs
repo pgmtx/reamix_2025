@@ -7,16 +7,16 @@ public class TVEye : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Slider outerEye;
+    [SerializeField] private Slider middleEye;
     [SerializeField] private Slider innerEye;
-    [Range(-10f, 0f)]
-    [SerializeField] private float playerMinX;
-    [Range(-0f, 10f)]
+    [Range(0f, 10f)]
     [SerializeField] private float playerMaxX;
 
     private void Update()
     {
         float playerCurrentX = player.position.x;
         outerEye.value = 0.5f + (playerCurrentX / (2 * playerMaxX));
-        innerEye.value = 0.5f + (playerCurrentX / (2 * -playerMinX));
+        middleEye.value = 0.5f + (playerCurrentX / (2 * playerMaxX));
+        innerEye.value = 0.5f + (playerCurrentX / (2 * playerMaxX));
     }
 }
