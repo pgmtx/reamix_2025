@@ -26,7 +26,7 @@ public class FootstepAudio : MonoBehaviour
         lastPosition2D = new Vector2(startPos.x, startPos.z);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Position actuelle en XZ
         Vector3 currentPos3D = playerPos.position;
@@ -59,7 +59,6 @@ public class FootstepAudio : MonoBehaviour
 
     void PlayFootstepSound()
     {
-        Debug.Log("Play step sound");
         // Randomize
         footstepAudio.clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
         footstepAudio.pitch = footstepPitch + Random.Range(-0.005f, 0.005f);
