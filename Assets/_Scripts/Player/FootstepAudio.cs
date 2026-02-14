@@ -61,9 +61,7 @@ public class FootstepAudio : MonoBehaviour
     {
         // Randomize
         footstepAudio.clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
-        footstepAudio.pitch = footstepPitch + Random.Range(-0.005f, 0.005f);
-        footstepAudio.volume = footstepVolume + Random.Range(-0.005f, 0.005f);
-        footstepAudio.Play();
+        AudioSystem.Instance.PlayRdmPitchVol(footstepAudio);
     }
 }
 

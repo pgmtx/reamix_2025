@@ -17,11 +17,13 @@ public class Balle : MonoBehaviour
     [SerializeField] private AudioSource ballHitSound;
     private float ballHitSoundVolume;
     private float ballHitSoundPitch;
+    [SerializeField] private float minImpactSpeedToPlaySound;
 
     void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         ballHitSound = GetComponent<AudioSource>();
+
         ballHitSoundVolume = ballHitSound.volume;
         ballHitSoundPitch = ballHitSound.pitch;
         // Disable on spawn pour pas avoir de bruit dans le tuyau
@@ -43,7 +45,7 @@ public class Balle : MonoBehaviour
     {
         float impactSpeed = collision.relativeVelocity.magnitude;
 
-        if (!grabInteractable.isSelected && impactSpeed > 1.6f)
+        if (!grabInteractable.isSelected && impactSpeed > minImpactSpeedToPlaySound)
         {
             Debug.Log("Impact réel à vitesse: " + impactSpeed);
             ballHitSound.pitch = ballHitSoundPitch + Random.Range(-0.005f, 0.005f);
@@ -51,6 +53,4 @@ public class Balle : MonoBehaviour
             ballHitSound.Play();
         }
     }
-
-    
 }

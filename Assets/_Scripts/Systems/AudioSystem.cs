@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -5,22 +6,22 @@ using UnityEngine;
 /// Ensure you change the 'Sounds' audio source to use 3D spatial blend if you intend to use 3D sounds.
 /// </summary>
 public class AudioSystem : StaticInstance<AudioSystem> {
-    [SerializeField] private AudioSource _musicSource;
-    [SerializeField] private AudioSource _soundsSource;
 
-    [SerializeField] 
-
-    public void PlayMusic(AudioClip clip) {
-        _musicSource.clip = clip;
-        _musicSource.Play();
+    public void PlayRdmPitchVol(AudioSource audioSource)
+    {
+        float pitch = audioSource.pitch;
+        float volume = audioSource.volume;
+        audioSource.pitch += Random.Range(-0.05f, 0.05f);
+        audioSource.volume += Random.Range(-0.05f, 0.05f);
+        audioSource.Play();
+        StartCoroutine(WaitForAudio(audioSource, volume, pitch));
     }
 
-    public void PlaySound(AudioClip clip, Vector3 pos, float vol = 1) {
-        _soundsSource.transform.position = pos;
-        PlaySound(clip, vol);
-    }
+    IEnumerator WaitForAudio(AudioSource audioSource, float oldVolume, float oldPitch)
+    {
+        yield return new WaitWhile(() => audioSource.isPlaying);
 
-    public void PlaySound(AudioClip clip, float vol = 1) {
-        _soundsSource.PlayOneShot(clip, vol);
+        audioSource.volume = oldVolume;
+        audioSource.pitch = oldPitch;
     }
 }

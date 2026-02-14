@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class XRHoverHighlight : MonoBehaviour
+public class XRInteractable : MonoBehaviour
 {
     private XRGrabInteractable grabInteractable;
     private Material material;
@@ -12,6 +12,8 @@ public class XRHoverHighlight : MonoBehaviour
     private Color hoverEmission = Color.cyan;
 
     private bool selected = false;
+
+    [SerializeField] private AudioSource pickupSound;
 
     private void Awake()
     {
@@ -56,6 +58,8 @@ public class XRHoverHighlight : MonoBehaviour
         material.DisableKeyword("_EMISSION");
         material.SetColor("_EmissionColor", originalEmission);
         selected = true;
+
+        AudioSystem.Instance.PlayRdmPitchVol(pickupSound);
     }
 
     void OnSelectExit(SelectExitEventArgs args)

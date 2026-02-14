@@ -10,6 +10,9 @@ public class Taupe : MonoBehaviour
     private bool canBeHit = true;
     public bool isUp { get; private set; }
 
+    [SerializeField] private AudioSource taupeLaugh;
+    [SerializeField] private AudioSource taupeHit;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -29,6 +32,7 @@ public class Taupe : MonoBehaviour
         canBeHit = false;
         isUp = false;
         animator.SetTrigger("down");
+        AudioSystem.Instance.PlayRdmPitchVol(taupeLaugh);
     }
 
     public void DisableTaupe()
@@ -55,6 +59,7 @@ public class Taupe : MonoBehaviour
         {
             canBeHit = false;
             manager.OnTaupeHit(this);
+            taupeHit.Play();
         }
     }
 }

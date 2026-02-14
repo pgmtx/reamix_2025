@@ -12,9 +12,17 @@ public class WhackAMoleManager : MonoBehaviour
     public GameEvent TaupeFrappe;
     [SerializeField] private GameEvent WhackTermine;
 
+    private void Awake()
+    {
+        Animator[] taupesAnimators = GetComponentsInChildren<Animator>();
+        foreach (Animator a in taupesAnimators)
+        {
+            a.enabled = true;
+        }
+    }
     void Start()
     {
-        taupes = FindObjectsOfType<Taupe>();
+        taupes = GetComponentsInChildren<Taupe>();
         StartCoroutine(MoleLoop());
     }
 
@@ -50,7 +58,7 @@ public class WhackAMoleManager : MonoBehaviour
 
             currentTaupe.GoDown();
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
         }
 
     }
