@@ -20676,7 +20676,7 @@ AudioSource:
   m_GameObject: {fileID: 919132148180377394}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
+  OutputAudioMixerGroup: {fileID: -2718469279359783524, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: 23be5157a5dd2e241b45e8b5b226832e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
@@ -30702,6 +30702,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4914757508021013280, guid: 957f738fc3dfdfd439ba9ad3209499ac, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2718469279359783524, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37072,7 +37076,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -37116,7 +37120,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -37168,7 +37172,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -37212,7 +37216,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -39679,7 +39683,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -39723,7 +39727,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -39775,7 +39779,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -39819,7 +39823,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -40630,7 +40634,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -40674,7 +40678,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -40726,7 +40730,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -40770,7 +40774,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -45754,7 +45758,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -45798,7 +45802,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -45850,7 +45854,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -45894,7 +45898,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -47000,7 +47004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47044,7 +47048,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -47096,7 +47100,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47140,7 +47144,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -47249,7 +47253,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47293,7 +47297,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -47345,7 +47349,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47389,7 +47393,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -49325,7 +49329,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -49369,7 +49373,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -49421,7 +49425,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -49465,7 +49469,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -50773,7 +50777,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: de34a0482faf1aa41b36db71281bdb4f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -50817,7 +50821,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -50869,7 +50873,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3fc6a285f3fb8428ae8917c5961d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -50913,7 +50917,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

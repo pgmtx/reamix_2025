@@ -32,7 +32,7 @@ public class Taupe : MonoBehaviour
         canBeHit = false;
         isUp = false;
         animator.SetTrigger("down");
-        AudioSystem.Instance.PlayRdmPitchVol(taupeLaugh);
+        taupeLaugh.PlayOneShot(taupeLaugh.clip);
     }
 
     public void DisableTaupe()
