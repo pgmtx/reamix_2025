@@ -45,11 +45,11 @@ public class Menu : MonoBehaviour
 
         // Mettre l'interaction sur le bouton Jouer
         jouerInteractable = boutonJouer.GetComponent<XRSimpleInteractable>();
-        jouerInteractable.selectEntered.AddListener(OnPressedJouer);
+        jouerInteractable?.selectEntered.AddListener(OnPressedJouer);
 
         // Mettre l'interaction sur le bouton Quitter
         quitterInteractable = boutonQuitter.GetComponent<XRSimpleInteractable>();
-        quitterInteractable.selectEntered.AddListener(OnPressedQuitter);
+        quitterInteractable?.selectEntered.AddListener(OnPressedQuitter);
     }
 
     void Update()
