@@ -12984,7 +12984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387997708335807169, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13505,6 +13505,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3422356925444205241, guid: c887616fec8241346b38d4b1841a70e6, type: 3}
   m_PrefabInstance: {fileID: 1465210052}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1875233730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9032954039820430273, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1731298970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875276062
 GameObject:
   m_ObjectHideFlags: 0
@@ -18492,9 +18503,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 74022001}
     - target: {fileID: 1745239090839354380, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
+      propertyPath: rayInteractor
+      value: 
+      objectReference: {fileID: 1875233730}
+    - target: {fileID: 1745239090839354380, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
       propertyPath: eclairagePlanetarium
       value: 
       objectReference: {fileID: 7415249367107672534}
+    - target: {fileID: 2782912277081860565, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 4685678100676897254, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
       propertyPath: m_Name
       value: Menu

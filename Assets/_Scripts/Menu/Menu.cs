@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Menu : MonoBehaviour
@@ -25,8 +24,19 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private GameObject deplacement;
 
+    [SerializeField] private XRRayInteractor rayInteractor;
+
     void Awake()
     {
+        InputAction triggerAction = new InputAction("Trigger", InputActionType.Button);
+
+        //triggerAction.AddBinding("<XRController>{RightHand}/triggerPressed");
+        //triggerAction.AddBinding("<XRController>{LeftHand}/triggerPressed");
+        triggerAction.AddBinding("<XRController>/triggerPressed");
+
+        triggerAction.performed += OnTriggerPressed;
+        triggerAction.Enable();
+
         // Bloquer les deplacements du joueur
         deplacement.SetActive(false);
 
@@ -45,11 +55,11 @@ public class Menu : MonoBehaviour
 
         // Mettre l'interaction sur le bouton Jouer
         jouerInteractable = boutonJouer.GetComponent<XRSimpleInteractable>();
-        jouerInteractable?.selectEntered.AddListener(OnPressedJouer);
+        jouerInteractable?.activated.AddListener(OnPressedJouer);
 
         // Mettre l'interaction sur le bouton Quitter
         quitterInteractable = boutonQuitter.GetComponent<XRSimpleInteractable>();
-        quitterInteractable?.selectEntered.AddListener(OnPressedQuitter);
+        quitterInteractable?.activated.AddListener(OnPressedQuitter);
     }
 
     void Update()
@@ -74,7 +84,21 @@ public class Menu : MonoBehaviour
         }
     }
 
-    void OnPressedJouer(SelectEnterEventArgs args)
+    private void OnTriggerPressed(InputAction.CallbackContext ctx)
+    {
+        if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+        {
+            var interactable = hit.collider.GetComponent<XRSimpleInteractable>();
+
+            if (interactable == jouerInteractable)
+                OnPressedJouer(null);
+
+            if (interactable == quitterInteractable)
+                OnPressedQuitter(null);
+        }
+    }
+
+    void OnPressedJouer(ActivateEventArgs args)
     {
         Debug.Log("Le bouton Jouer a ete presse !");
 
@@ -87,7 +111,7 @@ public class Menu : MonoBehaviour
         deplacement.SetActive(true);
     }
 
-    void OnPressedQuitter(SelectEnterEventArgs args)
+    void OnPressedQuitter(ActivateEventArgs args)
     {
         Debug.Log("Le jeu se ferme !!!!!");
         Application.Quit();
