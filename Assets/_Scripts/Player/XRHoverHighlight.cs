@@ -36,14 +36,11 @@ public class XRHoverHighlight : MonoBehaviour
         grabInteractable.hoverExited.AddListener(OnHoverExit);
         grabInteractable.selectEntered.AddListener(OnSelectEnter);
         grabInteractable.selectExited.AddListener(OnSelectExit);
-
-        Debug.Log("Emission" + originalEmission);
     }
 
     void OnHoverEnter(HoverEnterEventArgs args)
     {
         if (selected) return;
-        Debug.Log("Hovering an object");
         material.EnableKeyword("_EMISSION");
         material.SetColor("_EmissionColor", originalEmission * 2f);
     }
@@ -56,7 +53,6 @@ public class XRHoverHighlight : MonoBehaviour
 
     void OnSelectEnter(SelectEnterEventArgs args)
     {
-        Debug.Log("Selected an object");
         material.DisableKeyword("_EMISSION");
         material.SetColor("_EmissionColor", originalEmission);
         selected = true;
