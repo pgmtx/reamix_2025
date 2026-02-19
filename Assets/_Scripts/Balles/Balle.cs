@@ -14,20 +14,12 @@ public class Balle : MonoBehaviour
     bool wasSelectedLastFrame = false;
 
     [Header("Son")]
-    [SerializeField] private AudioSource ballHitSound;
-    private float ballHitSoundVolume;
-    private float ballHitSoundPitch;
     [SerializeField] private float minImpactSpeedToPlaySound;
+    private bool soundEnabled = false;
 
     void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
-        ballHitSound = GetComponent<AudioSource>();
-
-        ballHitSoundVolume = ballHitSound.volume;
-        ballHitSoundPitch = ballHitSound.pitch;
-        // Disable on spawn pour pas avoir de bruit dans le tuyau
-        ballHitSound.enabled = false;
     }
 
     void Update()
@@ -35,7 +27,7 @@ public class Balle : MonoBehaviour
         // Déclenché UNIQUEMENT la frame du pickup
         if (!wasSelectedLastFrame && grabInteractable.isSelected)
         {
-            ballHitSound.enabled = true;
+            soundEnabled = true;
             BallPickedUp.TriggerEvent();
         }
         wasSelectedLastFrame = grabInteractable.isSelected;
@@ -43,14 +35,15 @@ public class Balle : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (!soundEnabled)
+            return;
+
         float impactSpeed = collision.relativeVelocity.magnitude;
 
         if (!grabInteractable.isSelected && impactSpeed > minImpactSpeedToPlaySound)
         {
             Debug.Log("Impact réel à vitesse: " + impactSpeed);
-            ballHitSound.pitch = ballHitSoundPitch + Random.Range(-0.005f, 0.005f);
-            ballHitSound.volume = Mathf.Clamp(impactSpeed / 8, 0.15f, 0.85f);
-            ballHitSound.Play();
+            AudioSystem.Instance.Play3DSoundRdmPitchVol("Ball Hit Ground", transform.position, Mathf.Clamp(impactSpeed / 10, 0.15f, 0.85f), Random.Range(-0.005f, 0.005f));
         }
     }
 }

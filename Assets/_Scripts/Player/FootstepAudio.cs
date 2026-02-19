@@ -2,14 +2,9 @@ using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(AudioSource))]
 public class FootstepAudio : MonoBehaviour
 {
     [Header("Footstep Settings")]
-    private AudioSource footstepAudio;
-    private float footstepPitch;
-    private float footstepVolume;
-    public AudioClip[] footstepSounds;
     public float distanceThreshold = 1.5f; // Distance avant de jouer le bruit de pas
 
     private CharacterController characterController;
@@ -19,14 +14,11 @@ public class FootstepAudio : MonoBehaviour
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        footstepAudio = GetComponent<AudioSource>();
-        footstepPitch = footstepAudio.pitch;
-        footstepVolume = footstepAudio.volume;
         Vector3 startPos = transform.position;
         lastPosition2D = new Vector2(startPos.x, startPos.z);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Position actuelle en XZ
         Vector3 currentPos3D = transform.position;
@@ -49,19 +41,13 @@ public class FootstepAudio : MonoBehaviour
         // Jouer le bruit de pas si seuil atteint
         if (distanceTraveled >= distanceThreshold)
         {
-            PlayFootstepSound();
+            Debug.Log("PlayFootstep");
+            AudioSystem.Instance.PlayFootstep(transform.position);
 
             distanceTraveled = 0f; // reset
         }
 
         lastPosition2D = currentPos2D;
-    }
-
-    void PlayFootstepSound()
-    {
-        // Randomize
-        footstepAudio.clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
-        AudioSystem.Instance.PlayRdmPitchVol(footstepAudio);
     }
 }
 

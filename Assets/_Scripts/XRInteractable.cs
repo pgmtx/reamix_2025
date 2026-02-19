@@ -13,8 +13,6 @@ public class XRInteractable : MonoBehaviour
 
     private bool selected = false;
 
-    [SerializeField] private AudioSource pickupSound;
-
     private void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
@@ -59,7 +57,7 @@ public class XRInteractable : MonoBehaviour
         material.SetColor("_EmissionColor", originalEmission);
         selected = true;
 
-        AudioSystem.Instance.PlayRdmPitchVol(pickupSound);
+        AudioSystem.Instance.Play3DSoundRdmPitchVol("Pick Up Sound", transform.position);
     }
 
     void OnSelectExit(SelectExitEventArgs args)
