@@ -1,86 +1,100 @@
 using UnityEngine;
-using System.Collections; // Required for the Delay (Coroutine)
+using System.Collections;
 
 public class ElevatorAction : MonoBehaviour
 {
     [Header("Elevator Settings")]
     public float height = 10f;
     public float speed = 3f;
-    public float startDelay = 2f; // Time in seconds
+    public float startDelay = 2f;
     public AudioSource liftSound;
 
     [Header("Gate Settings")]
-    public Transform gate; // Drag your Gate object here
+    public Transform gate; 
     public float gateMoveDistance = 2.5f;
     public float gateSpeed = 2f;
 
-    private Vector3 _elevatorEndPos;
-    private Vector3 _gateOpenPos;
-    private Vector3 _gateClosedPos;
-
-    private bool _isElevatorMoving = false;
+    private Vector3 _bottomPos;
+    private Vector3 _topPos;
+    private Vector3 _gateOpenLocalPos;
+    private Vector3 _gateClosedLocalPos;
+    
+    private Vector3 _currentTarget;
+    private bool _isMoving = false;
     private bool _isGateClosing = false;
 
     void Start()
     {
-        _elevatorEndPos = transform.position + Vector3.up * height;
-
+        _bottomPos = transform.position;
+        _topPos = _bottomPos + Vector3.up * height;
+        
         if (gate != null)
         {
-            _gateOpenPos = gate.localPosition;
-            _gateClosedPos = _gateOpenPos + Vector3.up * gateMoveDistance;
+            _gateOpenLocalPos = gate.localPosition;
+            _gateClosedLocalPos = _gateOpenLocalPos + Vector3.up * gateMoveDistance;
         }
     }
 
-    // This is called by your GameEventListener
-    public void StartSequence()
+    // --- TRIGGER FUNCTIONS ---
+
+    public void StartGoingUp()
     {
+        if (_isMoving) return; // Don't interrupt if already moving
+        _currentTarget = _topPos;
         StartCoroutine(ElevatorSequence());
     }
 
+    public void StartGoingDown()
+    {
+        if (_isMoving) return;
+        _currentTarget = _bottomPos;
+        StartCoroutine(ElevatorSequence());
+    }
+
+    // --- LOGIC ---
+
     IEnumerator ElevatorSequence()
     {
-        Debug.Log("Player detected. Closing gates...");
+        // 1. Close Gate
         _isGateClosing = true;
-
-        // Wait for the delay you requested
+        
+        // 2. Wait for the delay
         yield return new WaitForSeconds(startDelay);
 
-        Debug.Log("Starting lift!");
-        _isElevatorMoving = true;
+        // 3. Move Elevator
+        _isMoving = true;
         if (liftSound != null) liftSound.Play();
     }
 
     void Update()
     {
-        // Handle Gate Movement (Up)
+        // Handle Gate Closing (Up relative to platform)
         if (_isGateClosing && gate != null)
         {
-            gate.localPosition = Vector3.MoveTowards(gate.localPosition, _gateClosedPos, gateSpeed * Time.deltaTime);
+            gate.localPosition = Vector3.MoveTowards(gate.localPosition, _gateClosedLocalPos, gateSpeed * Time.deltaTime);
         }
 
-        // Handle Elevator Movement (Up)
-        if (_isElevatorMoving)
+        // Handle Elevator Movement
+        if (_isMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _elevatorEndPos, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _currentTarget, speed * Time.deltaTime);
 
-            // Once we reach the top
-            if (Vector3.Distance(transform.position, _elevatorEndPos) < 0.01f)
+            // Arrival Check
+            if (Vector3.Distance(transform.position, _currentTarget) < 0.01f)
             {
-                _isElevatorMoving = false;
-                _isGateClosing = false; // Stop trying to close the gate
-                StartCoroutine(OpenGateAtTop());
+                _isMoving = false;
+                _isGateClosing = false; 
+                StartCoroutine(OpenGateAtDestination());
             }
         }
     }
 
-    IEnumerator OpenGateAtTop()
+    IEnumerator OpenGateAtDestination()
     {
-        Debug.Log("Arrived! Opening gates...");
-        // This moves the gate back down
-        while (Vector3.Distance(gate.localPosition, _gateOpenPos) > 0.01f)
+        // Moves the gate back down relative to the platform
+        while (gate != null && Vector3.Distance(gate.localPosition, _gateOpenLocalPos) > 0.01f)
         {
-            gate.localPosition = Vector3.MoveTowards(gate.localPosition, _gateOpenPos, gateSpeed * Time.deltaTime);
+            gate.localPosition = Vector3.MoveTowards(gate.localPosition, _gateOpenLocalPos, gateSpeed * Time.deltaTime);
             yield return null;
         }
     }

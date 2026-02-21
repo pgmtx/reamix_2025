@@ -13,7 +13,7 @@ public class MazeFinishTrigger : MonoBehaviour
             finishEvent.TriggerEvent(); // This matches your script's method name
 
             // Optional: disable the wall so it doesn't trigger twice
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }
