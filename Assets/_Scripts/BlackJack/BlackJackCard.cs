@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BlackjackCard : MonoBehaviour
 {
+    public int cardValue; // Set this in the Inspector for each prefab (2-11)
     public float flipSpeed = 4f;
 
     public void Reveal()
@@ -13,7 +14,6 @@ public class BlackjackCard : MonoBehaviour
     IEnumerator FlipRoutine()
     {
         Quaternion startRot = transform.rotation;
-        // This rotates 180 degrees from your starting face-down position
         Quaternion endRot = startRot * Quaternion.Euler(0, 180, 0); 
 
         float elapsed = 0;

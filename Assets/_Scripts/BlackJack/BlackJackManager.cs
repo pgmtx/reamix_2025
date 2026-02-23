@@ -4,92 +4,93 @@ using System.Collections;
 
 public class BlackjackManager : MonoBehaviour
 {
-    [Header("Card Setup")]
-    // Drag all 52 card prefabs into this list in the Inspector
     public List<GameObject> deckPrefabs; 
-    
-    // This list will hold the cards currently sitting on the table
     private List<GameObject> cardsOnTable = new List<GameObject>();
     private List<GameObject> shuffledDeck = new List<GameObject>();
+    
+    // Dealer's internal score tracking
+    private List<int> dealerHandValues = new List<int>();
 
-    [Header("Table Spawn Points")]
-    public Transform playerSlot1;
-    public Transform playerSlot2;
-    public Transform dealerSlot1;
-    public Transform dealerSlot2;
+    [Header("Spawn Points")]
+    public Transform playerSlot1; public Transform playerSlot2;
+    public Transform playerSlot3; public Transform playerSlot4;
+    public Transform dealerSlot1; public Transform dealerSlot2;
+    public Transform dealerSlot3; public Transform dealerSlot4;
 
-    [Header("Game Settings")]
-    public float dealSpeed = 0.5f;     // Time between each card appearing
-    public float waitBeforeFlip = 1.0f; // Pause before cards reveal themselves
-
-    // --- CALL THIS FUNCTION FROM YOUR VR BUTTON ---
     public void StartNewGame()
     {
-        StopAllCoroutines(); // Stop any current dealing
-        ClearTable();
-        ShuffleDeck();
-        StartCoroutine(DealSequence());
-    }
-
-    private void ClearTable()
-    {
-        foreach (GameObject card in cardsOnTable)
-        {
-            Destroy(card);
-        }
+        StopAllCoroutines();
+        foreach (GameObject card in cardsOnTable) Destroy(card);
         cardsOnTable.Clear();
-    }
-
-    private void ShuffleDeck()
-    {
+        dealerHandValues.Clear();
+        
         shuffledDeck = new List<GameObject>(deckPrefabs);
-        for (int i = 0; i < shuffledDeck.Count; i++)
-        {
+        for (int i = 0; i < shuffledDeck.Count; i++) {
             GameObject temp = shuffledDeck[i];
-            int randomIndex = Random.Range(i, shuffledDeck.Count);
-            shuffledDeck[i] = shuffledDeck[randomIndex];
-            shuffledDeck[randomIndex] = temp;
+            int r = Random.Range(i, shuffledDeck.Count);
+            shuffledDeck[i] = shuffledDeck[r];
+            shuffledDeck[r] = temp;
         }
+        StartCoroutine(DealSequence());
     }
 
     IEnumerator DealSequence()
     {
-        // 1. Deal cards in order (Player, Dealer, Player, Dealer)
-        yield return StartCoroutine(SpawnCardAtSlot(playerSlot1));
-        yield return new WaitForSeconds(dealSpeed);
+        // 1. Initial Deal (2 each)
+        yield return Spawn(playerSlot1, false); yield return new WaitForSeconds(0.4f);
+        yield return Spawn(dealerSlot1, true);  yield return new WaitForSeconds(0.4f);
+        yield return Spawn(playerSlot2, false); yield return new WaitForSeconds(0.4f);
+        yield return Spawn(dealerSlot2, true);  yield return new WaitForSeconds(0.4f);
         
-        yield return StartCoroutine(SpawnCardAtSlot(dealerSlot1));
-        yield return new WaitForSeconds(dealSpeed);
+        yield return new WaitForSeconds(0.5f);
         
-        yield return StartCoroutine(SpawnCardAtSlot(playerSlot2));
-        yield return new WaitForSeconds(dealSpeed);
-        
-        yield return StartCoroutine(SpawnCardAtSlot(dealerSlot2));
+        // 2. Reveal all initial cards
+        foreach (GameObject c in cardsOnTable) c.GetComponent<BlackjackCard>().Reveal();
+        yield return new WaitForSeconds(1.0f);
 
-        // 2. Wait for a dramatic pause
-        yield return new WaitForSeconds(waitBeforeFlip);
-
-        // 3. Flip all cards over
-        foreach (GameObject card in cardsOnTable)
-        {
-            if (card.TryGetComponent(out BlackjackCard flipScript))
-            {
-                flipScript.Reveal();
-            }
+        // 3. Dealer Logic: Hit until 17
+        // Check slot 3
+        if (GetHandTotal(dealerHandValues) < 17) {
+            yield return Spawn(dealerSlot3, true);
+            cardsOnTable[cardsOnTable.Count-1].GetComponent<BlackjackCard>().Reveal();
+            yield return new WaitForSeconds(1.0f);
         }
+
+        // Check slot 4
+        if (GetHandTotal(dealerHandValues) < 17) {
+            yield return Spawn(dealerSlot4, true);
+            cardsOnTable[cardsOnTable.Count-1].GetComponent<BlackjackCard>().Reveal();
+        }
+
+        Debug.Log("Dealer Final Score: " + GetHandTotal(dealerHandValues));
     }
 
-    IEnumerator SpawnCardAtSlot(Transform slot)
+    IEnumerator Spawn(Transform slot, bool isDealer)
     {
-        if (shuffledDeck.Count > 0)
-        {
-            GameObject cardToSpawn = shuffledDeck[0];
-            shuffledDeck.RemoveAt(0);
+        GameObject prefab = shuffledDeck[0];
+        shuffledDeck.RemoveAt(0);
+        
+        GameObject newCard = Instantiate(prefab, slot.position, slot.rotation);
+        cardsOnTable.Add(newCard);
 
-            // Spawn the card using the Slot's position and rotation
-            GameObject newCard = Instantiate(cardToSpawn, slot.position, slot.rotation);
-            cardsOnTable.Add(newCard);
+        if (isDealer) {
+            dealerHandValues.Add(newCard.GetComponent<BlackjackCard>().cardValue);
         }
         yield return null;
+    }
+
+    int GetHandTotal(List<int> values)
+    {
+        int total = 0;
+        int aces = 0;
+        foreach (int v in values) {
+            if (v == 11) aces++;
+            total += v;
+        }
+        while (total > 21 && aces > 0) {
+            total -= 10;
+            aces--;
+        }
+        return total;
     }
 }
