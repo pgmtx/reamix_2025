@@ -36,50 +36,105 @@ public class WheelRotation : MonoBehaviour
     {
         if (!isRotating)
         {
-            StartCoroutine(RotateWheels());
+            StartCoroutine(RotateToWord());
+        }
+    }
+    private IEnumerator RotateToWord()
+    {
+        isRotating = true;
+        string[] listeWords = { "MOOO", "MEOW", "JHIN", "BARK", "WOOF", "WICK", "CROA", "OINK", "ROAR", "PEEP" };
+        string word = listeWords[Random.Range(0, listeWords.Length)];
+        Debug.Log("Cible : " + word);
+
+        Coroutine[] routines = new Coroutine[4];
+        for (int i = 0; i < 4; i++)
+        {
+            routines[i] = StartCoroutine(RotateSingleWheelToLetter(i, word[i]));
+        }
+      
+        foreach (var r in routines) yield return r;
+
+        isRotating = false;
+        Debug.Log("Mot affiché !");
+    }
+
+    private IEnumerator RotateSingleWheelToLetter(int wheelIndex, char targetLetter)
+    {
+        Transform wheel = GetWheel(wheelIndex);
+        Transform[] cubes = GetCubes(wheelIndex);
+        int targetIndex = -1;
+
+        for (int j = 0; j < cubes.Length; j++)
+        {
+            if (cubes[j].name[1] == targetLetter)
+            {
+                targetIndex = j;
+                break;
+            }
+        }
+
+        if (targetIndex == -1) yield break;
+
+        int currentIndex = GetCurrentIndexForWheel(wheelIndex);
+
+        while (currentIndex != targetIndex)
+        {
+            Quaternion start = wheel.localRotation;
+            Quaternion end = start * Quaternion.Euler(0, rotationStep, 0);
+
+            float elapsed = 0;
+            float stepDuration = rotationDuration / 4f;
+
+            while (elapsed < stepDuration)
+            {
+                wheel.localRotation = Quaternion.Slerp(start, end, elapsed / stepDuration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            wheel.localRotation = end;
+
+            currentIndex = (currentIndex + 1) % cubes.Length;
+            SetCurrentIndexForWheel(wheelIndex, currentIndex);
         }
     }
 
-    private IEnumerator RotateWheels()
+    private int GetCurrentIndexForWheel(int wheelIndex)
     {
-        isRotating = true;
-
-        float elapsed = 0f;
-
-        Quaternion start1 = wheel1.localRotation;
-        Quaternion start2 = wheel2.localRotation;
-        Quaternion start3 = wheel3.localRotation;
-        Quaternion start4 = wheel4.localRotation;
-
-        Quaternion end1 = start1 * Quaternion.Euler(0f, rotationStep, 0f);
-        Quaternion end2 = start2 * Quaternion.Euler(0f, rotationStep, 0f);
-        Quaternion end3 = start3 * Quaternion.Euler(0f, rotationStep, 0f);
-        Quaternion end4 = start4 * Quaternion.Euler(0f, rotationStep, 0f);
-
-        while (elapsed < rotationDuration)
+        switch (wheelIndex)
         {
-            float t = elapsed / rotationDuration;
-
-            if (wheel1) wheel1.localRotation = Quaternion.Slerp(start1, end1, t);
-            if (wheel2) wheel2.localRotation = Quaternion.Slerp(start2, end2, t);
-            if (wheel3) wheel3.localRotation = Quaternion.Slerp(start3, end3, t);
-            if (wheel4) wheel4.localRotation = Quaternion.Slerp(start4, end4, t);
-
-            elapsed += Time.deltaTime;
-            yield return null;
+            case 0: return currentIndexWheel1;
+            case 1: return currentIndexWheel2;
+            case 2: return currentIndexWheel3;
+            case 3: return currentIndexWheel4;
+            default: return 0;
         }
+    }
 
-        if (wheel1) wheel1.localRotation = end1;
-        if (wheel2) wheel2.localRotation = end2;
-        if (wheel3) wheel3.localRotation = end3;
-        if (wheel4) wheel4.localRotation = end4;
+    private void SetCurrentIndexForWheel(int wheelIndex, int value)
+    {
+        switch (wheelIndex)
+        {
+            case 0: currentIndexWheel1 = value; break;
+            case 1: currentIndexWheel2 = value; break;
+            case 2: currentIndexWheel3 = value; break;
+            case 3: currentIndexWheel4 = value; break;
+        }
+    }
 
-        isRotating = false;
-        currentIndexWheel1 = (currentIndexWheel1 + 1) % cubes1.Length;
-        currentIndexWheel2 = (currentIndexWheel2 + 1) % cubes2.Length;
-        currentIndexWheel3 = (currentIndexWheel3 + 1) % cubes3.Length;
-        currentIndexWheel4 = (currentIndexWheel4 + 1) % cubes4.Length;
-        Debug.Log(cubes1[currentIndexWheel1].name.Substring(1) + cubes2[currentIndexWheel2].name.Substring(1) + cubes3[currentIndexWheel3].name.Substring(1) + cubes4[currentIndexWheel4].name.Substring(1));
+    private Transform[] GetCubes(int index)
+    {
+        if (index == 0) return cubes1;
+        if (index == 1) return cubes2;
+        if (index == 2) return cubes3;
+        return cubes4;
+    }
+
+    private Transform GetWheel(int index)
+    {
+        if (index == 0) return wheel1;
+        if (index == 1) return wheel2;
+        if (index == 2) return wheel3;
+        return wheel4;
     }
 
     void Update()
