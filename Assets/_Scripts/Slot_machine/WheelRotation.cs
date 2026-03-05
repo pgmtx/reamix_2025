@@ -79,14 +79,7 @@ public class WheelRotation : MonoBehaviour
         currentIndexWheel2 = (currentIndexWheel2 + 1) % cubes2.Length;
         currentIndexWheel3 = (currentIndexWheel3 + 1) % cubes3.Length;
         currentIndexWheel4 = (currentIndexWheel4 + 1) % cubes4.Length;
-        Debug.Log("Indexes: "+ currentIndexWheel1 + " "+ currentIndexWheel2 + " "+ currentIndexWheel3 + " "+ currentIndexWheel4);
-        Debug.Log(cubes1[currentIndexWheel1].name + cubes2[currentIndexWheel2].name + cubes3[currentIndexWheel3].name + cubes4[currentIndexWheel4].name);
-        string l1 = cubes1[currentIndexWheel1] != null ? cubes1[currentIndexWheel1].name : "_";
-        string l2 = cubes2[currentIndexWheel2] != null ? cubes2[currentIndexWheel2].name : "_";
-        string l3 = cubes3[currentIndexWheel3] != null ? cubes3[currentIndexWheel3].name : "_";
-        string l4 = cubes4[currentIndexWheel4] != null ? cubes4[currentIndexWheel4].name : "_";
-
-        Debug.Log("Word: " + l1 + l2 + l3 + l4);
+        Debug.Log(cubes1[currentIndexWheel1].name.Substring(1) + cubes2[currentIndexWheel2].name.Substring(1) + cubes3[currentIndexWheel3].name.Substring(1) + cubes4[currentIndexWheel4].name.Substring(1));
     }
 
     void Update()
