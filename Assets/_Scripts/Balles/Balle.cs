@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(AudioSource))]
 public class Balle : MonoBehaviour
 {
     public bool isAlreadyInBasket = false;

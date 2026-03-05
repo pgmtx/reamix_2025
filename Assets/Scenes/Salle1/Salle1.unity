@@ -1046,6 +1046,18 @@ MonoBehaviour:
           m_StringArgument: Porte ouverte
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 919132148944260921}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open Door
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98604895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7713,13 +7725,13 @@ MonoBehaviour:
   Sounds2D:
   - name: white noise
     clip: {fileID: 8300000, guid: a06d35f9230d99449acf791fb0fb0012, type: 3}
-    volume: 0.15
+    volume: 0.1
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: success
     clip: {fileID: 8300000, guid: 9d238ab4372cad54d8e1c0cb5a279770, type: 3}
-    volume: 0.9
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -7738,7 +7750,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: letter typed
     clip: {fileID: 8300000, guid: 2050e675e93861c4f934555c2aaa02de, type: 3}
-    volume: 0.9
+    volume: 0.95
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -7750,7 +7762,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: taupe laugh
     clip: {fileID: 8300000, guid: a076e279964ea124e8e086d7998650a2, type: 3}
-    volume: 0.3
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -19561,6 +19573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652878476674}
+  - component: {fileID: 919132148944260921}
   m_Layer: 0
   m_Name: porte_separation_v67
   m_TagString: Untagged
@@ -19568,6 +19581,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &919132148944260921
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148944260920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f4e7da194624064da5c41a0501d27ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &919132149170789172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6106011724599403352, guid: d930e1037f1e6714abea6e660581ad6d, type: 3}
@@ -28064,7 +28098,7 @@ Transform:
   m_GameObject: {fileID: 5272811091964372766}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -2.8267374, y: 2.9771187, z: 0.06360708}
+  m_LocalPosition: {x: -2.8267374, y: 2.977119, z: 0.06360708}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
