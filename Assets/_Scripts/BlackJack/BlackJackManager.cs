@@ -19,6 +19,9 @@ public class BlackjackManager : MonoBehaviour
 
     public void StartNewGame()
     {
+        FindObjectOfType<TableTrigger>().LockTrigger();
+        GameObject.Find("StartButton").SetActive(false);
+
         StopAllCoroutines();
         foreach (GameObject card in cardsOnTable) Destroy(card);
         cardsOnTable.Clear();

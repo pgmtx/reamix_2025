@@ -2,17 +2,38 @@ using UnityEngine;
 
 public class TableTrigger : MonoBehaviour
 {
-    // Drag your GameManager object into this slot in the Inspector
-    public BlackjackManager gameManagerr;
+    public GameObject startButton;
+    private bool gameActive = false;
 
-    // This runs automatically when something enters the cube
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the thing that entered is the Player (usually tagged "MainCamera" or "Player")
+        // Only show the button if a game isn't already running
+        if (other.CompareTag("MainCamera"))
+        {
+            startButton.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // We add a tiny delay or check to prevent "flickering"
         if (other.CompareTag("MainCamera") || other.CompareTag("Player"))
         {
-            Debug.Log("Player at table! Starting game...");
-            gameManagerr.StartNewGame();
+            // Instead of hiding instantly, we only hide if the game hasn't started
+            if (!gameActive) Invoke(nameof(HideButton), 0.5f);
         }
+    }
+
+    void HideButton()
+    {
+        // Only hide if we aren't currently touching the trigger
+        startButton.SetActive(false);
+    }
+
+    // Call this from your BlackjackManager.StartNewGame to stop the button from coming back
+    public void LockTrigger()
+    {
+        gameActive = true;
+        startButton.SetActive(false);
     }
 }
