@@ -29,7 +29,7 @@ public class Taupe : MonoBehaviour
         // laugh seulement si taupe ratee
         if (canBeHit)
         {
-            AudioSystem.Instance.Play3DSoundRdmPitchVol("Taupe Laugh", transform.position);
+            AudioSystem.Instance.Play3DSoundRdmPitchVol("taupe laugh", transform.position);
         }
 
         canBeHit = false;
@@ -61,7 +61,7 @@ public class Taupe : MonoBehaviour
         {
             canBeHit = false;
             manager.OnTaupeHit(this);
-            AudioSystem.Instance.Play3DSoundRdmPitchVol("Taupe Bonked", transform.position);
+            AudioSystem.Instance.Play3DSoundRdmPitchVol("taupe hit", transform.position);
         }
     }
 

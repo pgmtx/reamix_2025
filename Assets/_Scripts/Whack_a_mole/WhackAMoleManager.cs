@@ -12,9 +12,17 @@ public class WhackAMoleManager : MonoBehaviour
     public GameEvent TaupeFrappe;
     [SerializeField] private GameEvent WhackTermine;
 
+    private void Awake()
+    {
+        Animator[] taupesAnimators = GetComponentsInChildren<Animator>();
+        foreach (Animator a in taupesAnimators)
+        {
+            a.enabled = true;
+        }
+    }
     void Start()
     {
-        taupes = FindObjectsOfType<Taupe>();
+        taupes = GetComponentsInChildren<Taupe>();
         StartCoroutine(MoleLoop());
     }
 
@@ -39,7 +47,7 @@ public class WhackAMoleManager : MonoBehaviour
         {
             // Choisir une taupe
             currentTaupe = taupes[Random.Range(0, taupes.Length)];
-            
+
             float timeUp = Random.Range(1f, 2f);
             yield return new WaitForSeconds(timeUp);
 
@@ -50,7 +58,7 @@ public class WhackAMoleManager : MonoBehaviour
 
             currentTaupe.GoDown();
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
         }
 
     }
@@ -58,12 +66,12 @@ public class WhackAMoleManager : MonoBehaviour
     public void OnTaupeHit(Taupe taupe)
     {
         if (taupe != currentTaupe || Score >= 5 || win) return;
-        
+
         Score++;
         Debug.Log("Score : " + Score);
-        
+
         StopAllCoroutines();
-        
+
         TaupeFrappe.TriggerEvent();
         if (Score >= 5)
         {

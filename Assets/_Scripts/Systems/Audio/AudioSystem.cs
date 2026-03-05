@@ -27,7 +27,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
 
     private void Start()
     {
-        Play2DSound("White Noise");
+        Play2DSound("white noise");
     }
 
     public void Play2DSound(string name)

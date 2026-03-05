@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground
 - Active game object:
-  - Name: XR Interaction Setup
-  - Tag: Player
+  - Name: Balle (2)
+  - Tag: Balles
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
