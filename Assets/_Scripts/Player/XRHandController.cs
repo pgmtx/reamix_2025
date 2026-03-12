@@ -35,7 +35,7 @@ public class XRHandController : MonoBehaviour
         float grip = gripAction.ReadValue<float>();
         float trigger = triggerAction.ReadValue<float>();
 
-        Debug.Log($"Grip: {grip:F2}, Trigger: {trigger:F2}");
+        //Debug.Log($"Grip: {grip:F2}, Trigger: {trigger:F2}");
 
         handAnimator.SetFloat("Grip", grip);
         handAnimator.SetFloat("Trigger", trigger);
