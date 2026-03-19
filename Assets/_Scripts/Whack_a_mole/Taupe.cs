@@ -62,6 +62,13 @@ public class Taupe : MonoBehaviour
             canBeHit = false;
             manager.OnTaupeHit(this);
             AudioSystem.Instance.Play3DSoundRdmPitchVol("taupe hit", transform.position);
+
+            // Haptic Feedback
+            MarteauBehaviour marteau = MarteauBehaviour.Instance;
+            if (marteau.ControllerHoldingMarteau != null)
+            {
+                marteau.ControllerHoldingMarteau.SendHapticImpulse(marteau.hapticFeedbackIntensity, marteau.hapticFeedbackDuration);
+            }
         }
     }
 
