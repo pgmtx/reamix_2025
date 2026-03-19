@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: -1195458568305592295}
   - component: {fileID: 6437802909308383526}
   - component: {fileID: 1345191749362906599}
+  - component: {fileID: 1386292033081557082}
   m_Layer: 0
   m_Name: Towtruck
   m_TagString: Untagged
@@ -625,3 +626,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3945792, y: 2.2415109, z: 5.5702953}
   m_Center: {x: -0.0000010927517, y: 1.1300057, z: -0.65684646}
+--- !u!114 &1386292033081557082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924721617483827851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
