@@ -17,8 +17,9 @@ public class MarteauBehaviour : StaticInstance<MarteauBehaviour>
     [ReadOnly]
     public XRBaseController ControllerHoldingMarteau;
 
-    private void Awake()
+    override protected void Awake()
     {
+        base.Awake();
         xrGrabInteractable = GetComponent<XRGrabInteractable>();
         xrGrabInteractable.selectEntered.AddListener(OnSelectEnter);
         xrGrabInteractable.selectExited.AddListener(OnSelectExit);

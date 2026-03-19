@@ -71,7 +71,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
         audioSource.volume = s.volume + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.pitch = s.pitch + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.Play();
-        //UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+        UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
     }
 
     public void Play3DSound(string name, Vector3 position)
