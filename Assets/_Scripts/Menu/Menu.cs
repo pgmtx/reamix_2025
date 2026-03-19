@@ -21,11 +21,11 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject barriere;
     private XRGrabInteractable barriereInteractable;
 
-
-    [Header("GameObjects communs")]
     [SerializeField] private GameObject spotlight;
     private Light lightCompSpotlight;
 
+
+    [Header("GameObjects communs")]
     [SerializeField] private GameObject deplacement;
 
     [SerializeField] private XRRayInteractor rayInteractor;
