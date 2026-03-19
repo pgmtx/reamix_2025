@@ -10,32 +10,32 @@ public class XRHandController : MonoBehaviour
     [SerializeField] private InputAction gripAction;
     [SerializeField] private InputAction triggerAction;
 
-    void OnEnable()
+    private void OnEnable()
     {
         gripAction.Enable();
         triggerAction.Enable();
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         gripAction.Disable();
         triggerAction.Disable();
     }
 
-    void Start()
+    private void Start()
     {
         if (handAnimator == null)
+        {
             handAnimator = GetComponentInChildren<Animator>();
+        }
     }
 
-    void Update()
+    private void Update()
     {
         if (handAnimator == null) return;
 
-        float grip = gripAction.ReadValue<float>();
-        float trigger = triggerAction.ReadValue<float>();
-
-        //Debug.Log($"Grip: {grip:F2}, Trigger: {trigger:F2}");
+        var grip = gripAction.ReadValue<float>();
+        var trigger = triggerAction.ReadValue<float>();
 
         handAnimator.SetFloat("Grip", grip);
         handAnimator.SetFloat("Trigger", trigger);
