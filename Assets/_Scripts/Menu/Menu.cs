@@ -4,27 +4,35 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Menu : MonoBehaviour
 {
+    [Header("Menu demarrage (statique)")]
+    [SerializeField] private GameObject menu;
+
     [SerializeField] private GameObject boutonJouer;
     private XRSimpleInteractable jouerInteractable;
 
     [SerializeField] private GameObject boutonQuitter;
     private XRSimpleInteractable quitterInteractable;
 
-    [SerializeField] private GameObject eclairagePlanetarium;
-    private Light lightCompPlanetarium;
-    private bool updateLight = false;
+    [Header("Menu bouton main")]
+    [SerializeField] private GameObject menuMain;
 
-    [SerializeField] private GameObject menu;
 
+    [Header("GameObjects pour le Menu Demarrage")]
     [SerializeField] private GameObject barriere;
     private XRGrabInteractable barriereInteractable;
 
+
+    [Header("GameObjects communs")]
     [SerializeField] private GameObject spotlight;
     private Light lightCompSpotlight;
 
     [SerializeField] private GameObject deplacement;
 
     [SerializeField] private XRRayInteractor rayInteractor;
+
+    [SerializeField] private GameObject eclairagePlanetarium;
+    private Light lightCompPlanetarium;
+    private bool updateLight = false;
 
     void Awake()
     {
