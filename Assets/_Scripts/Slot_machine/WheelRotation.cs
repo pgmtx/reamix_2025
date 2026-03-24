@@ -26,12 +26,24 @@ public class WheelRotation : MonoBehaviour
     public float rotationStep = 45f;
     public float rotationDuration = 1f;
 
+    [Header("Levier Casino")]
+    public Transform handleAnchor; 
+    public float thresholdAngle = 55f;
+
+    private bool hasPulled = false;
     private int currentIndexWheel1 = 0;
     private int currentIndexWheel2 = 0;
     private int currentIndexWheel3 = 0;
     private int currentIndexWheel4 = 0;
+    private int counter = 0;
     private bool isRotating = false;
 
+    public void Start()
+    {
+        RotateStep();
+    }
+
+    public string word;
     public void RotateStep()
     {
         if (!isRotating)
@@ -43,8 +55,9 @@ public class WheelRotation : MonoBehaviour
     {
         isRotating = true;
         string[] listeWords = { "MOOO", "MEOW", "JHIN", "BARK", "WOOF", "WICK", "CROA", "OINK", "ROAR", "PEEP" };
-        string word = listeWords[Random.Range(0, listeWords.Length)];
+        word = listeWords[Random.Range(0, listeWords.Length)];
         Debug.Log("Cible : " + word);
+        counter = 0;
 
         Coroutine[] routines = new Coroutine[4];
         for (int i = 0; i < 4; i++)
@@ -55,7 +68,6 @@ public class WheelRotation : MonoBehaviour
         foreach (var r in routines) yield return r;
 
         isRotating = false;
-        Debug.Log("Mot affiché !");
     }
 
     private IEnumerator RotateSingleWheelToLetter(int wheelIndex, char targetLetter)
@@ -143,5 +155,30 @@ public class WheelRotation : MonoBehaviour
         {
             RotateStep();
         }
+
+        float currentAngle = handleAnchor.localEulerAngles.z;
+
+        if (currentAngle > 180) currentAngle -= 360;
+
+        if (currentAngle >= 55f && !hasPulled && !isRotating)
+        {
+            hasPulled = true;
+            RotateStep();
+        }
+
+        if (hasPulled && Mathf.Abs(currentAngle) < 5f)
+        {
+            hasPulled = false;
+        }
+    }
+
+    public void CheckIfWon(char lettre, int slot, bool removed)
+    {
+        if (word[slot] == lettre && removed)
+            counter--;
+        if (word[slot] == lettre && !removed)
+            counter++;
+        if (counter == 4)
+            Debug.Log("u won gg");
     }
 }
