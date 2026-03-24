@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle
 - Active game object:
-  - Name: XR Origin (XR Rig)
-  - Tag: Player
-  - Layer: Ignore Raycast
+  - Name: EventsHandler
+  - Tag: Untagged
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

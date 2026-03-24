@@ -33,7 +33,6 @@ public class BasketLogic : MonoBehaviour
 
             if (currentBalls >= BallsNeeded)
             {
-                Debug.Log("Door Open");
                 BasketFullEvent.TriggerEvent();
             }
             
