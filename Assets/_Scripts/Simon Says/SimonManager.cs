@@ -6,23 +6,26 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SimonManager : MonoBehaviour
 {
     [Header("UI Setup")]
-    public GameObject startButton; // Drag your Start Button here in the Inspector
+    public GameObject startButton;
 
     [Header("Buttons Setup")]
-    public GameObject[] gameButtons; // Assign your 4 buttons here
-    public Material[] buttonMaterials; // Original materials
-    public Color flashColor = Color.white; // The color when it glows
+    public GameObject[] gameButtons;
+    public Color flashColor = Color.white;
+
+    [Header("Audio Setup")]
+    public AudioSource gameSpeaker;   // Drag one AudioSource here (the "Speaker")
+    public AudioClip[] buttonSounds; // NOW you can drag your 4 sound files here
+    public AudioClip failSound;      // Optional: Drag your fail sound file here
 
     private List<int> gameSequence = new List<int>();
     private int playerStep = 0;
     private bool isInputEnabled = false;
 
-    [Header("Audio")]
-    public AudioSource[] buttonSounds; // Assign unique beeps for each button
+    // ... (Keep StartGame, AddNextStep, PlaySequence the same) ...
 
     public void StartGame()
     {
-        startButton.SetActive(false); // This hides the button immediately
+        if (startButton != null) startButton.SetActive(false);
         gameSequence.Clear();
         playerStep = 0;
         AddNextStep();
@@ -42,7 +45,7 @@ public class SimonManager : MonoBehaviour
         foreach (int index in gameSequence)
         {
             FlashButton(index);
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.8f);
         }
 
         isInputEnabled = true;
@@ -52,8 +55,8 @@ public class SimonManager : MonoBehaviour
     public void PlayerPressedButton(int buttonID)
     {
         if (!isInputEnabled) return;
+        isInputEnabled = false;
 
-        // Visual and audio feedback for the player press
         FlashButton(buttonID);
 
         if (buttonID == gameSequence[playerStep])
@@ -61,32 +64,59 @@ public class SimonManager : MonoBehaviour
             playerStep++;
             if (playerStep == gameSequence.Count)
             {
-                Invoke("AddNextStep", 0.5f);
+                Invoke("AddNextStep", 1.2f);
+            }
+            else
+            {
+                StartCoroutine(ContinueInputDelay());
             }
         }
         else
         {
-            Debug.Log("Game Over!");
-            // Optional: Play a "buzz" sound here
-            gameSequence.Clear();
-            isInputEnabled = false;
+            if (gameSpeaker != null && failSound != null) gameSpeaker.PlayOneShot(failSound);
+            GameOver();
         }
+    }
+
+    IEnumerator ContinueInputDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        isInputEnabled = true;
+    }
+
+    void GameOver()
+    {
+        gameSequence.Clear();
+        isInputEnabled = false;
+        if (startButton != null) startButton.SetActive(true);
     }
 
     void FlashButton(int index)
     {
-        StartCoroutine(FlashEffect(index));
-        if (buttonSounds[index] != null) buttonSounds[index].Play();
+        if (index >= 0 && index < gameButtons.Length)
+        {
+            StartCoroutine(FlashEffect(index));
+
+            // This is how we play the clips now
+            if (gameSpeaker != null && buttonSounds != null && index < buttonSounds.Length)
+            {
+                if (buttonSounds[index] != null)
+                {
+                    gameSpeaker.PlayOneShot(buttonSounds[index]);
+                }
+            }
+        }
     }
 
     IEnumerator FlashEffect(int index)
     {
         Renderer rend = gameButtons[index].GetComponent<Renderer>();
-        rend.material.EnableKeyword("_EMISSION");
-        rend.material.SetColor("_EmissionColor", flashColor * 2f); // Bright glow
-
-        yield return new WaitForSeconds(0.4f);
-
-        rend.material.SetColor("_EmissionColor", Color.black); // Turn off glow
+        if (rend != null)
+        {
+            rend.material.EnableKeyword("_EMISSION");
+            rend.material.SetColor("_EmissionColor", flashColor * 2f);
+            yield return new WaitForSeconds(0.4f);
+            rend.material.SetColor("_EmissionColor", Color.black);
+        }
     }
 }
