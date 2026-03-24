@@ -26,6 +26,12 @@ public class Taupe : MonoBehaviour
 
     public void GoDown()
     {
+        // laugh seulement si taupe ratee
+        if (canBeHit)
+        {
+            AudioSystem.Instance.Play3DSoundRdmPitchVol("taupe laugh", transform.position);
+        }
+
         canBeHit = false;
         isUp = false;
         animator.SetTrigger("down");
@@ -50,11 +56,36 @@ public class Taupe : MonoBehaviour
         if (!canBeHit) return;
         if (!isUp || WhackAMoleManager.Score >= 5) return;
 
+        XRGrabInteractable grab = other.GetComponentInParent<XRGrabInteractable>();
+        if (other.CompareTag("Marteau") && grab != null && grab.isSelected)
+        {
+            canBeHit = false;
+            manager.OnTaupeHit(this);
+            AudioSystem.Instance.Play3DSoundRdmPitchVol("taupe hit", transform.position);
+
+            // Haptic Feedback
+            MarteauBehaviour marteau = MarteauBehaviour.Instance;
+            if (marteau.ControllerHoldingMarteau != null)
+            {
+                marteau.ControllerHoldingMarteau.SendHapticImpulse(marteau.hapticFeedbackIntensity, marteau.hapticFeedbackDuration);
+            }
+        }
+    }
+
+    /*
+    old version
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!canBeHit) return;
+        if (!isUp || WhackAMoleManager.Score >= 5) return;
+
         XRGrabInteractable grab = other.GetComponent<XRGrabInteractable>();
         if (other.CompareTag("Marteau") && grab != null && grab.isSelected)
         {
             canBeHit = false;
             manager.OnTaupeHit(this);
+            AudioSystem.Instance.Play3DSoundRdmPitchVol("Taupe Bonked", transform.position);
         }
     }
+    */
 }

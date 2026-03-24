@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 9069421923223301050}
   - component: {fileID: 2913644915862180564}
   - component: {fileID: 3938193359306188843}
+  - component: {fileID: 2563012851342580237}
   m_Layer: 0
   m_Name: Hatchback
   m_TagString: Untagged
@@ -623,3 +624,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &2563012851342580237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769690492283750692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

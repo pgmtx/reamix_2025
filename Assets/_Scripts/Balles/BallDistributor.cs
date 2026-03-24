@@ -16,7 +16,7 @@ public class BallDistributor : MonoBehaviour
 
         Transform[] balls = ballsParent.GetComponentsInChildren<Transform>(true);
 
-        foreach(Transform ball in balls)
+        foreach (Transform ball in balls)
         {
             if (ball == ballsParent) continue;
 
@@ -29,6 +29,21 @@ public class BallDistributor : MonoBehaviour
                 InactiveBalls.Add(ball.gameObject);
             }
         }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(OnStartDistribute());
+    }
+
+    private IEnumerator OnStartDistribute()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            DistributeBall();
+            yield return new WaitForSeconds(1f);
+        }
+
     }
 
     public void DistributeBall()
