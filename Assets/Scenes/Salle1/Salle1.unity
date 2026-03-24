@@ -7895,7 +7895,7 @@ MonoBehaviour:
   menu: {fileID: 5311021892877741883}
   boutonJouer: {fileID: 5311021892877741886}
   boutonQuitter: {fileID: 5311021892877741885}
-  menuMain: {fileID: 0}
+  menuMain: {fileID: 1843927145}
   barriere: {fileID: 766774368}
   spotlight: {fileID: 5311021892877741884}
   deplacement: {fileID: 74022001}
@@ -14383,6 +14383,11 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3422356925444205241, guid: c887616fec8241346b38d4b1841a70e6, type: 3}
   m_PrefabInstance: {fileID: 1699326972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1843927145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5116230662276516877, guid: ced19591533e07541b5b427ad3fdbb32, type: 3}
+  m_PrefabInstance: {fileID: 1972718277767234478}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844270158
 GameObject:

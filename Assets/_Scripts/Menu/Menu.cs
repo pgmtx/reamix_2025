@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
 
     [Header("Menu bouton main")]
     [SerializeField] private GameObject menuMain;
+    private InputAction boutonA;
 
 
     [Header("GameObjects pour le Menu Demarrage")]
@@ -69,6 +70,16 @@ public class Menu : MonoBehaviour
         // Mettre l'interaction sur le bouton Quitter
         quitterInteractable = boutonQuitter.GetComponent<XRSimpleInteractable>();
         quitterInteractable?.activated.AddListener(OnPressedQuitter);
+
+        // Setup du bouton de pause ptetre mettre sur la manette gauche
+        boutonA = new InputAction(
+            "BoutonA",
+            InputActionType.Button,
+            "<XRController>{RightHand}/primaryButton"
+        );
+
+        boutonA.performed += OnBoutonAPressed;
+        boutonA.Enable();
     }
 
     void Update()
@@ -130,5 +141,11 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Le jeu se ferme !!!!!");
         Application.Quit();
+    }
+
+    private void OnBoutonAPressed(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("Bouton pause presse");
+        menuMain.SetActive(!menuMain.activeSelf);
     }
 }
