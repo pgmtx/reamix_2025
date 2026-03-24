@@ -41,7 +41,6 @@ public class FootstepAudio : MonoBehaviour
         // Jouer le bruit de pas si seuil atteint
         if (distanceTraveled >= distanceThreshold)
         {
-            Debug.Log("PlayFootstep");
             AudioSystem.Instance.PlayFootstep(transform.position);
 
             distanceTraveled = 0f; // reset

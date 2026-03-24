@@ -22,14 +22,13 @@ public class BasketLogic : MonoBehaviour
         // 2. Only proceed if it IS a ball AND it hasn't been counted yet
         else
         {
-            currentBalls++;
-            Debug.Log("Unique ball added! Count: " + currentBalls);
-
-            // Mark it so it can't be counted again
             if (!ball.isAlreadyInBasket)
             {
-                ball.isAlreadyInBasket = true;
+                currentBalls++;
+                Debug.Log("Unique ball added! Count: " + currentBalls);
                 BallInBasket.TriggerEvent();
+                // Mark it so it can't be counted again
+                ball.isAlreadyInBasket = true;
             }
 
             if (currentBalls >= BallsNeeded)
@@ -41,6 +40,7 @@ public class BasketLogic : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerExit(Collider other)
     {
         // 1. Check if it's a ball
@@ -55,4 +55,5 @@ public class BasketLogic : MonoBehaviour
             Debug.Log("Unique ball removed! Count: " + currentBalls);
         }
     }
+    */
 }
