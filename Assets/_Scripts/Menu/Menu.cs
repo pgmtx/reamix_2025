@@ -28,7 +28,8 @@ public class Menu : MonoBehaviour
     [Header("GameObjects communs")]
     [SerializeField] private GameObject deplacement;
 
-    [SerializeField] private XRRayInteractor rayInteractor;
+    [SerializeField] private XRRayInteractor rayInteractorGauche;
+    [SerializeField] private XRRayInteractor rayInteractorDroite;
 
     [SerializeField] private GameObject eclairagePlanetarium;
     private Light lightCompPlanetarium;
@@ -94,7 +95,13 @@ public class Menu : MonoBehaviour
 
     private void OnTriggerPressed(InputAction.CallbackContext ctx)
     {
-        if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+        CheckRay(rayInteractorGauche);
+        CheckRay(rayInteractorDroite);
+    }
+
+    void CheckRay(XRRayInteractor ray)
+    {
+        if (ray.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             var interactable = hit.collider.GetComponent<XRSimpleInteractable>();
 

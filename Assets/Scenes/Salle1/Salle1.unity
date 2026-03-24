@@ -553,6 +553,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65040445}
   m_Mesh: {fileID: -9194200124034304898, guid: 55802ac0c14e14840ba1217a4ed6373b, type: 3}
+--- !u!114 &66580895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9146015503685400394, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1731298970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &70252910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3422356925444205241, guid: c887616fec8241346b38d4b1841a70e6, type: 3}
@@ -7888,7 +7899,8 @@ MonoBehaviour:
   barriere: {fileID: 766774368}
   spotlight: {fileID: 5311021892877741884}
   deplacement: {fileID: 74022001}
-  rayInteractor: {fileID: 1875233730}
+  rayInteractorGauche: {fileID: 66580895}
+  rayInteractorDroite: {fileID: 1875233730}
   eclairagePlanetarium: {fileID: 7415249367107672534}
 --- !u!1 &1120700186
 GameObject:
