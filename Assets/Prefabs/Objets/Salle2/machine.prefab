@@ -2053,6 +2053,7 @@ MonoBehaviour:
   rotationDuration: 1
   handleAnchor: {fileID: 2120050058757196886}
   thresholdAngle: 55
+  motFini: {fileID: 0}
   word: 
 --- !u!65 &1030577603888098135
 BoxCollider:
@@ -2073,8 +2074,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.118982, y: 17.65341, z: 11.991302}
-  m_Center: {x: 3.8245118, y: 4.303361, z: 0.018270165}
+  m_Size: {x: 10.048181, y: 17.65341, z: 11.991302}
+  m_Center: {x: 3.289112, y: 4.303361, z: 0.018270167}
 --- !u!1 &5387598959571466062
 GameObject:
   m_ObjectHideFlags: 0

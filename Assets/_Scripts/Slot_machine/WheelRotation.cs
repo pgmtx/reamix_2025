@@ -30,6 +30,9 @@ public class WheelRotation : MonoBehaviour
     public Transform handleAnchor; 
     public float thresholdAngle = 55f;
 
+    [Header("Event")]
+    public GameEvent motFini;
+
     private bool hasPulled = false;
     private int currentIndexWheel1 = 0;
     private int currentIndexWheel2 = 0;
@@ -179,6 +182,7 @@ public class WheelRotation : MonoBehaviour
         if (word[slot] == lettre && !removed)
             counter++;
         if (counter == 4)
+            motFini.TriggerEvent();
             Debug.Log("u won gg");
     }
 }
