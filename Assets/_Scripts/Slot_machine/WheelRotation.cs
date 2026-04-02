@@ -27,7 +27,7 @@ public class WheelRotation : MonoBehaviour
     public float rotationDuration = 1f;
 
     [Header("Levier Casino")]
-    public Transform handleAnchor; 
+    public Transform handleAnchor;
     public float thresholdAngle = 55f;
 
     [Header("Event")]
@@ -54,6 +54,7 @@ public class WheelRotation : MonoBehaviour
             StartCoroutine(RotateToWord());
         }
     }
+
     private IEnumerator RotateToWord()
     {
         isRotating = true;
@@ -67,7 +68,7 @@ public class WheelRotation : MonoBehaviour
         {
             routines[i] = StartCoroutine(RotateSingleWheelToLetter(i, word[i]));
         }
-      
+
         foreach (var r in routines) yield return r;
 
         isRotating = false;
