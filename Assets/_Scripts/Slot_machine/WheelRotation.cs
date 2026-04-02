@@ -112,6 +112,8 @@ public class WheelRotation : MonoBehaviour
             currentIndex = (currentIndex + 1) % cubes.Length;
             SetCurrentIndexForWheel(wheelIndex, currentIndex);
         }
+        Vector3 currentPos = cubes[targetIndex].localPosition;
+        cubes[targetIndex].localPosition = new Vector3(currentPos.x, currentPos.y, -0.05509732f);
     }
 
     private int GetCurrentIndexForWheel(int wheelIndex)
@@ -183,7 +185,9 @@ public class WheelRotation : MonoBehaviour
         if (word[slot] == lettre && !removed)
             counter++;
         if (counter == 4)
+        {
             motFini.TriggerEvent();
             Debug.Log("u won gg");
+        }
     }
 }
