@@ -70,6 +70,7 @@ public class SnapCube : MonoBehaviour
         {   
             inTheTrigger = false;
         }
+        this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 
     private void OnGrabAgain(SelectExitEventArgs args)
@@ -84,6 +85,7 @@ public class SnapCube : MonoBehaviour
 
         snappedObject = null;
         foreach (var col in GetComponents<BoxCollider>()) col.enabled = true;
+        this.gameObject.layer = LayerMask.NameToLayer("Socle");
     }
 
     async void MyAsyncTask()
