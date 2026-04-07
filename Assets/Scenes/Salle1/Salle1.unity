@@ -18283,7 +18283,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!95 &919132149445425551
 Animator:
@@ -19773,7 +19773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4265193742286825357, guid: abd8bca353b330342960e9df777a1e63, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5539810003822006965, guid: abd8bca353b330342960e9df777a1e63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19817,7 +19817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645376641360253018, guid: abd8bca353b330342960e9df777a1e63, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21623,7 +21623,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!54 &3347515350574481760
 Rigidbody:
@@ -23649,7 +23649,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &4710497675335051087
 MonoBehaviour:
@@ -27821,7 +27821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6297500186100846430, guid: feae37bdba7e3b64594317a5d48a9dfd, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7274177244579834827, guid: feae37bdba7e3b64594317a5d48a9dfd, type: 3}
       propertyPath: m_Name
@@ -28859,7 +28859,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &8268233128473580333
 MeshRenderer:
