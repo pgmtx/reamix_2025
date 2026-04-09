@@ -27,8 +27,11 @@ public class WheelRotation : MonoBehaviour
     public float rotationDuration = 1f;
 
     [Header("Levier Casino")]
-    public Transform handleAnchor; 
+    public Transform handleAnchor;
     public float thresholdAngle = 55f;
+
+    [Header("Event")]
+    public GameEvent motFini;
 
     private bool hasPulled = false;
     private int currentIndexWheel1 = 0;
@@ -51,6 +54,7 @@ public class WheelRotation : MonoBehaviour
             StartCoroutine(RotateToWord());
         }
     }
+
     private IEnumerator RotateToWord()
     {
         isRotating = true;
@@ -64,7 +68,7 @@ public class WheelRotation : MonoBehaviour
         {
             routines[i] = StartCoroutine(RotateSingleWheelToLetter(i, word[i]));
         }
-      
+
         foreach (var r in routines) yield return r;
 
         isRotating = false;
@@ -108,6 +112,8 @@ public class WheelRotation : MonoBehaviour
             currentIndex = (currentIndex + 1) % cubes.Length;
             SetCurrentIndexForWheel(wheelIndex, currentIndex);
         }
+        Vector3 currentPos = cubes[targetIndex].localPosition;
+        cubes[targetIndex].localPosition = new Vector3(currentPos.x, currentPos.y, -0.05509732f);
     }
 
     private int GetCurrentIndexForWheel(int wheelIndex)
@@ -179,6 +185,9 @@ public class WheelRotation : MonoBehaviour
         if (word[slot] == lettre && !removed)
             counter++;
         if (counter == 4)
+        {
+            motFini.TriggerEvent();
             Debug.Log("u won gg");
+        }
     }
 }

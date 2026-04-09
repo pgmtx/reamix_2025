@@ -6,9 +6,9 @@
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Balles, Marteau, Taupe
   - Layers:
-    - Default, TransparentFX, Ignore Raycast, Water, UI, Ground
+    - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle
 - Active game object:
-  - Name: AudioSystem
+  - Name: Point Light Planetarium
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
