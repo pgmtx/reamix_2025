@@ -40,13 +40,14 @@ public class WheelRotation : MonoBehaviour
     private int currentIndexWheel4 = 0;
     private int counter = 0;
     private bool isRotating = false;
+    private string word;
+
 
     public void Start()
     {
         RotateStep();
     }
 
-    public string word;
     public void RotateStep()
     {
         if (!isRotating)
@@ -59,7 +60,13 @@ public class WheelRotation : MonoBehaviour
     {
         isRotating = true;
         string[] listeWords = { "MOOO", "MEOW", "JHIN", "BARK", "WOOF", "WICK", "CROA", "OINK", "ROAR", "PEEP" };
-        word = listeWords[Random.Range(0, listeWords.Length)];
+
+        // Pour éviter de retomber sur le même mot et que la machine ne tourne pas
+        var previous = word;
+        do {
+            word = listeWords[Random.Range(0, listeWords.Length)];
+        } while (word == previous);
+
         Debug.Log("Cible : " + word);
         counter = 0;
 
