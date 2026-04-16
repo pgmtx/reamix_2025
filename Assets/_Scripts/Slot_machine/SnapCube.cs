@@ -49,37 +49,58 @@ public class SnapCube : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (placed || !inTheTrigger) return;
-        if (inTheTrigger == true)
-        {
-            snappedObject = collision.gameObject;
-            collision.gameObject.GetComponent<XRGrabInteractable>().selectExited.AddListener(OnGrabAgain);
-            placed = true;
-            activeHologram = false;
-            inTheTrigger = false;
-            string[] nameParts = snappedObject.name.Split('_');
-            GameObject.Find("machine").GetComponent<WheelRotation>().CheckIfWon(nameParts[1][0], (int)char.GetNumericValue(name[^1]),false);
-            Destroy(hologram);
-            
 
-            collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            collision.gameObject.transform.position = this.gameObject.transform.position;
-            collision.gameObject.transform.rotation = this.gameObject.transform.rotation;
-            foreach (var col in GetComponents<BoxCollider>()) col.enabled = false;
+        XRGrabInteractable grab = collision.gameObject.GetComponent<XRGrabInteractable>();
+        if (grab == null) return;
+
+        snappedObject = collision.gameObject;
+
+        string name = snappedObject.name;
+
+        char letter = name[name.Length - 1];
+
+        int slotIndex = (int)char.GetNumericValue(this.gameObject.name[this.gameObject.name.Length - 1]);
+
+        GameObject machine = GameObject.Find("machine");
+        if (machine != null)
+        {
+            machine.GetComponent<WheelRotation>().CheckIfWon(letter, slotIndex, false);
         }
-        else
-        {   
-            inTheTrigger = false;
-        }
+
+        // --- Logique de snap ---
+        grab.selectExited.AddListener(OnGrabAgain);
+        placed = true;
+        activeHologram = false;
+        inTheTrigger = false;
+        if (hologram != null) Destroy(hologram);
+
+        snappedObject.GetComponent<Rigidbody>().isKinematic = true;
+        snappedObject.transform.position = this.transform.position;
+        snappedObject.transform.rotation = this.transform.rotation;
+
+        foreach (var col in GetComponents<BoxCollider>()) col.enabled = false;
         this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 
     private void OnGrabAgain(SelectExitEventArgs args)
     {
+        if (snappedObject == null) return;
+
         placed = false;
+
         Rigidbody rb = snappedObject.GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-        string[] nameParts = snappedObject.name.Split('_');
-        GameObject.Find("machine").GetComponent<WheelRotation>().CheckIfWon(nameParts[1][0], (int)char.GetNumericValue(name[^1]), true);
+        if (rb != null) rb.isKinematic = false;
+
+        string cubeName = snappedObject.name;
+        char letter = cubeName[cubeName.Length - 1];
+    
+        int slotIndex = (int)char.GetNumericValue(this.gameObject.name[this.gameObject.name.Length - 1]);
+
+        GameObject machine = GameObject.Find("machine");
+        if (machine != null)
+        {
+            machine.GetComponent<WheelRotation>().CheckIfWon(letter, slotIndex, true);
+        }
 
         args.interactableObject.transform.GetComponent<XRGrabInteractable>().selectExited.RemoveListener(OnGrabAgain);
 
