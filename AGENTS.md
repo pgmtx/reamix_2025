@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: LAMACHINEDECLEMENTQUEERICAREFAIT
+  - Name: cube_C
   - Tag: Untagged
-  - Layer: Default
+  - Layer: DontCollideWithPlayer
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
