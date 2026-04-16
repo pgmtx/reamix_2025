@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: Hatchback
+  - Name: cube_C
   - Tag: Untagged
   - Layer: DontCollideWithPlayer
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
