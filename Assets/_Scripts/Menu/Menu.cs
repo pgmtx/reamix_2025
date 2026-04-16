@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Menu : MonoBehaviour
 {
     [Header("Menu demarrage (statique)")]
-    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject menuPrincipal;
 
     [SerializeField] private GameObject boutonJouer;
     private XRSimpleInteractable jouerInteractable;
@@ -99,7 +99,8 @@ public class Menu : MonoBehaviour
             if (lightCompPlanetarium.intensity >= 6 && lightCompSpotlight.intensity <= 0)
             {
                 Debug.Log("Menu desactive !");
-                menu.SetActive(false);
+                menuPrincipal.SetActive(false);
+                updateLight = !updateLight;
             }
         }
     }
