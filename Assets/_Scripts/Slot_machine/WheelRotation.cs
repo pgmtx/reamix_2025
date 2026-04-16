@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class WheelRotation : MonoBehaviour
 {
-    [Header("Roues")]
+    [Header("Roues (Assigner les pivots dans l'Inspector)")]
     public Transform wheel1;
     public Transform wheel2;
     public Transform wheel3;
     public Transform wheel4;
 
-    [Header("Wheel 1")]
-    public Transform[] cubes1 = new Transform[8];
-
-    [Header("Wheel 2")]
-    public Transform[] cubes2 = new Transform[8];
-
-    [Header("Wheel 3")]
-    public Transform[] cubes3 = new Transform[8];
-
-    [Header("Wheel 4")]
-    public Transform[] cubes4 = new Transform[8];
+    [Header("Tableaux de Cubes (Remplis automatiquement)")]
+    private Transform[] cubes1 = new Transform[8];
+    private Transform[] cubes2 = new Transform[8];
+    private Transform[] cubes3 = new Transform[8];
+    private Transform[] cubes4 = new Transform[8];
 
     [Header("Rotation Settings")]
     public float rotationStep = 45f;
@@ -33,6 +27,7 @@ public class WheelRotation : MonoBehaviour
     [Header("Event")]
     public GameEvent motFini;
 
+    public string word;
     private bool hasPulled = false;
     private int currentIndexWheel1 = 0;
     private int currentIndexWheel2 = 0;
@@ -40,12 +35,53 @@ public class WheelRotation : MonoBehaviour
     private int currentIndexWheel4 = 0;
     private int counter = 0;
     private bool isRotating = false;
-    private string word;
-
 
     public void Start()
     {
+        // Initialisation des tableaux au démarrage
+        FillCubeArray(wheel1, cubes1, 1);
+        FillCubeArray(wheel2, cubes2, 2);
+        FillCubeArray(wheel3, cubes3, 3);
+        FillCubeArray(wheel4, cubes4, 4);
+
         RotateStep();
+    }
+
+    private void FillCubeArray(Transform wheel, Transform[] array, int wheelIndex)
+    {
+        if (wheel == null) return;
+
+        Transform[] allChildren = wheel.GetComponentsInChildren<Transform>();
+
+        foreach (Transform child in allChildren)
+        {
+            string name = child.name; // Exemple attendu: "Wheel0_Cubes1R"
+
+            // On vérifie que le nom commence par WheelN_Cube
+            if (name.StartsWith("Wheel" + wheelIndex + "_Cube"))
+            {
+                // On extrait le chiffre juste après "_Cube" (longueur de "_Cube" est 5)
+                int startIndex = name.IndexOf("_Cube") + 5;
+
+                if (startIndex < name.Length && char.IsDigit(name[startIndex]))
+                {
+                    int cubePos = (int)char.GetNumericValue(name[startIndex]);
+
+                    if (cubePos < array.Length)
+                    {
+                        array[cubePos] = child;
+                        // Debug.Log($"Roue {wheelIndex} : Cube {cubePos} assigné ({child.name})");
+                    }
+                }
+            }
+        }
+
+        // Vérification de sécurité pour voir si le tableau est complet
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == null)
+                Debug.LogWarning($"Attention : Emplacement {i} vide pour la roue {wheelIndex}. Vérifie le nommage.");
+        }
     }
 
     public void RotateStep()
@@ -60,14 +96,9 @@ public class WheelRotation : MonoBehaviour
     {
         isRotating = true;
         string[] listeWords = { "MOOO", "MEOW", "JHIN", "BARK", "WOOF", "WICK", "CROA", "OINK", "ROAR", "PEEP" };
+        word = listeWords[Random.Range(0, listeWords.Length)];
+        Debug.Log("<color=green>Cible : " + word + "</color>");
 
-        // Pour éviter de retomber sur le même mot et que la machine ne tourne pas
-        var previous = word;
-        do {
-            word = listeWords[Random.Range(0, listeWords.Length)];
-        } while (word == previous);
-
-        Debug.Log("Cible : " + word);
         counter = 0;
 
         Coroutine[] routines = new Coroutine[4];
@@ -87,19 +118,31 @@ public class WheelRotation : MonoBehaviour
         Transform[] cubes = GetCubes(wheelIndex);
         int targetIndex = -1;
 
+        // Recherche du cube qui porte la lettre à la FIN de son nom
         for (int j = 0; j < cubes.Length; j++)
         {
-            if (cubes[j].name[1] == targetLetter)
+            if (cubes[j] != null)
             {
-                targetIndex = j;
-                break;
+                string cubeName = cubes[j].name;
+                char letterOnCube = cubeName[cubeName.Length - 1];
+
+                if (char.ToUpper(letterOnCube) == char.ToUpper(targetLetter))
+                {
+                    targetIndex = j;
+                    break;
+                }
             }
         }
 
-        if (targetIndex == -1) yield break;
+        if (targetIndex == -1)
+        {
+            Debug.LogError($"Lettre '{targetLetter}' non trouvée sur la roue {wheelIndex}");
+            yield break;
+        }
 
         int currentIndex = GetCurrentIndexForWheel(wheelIndex);
 
+        // Rotation cran par cran jusqu'à l'index cible
         while (currentIndex != targetIndex)
         {
             Quaternion start = wheel.localRotation;
@@ -116,12 +159,12 @@ public class WheelRotation : MonoBehaviour
             }
             wheel.localRotation = end;
 
-            currentIndex = (currentIndex + 1) % cubes.Length;
+            currentIndex = (currentIndex + 1) % 8;
             SetCurrentIndexForWheel(wheelIndex, currentIndex);
         }
-        Vector3 currentPos = cubes[targetIndex].localPosition;
-        cubes[targetIndex].localPosition = new Vector3(currentPos.x, currentPos.y, -0.05509732f);
     }
+
+    // --- Helpers pour gérer les index et les accès aux roues ---
 
     private int GetCurrentIndexForWheel(int wheelIndex)
     {
@@ -164,37 +207,38 @@ public class WheelRotation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (handleAnchor != null)
         {
-            RotateStep();
-        }
+            float currentAngle = handleAnchor.localEulerAngles.z; // On vérifie l'axe X selon tes nouveaux réglages
+            if (currentAngle > 180) currentAngle -= 360;
+            if (currentAngle >= 50f && !hasPulled && !isRotating)
+            {
+                hasPulled = true;
+                RotateStep();
+            }
 
-        float currentAngle = handleAnchor.localEulerAngles.z;
-
-        if (currentAngle > 180) currentAngle -= 360;
-
-        if (currentAngle >= 55f && !hasPulled && !isRotating)
-        {
-            hasPulled = true;
-            RotateStep();
-        }
-
-        if (hasPulled && Mathf.Abs(currentAngle) < 5f)
-        {
-            hasPulled = false;
+            if (hasPulled && Mathf.Abs(currentAngle) < 5f)
+            {
+                hasPulled = false;
+            }
         }
     }
 
     public void CheckIfWon(char lettre, int slot, bool removed)
     {
-        if (word[slot] == lettre && removed)
-            counter--;
-        if (word[slot] == lettre && !removed)
-            counter++;
+        if (slot < 0 || slot >= word.Length) return;
+
+        // On compare en majuscule pour éviter les erreurs de casse
+        if (char.ToUpper(word[slot]) == char.ToUpper(lettre))
+        {
+            if (removed) counter--;
+            else counter++;
+        }
+
         if (counter == 4)
         {
-            motFini.TriggerEvent();
-            Debug.Log("u won gg");
+            if (motFini != null) motFini.TriggerEvent();
+            Debug.Log("<color=cyan>YOU WON GG !</color>");
         }
     }
 }
