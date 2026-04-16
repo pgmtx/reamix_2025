@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1232098082929434842}
   - component: {fileID: 5231617538682982232}
   - component: {fileID: 8842794800123202412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BL_Wheel.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3991072818777642409}
   - component: {fileID: 8576366932810365647}
   - component: {fileID: 2816683164637530546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FL_Wheel.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4545300534733968282}
   - component: {fileID: 3285024614651726939}
   - component: {fileID: 8585710739932682140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BR_Wheel.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4902881050149965528}
   - component: {fileID: 7572217361157925124}
   - component: {fileID: 7063780173253916726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FR_Wheel.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,8 @@ GameObject:
   - component: {fileID: 6551945858847432782}
   - component: {fileID: 8594428456482452929}
   - component: {fileID: 8461611049652853417}
-  m_Layer: 0
+  - component: {fileID: 8829314162366843873}
+  m_Layer: 10
   m_Name: Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +520,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8829314162366843873}
+        m_TargetAssemblyTypeName: Voiture, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -634,5 +647,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8829314162366843873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663673574762740106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23142a4730651640b63561d85bc3167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8238432229869096519}
   - component: {fileID: 268117585603638638}
   - component: {fileID: 6904706034006684102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tapis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9612781, y: 0.105, z: 6.2077165}
-  m_LocalScale: {x: 3.8, y: 1.2666667, z: 3.8}
+  m_LocalScale: {x: 3.608176, y: 1.2027253, z: 3.608176}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6884564117627455254}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8788212494755012402}
   - component: {fileID: 6642843957748716787}
   - component: {fileID: 1606716507069629906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tapisTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 6884564117627455254}
   - component: {fileID: 8937930255115505488}
   - component: {fileID: 3708297547458889975}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ContourHoriz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 6355569912034264104}
   - component: {fileID: 3744160118145025694}
   - component: {fileID: 353208753163786765}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ville
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,9 +6,9 @@
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Balles, Marteau, Taupe
   - Layers:
-    - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle
+    - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: Point Light Planetarium
+  - Name: Hatchback
   - Tag: Untagged
-  - Layer: Default
+  - Layer: DontCollideWithPlayer
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

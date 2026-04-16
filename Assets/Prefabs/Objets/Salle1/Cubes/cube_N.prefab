@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7277607182161744281}
   - component: {fileID: 2106420230782352502}
   - component: {fileID: 4436801087346338022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 537188147808995350}
   - component: {fileID: 7531166311279377818}
   - component: {fileID: 2066265004948784808}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 5644415890720601041}
   - component: {fileID: 4835702057910707077}
   - component: {fileID: 4623840910754085664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 4706622530552530775}
   - component: {fileID: 6163831304792647818}
   - component: {fileID: 3464358833126355462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cube_N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 8617957129118771988}
   - component: {fileID: 7045197243526850309}
   - component: {fileID: 6831919580726553007}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 1508922868784262954}
   - component: {fileID: 5403056069362732673}
   - component: {fileID: 4695719159332510850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 850263727020688685}
   - component: {fileID: 4704445866621452905}
   - component: {fileID: 5176491387786394631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 8014018440940508914}
   - component: {fileID: 1883844506274317458}
   - component: {fileID: 2590568382724921725}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}

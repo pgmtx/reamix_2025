@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2860618795689733743}
   - component: {fileID: 5121732820473860347}
   - component: {fileID: 3041854907693582922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FR_Wheel.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4078104857523009973}
   - component: {fileID: 352342272451583699}
   - component: {fileID: 3502699443456032889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BL_Wheel.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 5840187650872712010}
   - component: {fileID: 5692444699579819710}
   - component: {fileID: 4147380333160660653}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BR_Wheel.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,8 @@ GameObject:
   - component: {fileID: -2066155907509437952}
   - component: {fileID: 5420353892275137167}
   - component: {fileID: 3767850434779862758}
-  m_Layer: 0
+  - component: {fileID: 5921001413162071882}
+  m_Layer: 10
   m_Name: Taxi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +437,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5921001413162071882}
+        m_TargetAssemblyTypeName: Voiture, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -553,6 +566,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5921001413162071882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8160049463398649625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23142a4730651640b63561d85bc3167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8225268088695874782
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +589,7 @@ GameObject:
   - component: {fileID: 4136931502637903611}
   - component: {fileID: 6816275982294589335}
   - component: {fileID: 6060641778367782501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FL_Wheel.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

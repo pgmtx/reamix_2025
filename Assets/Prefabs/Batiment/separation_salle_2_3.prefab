@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2837645028422054910}
   - component: {fileID: 3080427926468990100}
   - component: {fileID: 8364575398400810110}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1266169172062024397}
   - component: {fileID: 5756062181423461241}
   - component: {fileID: 2264868235844086867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BezierCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3178209377767549502}
   - component: {fileID: 61615063974419817}
   - component: {fileID: 8596208552779496815}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4439729348782094512}
   - component: {fileID: 173849779237151931}
   - component: {fileID: 3048737397176826499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6401989277612150205}
   - component: {fileID: 7331686786127335559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: separation_salle_2_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 5411853448058853259}
   - component: {fileID: 7947896865872129338}
   - component: {fileID: 7212519789190168207}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 7483268036866732029}
   - component: {fileID: 4434534180297899450}
   - component: {fileID: 2904700696591762711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

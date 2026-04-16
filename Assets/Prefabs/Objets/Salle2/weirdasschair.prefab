@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7800419814196323683}
   - component: {fileID: 636330696359067205}
   - component: {fileID: 8484984521803209201}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "B\xE9zierCurve"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 7773295687972051962}
   - component: {fileID: 655665050506649243}
   - component: {fileID: 5964537755531387733}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 496032234167622755}
   - component: {fileID: 7540423413681493620}
   - component: {fileID: 4640178308435817149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 794371806702778689}
   - component: {fileID: 2110496949603455393}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: weirdasschair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 6078696025800370295}
   - component: {fileID: 8115183841071869190}
   - component: {fileID: 2065999309828300767}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 1507701892739157982}
   - component: {fileID: 2857272191851220787}
   - component: {fileID: 8252910171965723555}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 2056064487389807374}
   - component: {fileID: 9076577913071368017}
   - component: {fileID: 8379131394522523695}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torus.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 9059333653602661521}
   - component: {fileID: 5092818179683623306}
   - component: {fileID: 9008080882852613147}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 8829658984379046438}
   - component: {fileID: 2552816693956014472}
   - component: {fileID: 5464598238379485843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

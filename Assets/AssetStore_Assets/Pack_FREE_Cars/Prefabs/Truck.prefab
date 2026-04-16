@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 849762832787966972}
   - component: {fileID: 8312365885592057521}
   - component: {fileID: 5170378326248275598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BR_Wheel.010.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 254977762484752879}
   - component: {fileID: 6695258808661945034}
   - component: {fileID: 2551228140289009650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BR_Wheel.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2724119667028059249}
   - component: {fileID: 6147281243124706868}
   - component: {fileID: 3093154338651208693}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BL_Wheel.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 6702903961742557989}
   - component: {fileID: 7529417943517753345}
   - component: {fileID: 1327800080266135702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FR_Wheel.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 8852635703585871508}
   - component: {fileID: 3866874124201905157}
   - component: {fileID: 3415697900864835142}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FL_Wheel.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 12655004092672456}
   - component: {fileID: 5893117010876018858}
   - component: {fileID: 6835215370642468912}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BL_Wheel.010.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,8 @@ GameObject:
   - component: {fileID: 2881030799011484321}
   - component: {fileID: 7427202751971095418}
   - component: {fileID: 4435773767783066580}
-  m_Layer: 0
+  - component: {fileID: 8392442958854956909}
+  m_Layer: 10
   m_Name: Truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +688,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8392442958854956909}
+        m_TargetAssemblyTypeName: Voiture, Assembly-CSharp
+        m_MethodName: Klaxon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -802,5 +815,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8392442958854956909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189002782948893723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23142a4730651640b63561d85bc3167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
