@@ -43,17 +43,24 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private GameObject eclairagePlanetarium;
     private Light lightCompPlanetarium;
-    private bool restoreLights = false;
-    private bool shutLights = false;
+
+
+    // Etat des lumières
+    private enum LightState
+    {
+        Idle,
+        Restoring,
+        Dimming
+    }
+
+    private LightState currentLightState = LightState.Idle;
+
 
     void Awake()
     {
         InputAction triggerAction = new InputAction("Trigger", InputActionType.Button);
 
-        //triggerAction.AddBinding("<XRController>{RightHand}/triggerPressed");
-        //triggerAction.AddBinding("<XRController>{LeftHand}/triggerPressed");
         triggerAction.AddBinding("<XRController>/triggerPressed");
-
         triggerAction.performed += OnTriggerPressed;
         triggerAction.Enable();
 
@@ -65,8 +72,7 @@ public class Menu : MonoBehaviour
         poigneeBarriereInteractable = poigneeBarriere.GetComponent<XRGrabInteractable>();
         poigneeBarriereInteractable.enabled = false;
 
-        // Eclairage eteint
-        // Valeur defaut du planetarium -> lightCompPlanetarium.intensity = 6;
+        // Setup lumières
         lightCompPlanetarium = eclairagePlanetarium.GetComponent<Light>();
         lightCompPlanetarium.intensity = 0;
 
@@ -103,32 +109,43 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        if (restoreLights)
+        switch (currentLightState)
         {
-            if (lightCompPlanetarium.intensity < 6)
-            {
-                lightCompPlanetarium.intensity += Time.deltaTime;
-            }
+            case LightState.Restoring:
+                UpdateRestoreLights();
+                break;
 
-            if (lightCompSpotlight.intensity > 0)
-            { 
-                lightCompSpotlight.intensity -= Time.deltaTime;
-            }
+            case LightState.Dimming:
+                UpdateDimmingLights();
+                break;
+        }
+    }
 
-            if (lightCompPlanetarium.intensity >= 6 && lightCompSpotlight.intensity <= 0)
-            {
-                // Uniquement pour la première fois -> Desac menu principale
-                if (menuPrincipal.activeSelf)
-                {
-                    Debug.Log("Menu desactive !");
-                    menuPrincipal.SetActive(false);
-                }
-                
-                // Desac le spotlight et stop màj lumières
-                Debug.Log("Spotlight desactive !");
-                spotlight.SetActive(false);
-                restoreLights = false;
-            }
+    // Lumière qui revient
+    void UpdateRestoreLights()
+    {
+        lightCompPlanetarium.intensity = Mathf.Min(6, lightCompPlanetarium.intensity + Time.deltaTime * 2f);
+        lightCompSpotlight.intensity = Mathf.Max(0, lightCompSpotlight.intensity - Time.deltaTime * 2f);
+
+        if (lightCompPlanetarium.intensity >= 6 && lightCompSpotlight.intensity <= 0)
+        {
+            if (menuPrincipal.activeSelf)
+                menuPrincipal.SetActive(false);
+
+            spotlight.SetActive(false);
+            currentLightState = LightState.Idle;
+        }
+    }
+
+    // Lumière qui s’éteint
+    void UpdateDimmingLights()
+    {
+        lightCompPlanetarium.intensity = Mathf.Max(0, lightCompPlanetarium.intensity - Time.deltaTime * 2f);
+        lightCompSpotlight.intensity = Mathf.Min(8, lightCompSpotlight.intensity + Time.deltaTime * 2f);
+
+        if (lightCompPlanetarium.intensity <= 0 && lightCompSpotlight.intensity >= 8)
+        {
+            currentLightState = LightState.Idle;
         }
     }
 
@@ -150,7 +167,7 @@ public class Menu : MonoBehaviour
             if (interactable == quitterInteractable || interactable == quitterInteractableMain)
                 OnPressedQuitter(null);
 
-            if (interactable == reprendreInteractableMain) 
+            if (interactable == reprendreInteractableMain)
                 OnPressedReprendre(null);
         }
     }
@@ -159,11 +176,11 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Le bouton Jouer a ete presse !");
 
-        restoreLights = true;
+        currentLightState = LightState.Restoring;
 
-        // On desac les boutons et remet a defaut
         boutonJouer.SetActive(false);
         boutonQuitter.SetActive(false);
+
         poigneeBarriereInteractable.enabled = true;
         deplacement.SetActive(true);
         rotation.SetActive(true);
@@ -179,7 +196,7 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Le bouton Reprendre a ete presse !");
 
-        restoreLights = true;
+        currentLightState = LightState.Restoring;
 
         deplacement.SetActive(true);
         rotation.SetActive(true);
@@ -191,29 +208,28 @@ public class Menu : MonoBehaviour
         Debug.Log("Bouton pause presse");
 
         if (menuPrincipal.activeSelf)
-        {
             return;
-        }
 
-        if (menuMain.activeSelf) // On remet la lumière normalement progressivement
+        bool isOpening = !menuMain.activeSelf;
+
+        if (isOpening)
         {
-            restoreLights = true;
-            // Activer la rotation
-            deplacement.SetActive(true);
-            rotation.SetActive(true);
-        } 
-        else // On allume le spotlight et éteins la lumière du jeu
-        {
-            // Desac la rotation
+            // Pause
             deplacement.SetActive(false);
             rotation.SetActive(false);
 
             spotlight.SetActive(true);
-            restoreLights = false;
-            lightCompPlanetarium.intensity = 0;
-            lightCompSpotlight.intensity = 8;
+            currentLightState = LightState.Dimming;
+        }
+        else
+        {
+            // Reprendre
+            deplacement.SetActive(true);
+            rotation.SetActive(true);
+
+            currentLightState = LightState.Restoring;
         }
 
-        menuMain.SetActive(!menuMain.activeSelf);
+        menuMain.SetActive(isOpening);
     }
 }
