@@ -13449,6 +13449,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3422356925444205241, guid: c887616fec8241346b38d4b1841a70e6, type: 3}
   m_PrefabInstance: {fileID: 1699326972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1837133336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7602005377494257453, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1731298970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844270158
 GameObject:
   m_ObjectHideFlags: 0
@@ -18558,13 +18563,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7985532047457849669, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
-      propertyPath: barriere
+      propertyPath: rotation
       value: 
-      objectReference: {fileID: 766774368}
+      objectReference: {fileID: 1837133336}
     - target: {fileID: 7985532047457849669, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
       propertyPath: deplacement
       value: 
       objectReference: {fileID: 74022001}
+    - target: {fileID: 7985532047457849669, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
+      propertyPath: poigneeBarriere
+      value: 
+      objectReference: {fileID: 766774368}
     - target: {fileID: 7985532047457849669, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
       propertyPath: rayInteractorDroite
       value: 
@@ -18585,6 +18594,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 5562156576391393918, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8156586526450862033, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5700297256352672459, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7124ee5e46ced7146b60ec791f71f377, type: 3}
