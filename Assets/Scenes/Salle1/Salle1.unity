@@ -7127,7 +7127,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: klaxon
     clip: {fileID: 8300000, guid: e2d7946d46e3eb74da93034f54c02ddd, type: 3}
-    volume: 0.3
+    volume: 0.15
     pitch: 0.95
     loop: 0
     source: {fileID: 0}
