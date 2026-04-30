@@ -4191,7 +4191,11 @@ PrefabInstance:
     - target: {fileID: 7462879561657043759, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_InteractionManager
       value: 
-      objectReference: {fileID: 2145518285}
+      objectReference: {fileID: 523829585}
+    - target: {fileID: 7462879561657043759, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7462879561657043759, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_RayOriginTransform
       value: 
@@ -6298,7 +6302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 542150188690856925, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 613953350186305376, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_UseDynamicAttach
@@ -6322,11 +6326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 991698288130131352, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 1064216363302124075, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 1238282606579924589, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_UseDynamicAttach
@@ -6350,7 +6354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834821180075094628, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 1910643552267788291, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_Radius
@@ -6358,7 +6362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2202720338173309889, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 3020261601028774284, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6426,7 +6430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3444657896789576472, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 3561824613862067927, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_Drag
@@ -6486,11 +6490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5431817755321048221, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5676738829653031656, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5780473869921283131, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_Layer
@@ -6498,7 +6502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5978117399903876377, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 6227259320532417608, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_Layer
@@ -6562,7 +6566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8171094524774154099, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: minImpactSpeedToPlaySound
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 8298081887237171121, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
       propertyPath: m_UseDynamicAttach
@@ -7080,20 +7084,20 @@ MonoBehaviour:
   Sounds2D:
   - name: white noise
     clip: {fileID: 8300000, guid: a06d35f9230d99449acf791fb0fb0012, type: 3}
-    volume: 0.09
+    volume: 0.2
     pitch: 0.9
     loop: 1
     source: {fileID: 0}
   - name: success
     clip: {fileID: 8300000, guid: 9d238ab4372cad54d8e1c0cb5a279770, type: 3}
-    volume: 0.15
+    volume: 0.18
     pitch: 1
     loop: 0
     source: {fileID: 0}
   Sounds3D:
   - name: object picked up
     clip: {fileID: 8300000, guid: cb9824ccbce42654fae724cc098f52c6, type: 3}
-    volume: 0.3
+    volume: 0.17
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -7111,13 +7115,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: taupe hit
     clip: {fileID: 8300000, guid: 0d95244ef05d81a4ebafdc74166f3267, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: taupe laugh
     clip: {fileID: 8300000, guid: a076e279964ea124e8e086d7998650a2, type: 3}
-    volume: 0.5
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -7130,52 +7134,55 @@ MonoBehaviour:
   Footsteps:
   - name: 1
     clip: {fileID: 8300000, guid: 4d2cf2ec3f21af84db7b253d7350e038, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 2
     clip: {fileID: 8300000, guid: b964b79c23b2e0d4c8173b793ca6b87b, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 3
     clip: {fileID: 8300000, guid: 4fcbc312be2d6bc41a8bcc80e7c01908, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 4
     clip: {fileID: 8300000, guid: 0220f282bf4816d41bfa0f42684f3840, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 5
     clip: {fileID: 8300000, guid: e307cdfd3f8084f49bf17d58f07f59ac, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 6
     clip: {fileID: 8300000, guid: 71a529c0dd34a4e429239a9b1626336c, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 7
     clip: {fileID: 8300000, guid: a4452f4645d8c494382066e66fef4374, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: 8
     clip: {fileID: 8300000, guid: ac09d7991b294184f926330c96d1de2d, type: 3}
-    volume: 0.6
+    volume: 0.85
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
+  AudioMixer2D: {fileID: 8791929436014432520, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
+  AudioMixer3D: {fileID: -2214937105154208908, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
+  AudioMixerFootsteps: {fileID: 4272743801463846931, guid: d11d6d04ddb553942bea0846dd554d42, type: 2}
 --- !u!1 &852185615
 GameObject:
   m_ObjectHideFlags: 0
@@ -8541,6 +8548,10 @@ PrefabInstance:
     - target: {fileID: 3938193359306188843, guid: f40e52a0c26735a46b681671fb2baa40, type: 3}
       propertyPath: m_UseDynamicAttach
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938193359306188843, guid: f40e52a0c26735a46b681671fb2baa40, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Klaxon
       objectReference: {fileID: 0}
     - target: {fileID: 7769690492283750692, guid: f40e52a0c26735a46b681671fb2baa40, type: 3}
       propertyPath: m_Name
@@ -16288,17 +16299,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141028971}
   m_Mesh: {fileID: 1328018317899648971, guid: 55802ac0c14e14840ba1217a4ed6373b, type: 3}
---- !u!114 &2145518285 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7027690671209832357, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
-  m_PrefabInstance: {fileID: 632785966401593660}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &118794963481760526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16545,6 +16545,10 @@ PrefabInstance:
       propertyPath: m_UseDynamicAttach
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2066155907509437952, guid: 66f97e68ed002b74f8e181d1c3108e14, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Klaxon
+      objectReference: {fileID: 0}
     - target: {fileID: 3607909790750507677, guid: 66f97e68ed002b74f8e181d1c3108e14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.6568003
@@ -16706,6 +16710,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1006860317165360892, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+      propertyPath: m_Radius
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 1158730902747856098, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_Name
       value: ---------- ACTEURS  ----------
@@ -16758,9 +16766,17 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 523829585}
+    - target: {fileID: 8278858990721735407, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9202751139776240298, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211151295661434633, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+      propertyPath: m_Radius
+      value: 0.175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17793,6 +17809,10 @@ PrefabInstance:
     - target: {fileID: 6551945858847432782, guid: 3f83a5a9639ce0249ac0d7df9b8c40b9, type: 3}
       propertyPath: m_UseDynamicAttach
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551945858847432782, guid: 3f83a5a9639ce0249ac0d7df9b8c40b9, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Klaxon
       objectReference: {fileID: 0}
     - target: {fileID: 8663673574762740106, guid: 3f83a5a9639ce0249ac0d7df9b8c40b9, type: 3}
       propertyPath: m_Name
@@ -21758,6 +21778,10 @@ PrefabInstance:
       propertyPath: m_UseDynamicAttach
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6437802909308383526, guid: 50bc8a305f45f224abedbbaaa3046911, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Klaxon
+      objectReference: {fileID: 0}
     - target: {fileID: 8924721617483827851, guid: 50bc8a305f45f224abedbbaaa3046911, type: 3}
       propertyPath: m_Name
       value: Towtruck
@@ -22708,6 +22732,10 @@ PrefabInstance:
       propertyPath: m_UseDynamicAttach
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2286894527956126021, guid: 813df9801c30e63479934f054db68d12, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Klaxon
+      objectReference: {fileID: 0}
     - target: {fileID: 1348718573842630220, guid: 813df9801c30e63479934f054db68d12, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.56092584
@@ -23116,6 +23144,10 @@ PrefabInstance:
     - target: {fileID: 4917069645820132884, guid: 350735ef3b951a54ba6ec49c663c667e, type: 3}
       propertyPath: m_UseDynamicAttach
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917069645820132884, guid: 350735ef3b951a54ba6ec49c663c667e, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Klaxon
       objectReference: {fileID: 0}
     - target: {fileID: 9181701585240893179, guid: 350735ef3b951a54ba6ec49c663c667e, type: 3}
       propertyPath: m_Name

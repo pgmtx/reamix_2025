@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering;
 
 public class AudioSystem : StaticInstance<AudioSystem>
@@ -9,6 +10,9 @@ public class AudioSystem : StaticInstance<AudioSystem>
     public Sound[] Sounds2D;
     public Sound[] Sounds3D;
     public Sound[] Footsteps;
+    public AudioMixerGroup AudioMixer2D;
+    public AudioMixerGroup AudioMixer3D;
+    public AudioMixerGroup AudioMixerFootsteps;
 
     protected override void Awake()
     {
@@ -27,6 +31,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
 
     private void Start()
     {
+        Debug.Log("Playing white noise");
         Play2DSound("white noise");
     }
 
@@ -38,6 +43,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             Debug.LogWarning("Son: " + name + " introuvable !!!");
             return;
         }
+        s.source.outputAudioMixerGroup = AudioMixer2D;
         s.source.Play();
     }
 
@@ -50,6 +56,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             return;
         }
 
+        s.source.outputAudioMixerGroup = AudioMixer2D;
         float pitch = s.source.pitch;
         float volume = s.source.volume;
         s.source.pitch += UnityEngine.Random.Range(-0.05f, 0.05f);
@@ -66,24 +73,13 @@ public class AudioSystem : StaticInstance<AudioSystem>
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+        audioSource.outputAudioMixerGroup = AudioMixerFootsteps;
         audioSource.clip = s.clip;
         audioSource.spatialBlend = 1f;
         audioSource.volume = s.volume + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.pitch = s.pitch + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.Play();
         UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
-    }
-
-    public void Play3DSound(string name, Vector3 position)
-    {
-        Sound s = Array.Find(Sounds3D, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning("Son: " + name + " introuvable !!!");
-            return;
-        }
-
-        AudioSource.PlayClipAtPoint(s.clip, position);
     }
 
     public void Play3DSoundRdmPitchVol(string name, Vector3 position)
@@ -99,6 +95,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+        audioSource.outputAudioMixerGroup = AudioMixer3D;
         audioSource.clip = s.clip;
         audioSource.spatialBlend = 1f;
         audioSource.volume = s.volume + UnityEngine.Random.Range(-0.05f, 0.05f);
@@ -120,6 +117,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+        audioSource.outputAudioMixerGroup = AudioMixer3D;
         audioSource.clip = s.clip;
         audioSource.spatialBlend = 1f;
         audioSource.volume = s.volume + randomVolume;
@@ -128,15 +126,23 @@ public class AudioSystem : StaticInstance<AudioSystem>
         UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
     }
 
-    public void Play3DSoundRdmPitchVol(Sound s, Vector3 position)
+    public void Play3DSoundRdmPitch(string name, Vector3 position, float playVolume)
     {
+        Sound s = Array.Find(Sounds3D, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Son: " + name + " introuvable !!!");
+            return;
+        }
+
         // Copié de la fonction de unity  de base
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+        audioSource.outputAudioMixerGroup = AudioMixer3D;
         audioSource.clip = s.clip;
         audioSource.spatialBlend = 1f;
-        audioSource.volume = s.volume + UnityEngine.Random.Range(-0.05f, 0.05f);
+        audioSource.volume = playVolume;
         audioSource.pitch = s.pitch + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.Play();
         UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));

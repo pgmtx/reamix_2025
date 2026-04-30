@@ -42,7 +42,8 @@ public class Balle : MonoBehaviour
         if (!grabInteractable.isSelected && impactSpeed > minImpactSpeedToPlaySound)
         {
             Debug.Log("Impact réel à vitesse: " + impactSpeed);
-            AudioSystem.Instance.Play3DSoundRdmPitchVol("ball hit ground", transform.position, Mathf.Clamp(impactSpeed / 10, 0.15f, 0.85f), Random.Range(-0.005f, 0.005f));
+            Debug.Log("Son joué volume: " + Mathf.Clamp(impactSpeed / 6, 0.05f, 0.95f));
+            AudioSystem.Instance.Play3DSoundRdmPitch("ball hit ground", transform.position, Mathf.Clamp(impactSpeed / 6, 0.05f, 0.95f));
         }
     }
 }

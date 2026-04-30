@@ -6,6 +6,6 @@ public class Voiture : MonoBehaviour
 {
     public void Klaxon()
     {
-        AudioSystem.Instance.Play3DSound("klaxon", transform.position);
+        AudioSystem.Instance.Play3DSoundRdmPitchVol("klaxon", transform.position);
     }
 }
