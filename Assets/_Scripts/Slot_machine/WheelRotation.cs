@@ -109,8 +109,39 @@ public class WheelRotation : MonoBehaviour
         }
 
         foreach (var r in routines) yield return r;
-
+        RecalculateCounter();
         isRotating = false;
+    }
+
+    public void RecalculateCounter()
+    {
+        counter = 0;
+        SnapCube[] snapCubes = FindObjectsOfType<SnapCube>();
+
+        foreach (var snap in snapCubes)
+        {
+            if (snap.snappedObject != null)
+            {
+                string name = snap.snappedObject.name;
+                char letterOnCube = name[name.Length - 1];
+
+                int slotIndex = (int)char.GetNumericValue(snap.gameObject.name[snap.gameObject.name.Length - 1]);
+
+                if (slotIndex >= 0 && slotIndex < word.Length)
+                {
+                    if (char.ToUpper(word[slotIndex]) == char.ToUpper(letterOnCube))
+                    {
+                        counter++;
+                    }
+                }
+            }
+        }
+
+        if (counter == 4)
+        {
+            if (motFini != null) motFini.TriggerEvent();
+            Debug.Log("<color=cyan>YOU WON GG !</color>");
+        }
     }
 
     private IEnumerator RotateSingleWheelToLetter(int wheelIndex, char targetLetter)
