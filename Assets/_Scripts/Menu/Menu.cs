@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -58,6 +59,8 @@ public class Menu : MonoBehaviour
 
     void Awake()
     {
+        setRays(true);
+
         InputAction triggerAction = new InputAction("Trigger", InputActionType.Button);
 
         triggerAction.AddBinding("<XRController>/triggerPressed");
@@ -184,6 +187,8 @@ public class Menu : MonoBehaviour
         poigneeBarriereInteractable.enabled = true;
         deplacement.SetActive(true);
         rotation.SetActive(true);
+
+        setRays(false);
     }
 
     void OnPressedQuitter(ActivateEventArgs args)
@@ -201,6 +206,8 @@ public class Menu : MonoBehaviour
         deplacement.SetActive(true);
         rotation.SetActive(true);
         menuMain.SetActive(false);
+
+        setRays(false);
     }
 
     private void OnBoutonAPressed(InputAction.CallbackContext ctx)
@@ -220,6 +227,8 @@ public class Menu : MonoBehaviour
 
             spotlight.SetActive(true);
             currentLightState = LightState.Dimming;
+
+            setRays(true);
         }
         else
         {
@@ -228,8 +237,16 @@ public class Menu : MonoBehaviour
             rotation.SetActive(true);
 
             currentLightState = LightState.Restoring;
+
+            setRays(false);
         }
 
         menuMain.SetActive(isOpening);
+    }
+
+    private void setRays(bool active)
+    {
+        rayInteractorDroite.enabled = active;
+        rayInteractorGauche.enabled = active;
     }
 }
