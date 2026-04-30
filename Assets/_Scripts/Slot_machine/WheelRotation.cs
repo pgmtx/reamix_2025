@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Compilation;
 using UnityEngine;
 
 public class WheelRotation : MonoBehaviour
@@ -226,6 +227,11 @@ public class WheelRotation : MonoBehaviour
 
     public void CheckIfWon(char lettre, int slot, bool removed)
     {
+        if (removed)
+            Debug.Log("lettre removed :" + lettre);
+        else
+            Debug.Log("lettre placed :" + lettre);
+        Debug.Log("score : " + counter);
         if (slot < 0 || slot >= word.Length) return;
 
         // On compare en majuscule pour éviter les erreurs de casse
