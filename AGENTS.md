@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: cube_N
+  - Name: Katana
   - Tag: Untagged
-  - Layer: DontCollideWithPlayer
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
