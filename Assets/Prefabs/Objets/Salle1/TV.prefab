@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3476916124913732111}
   - component: {fileID: 1799149030062780517}
   - component: {fileID: 104960302169987333}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2215529502876677380}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MiddleEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 556170058607257094}
   - component: {fileID: 132914355663094154}
   - component: {fileID: 4763556339183979859}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2396675661463968851}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 670878951779440479}
   - component: {fileID: 8345912517529470149}
   - component: {fileID: 188707574190750987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 7209759237492481563}
   - component: {fileID: 5155776639407904800}
   - component: {fileID: 7538844335706813877}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7725710381002522580}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 903322549194950580}
   - component: {fileID: 319263548094235049}
   - component: {fileID: 2366522480091582497}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 175, y: 85}
+  m_SizeDelta: {x: 175, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &903322549194950580
 Canvas:
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 6040578686506689975}
   - component: {fileID: 1530953607969739460}
   - component: {fileID: 150238186509350525}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 6309133626822237587}
   - component: {fileID: 4634604435482256367}
   - component: {fileID: 7507284305270171999}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ai_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,8 +786,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 6.4
+  m_fontSizeBase: 6.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -837,7 +837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1243215774063103127}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: InnerEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392286559317775617}
   - component: {fileID: 8633137131845206026}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MiddleEyeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 6735517981754294331}
   - component: {fileID: 4389318438871799638}
   - component: {fileID: 4901903040433551163}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 7066589979040106997}
   - component: {fileID: 6226547647946854545}
   - component: {fileID: 8215895663828143303}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1144,7 +1144,7 @@ GameObject:
   - component: {fileID: 900355832761996732}
   - component: {fileID: 8430923173136238137}
   - component: {fileID: 451650093050378012}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4100385747186277594}
   - component: {fileID: 1436185614808189234}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: InnerEyeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1319,7 +1319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123906775896010901}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: OuterEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,7 +1358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368976729180554143}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1397,7 @@ GameObject:
   - component: {fileID: 2993434184985944997}
   - component: {fileID: 3461117797420059423}
   - component: {fileID: 8570565765784880471}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6860591780820066792}
   - component: {fileID: 8706046901022490171}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: EyeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,7 +1501,7 @@ RectTransform:
   m_GameObject: {fileID: 7505129978845887626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7368976729180554143}
@@ -1509,7 +1509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -21.9}
   m_SizeDelta: {x: 120, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8706046901022490171
@@ -1575,7 +1575,7 @@ GameObject:
   - component: {fileID: 3704516833492359935}
   - component: {fileID: 2490971917975603747}
   - component: {fileID: 561095791901198338}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

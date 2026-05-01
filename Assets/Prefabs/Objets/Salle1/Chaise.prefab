@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1039597205429255334}
   - component: {fileID: 5165702915743923600}
   - component: {fileID: 2969205179569150381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "B\xE9zierCurve.001"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2725277618130259016}
   - component: {fileID: 6345919537054598594}
   - component: {fileID: 5402281718777788366}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chaise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 4646469995913509567}
   - component: {fileID: 1987229762317004356}
   - component: {fileID: 4144705870658816778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "B\xE9zierCurve"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 1726631092795716139}
   - component: {fileID: 4056652144164877319}
   - component: {fileID: 6857915742288402635}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coussin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
