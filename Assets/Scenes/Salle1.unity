@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BothGamesSalle1Finished: {fileID: 11400000, guid: f5a47f37c554005479782be8397d133b, type: 2}
   PlayerAfkForTooLong: {fileID: 11400000, guid: 2c5e78f788109244fb301e0e746f6eaf, type: 2}
-  Player: {fileID: 632785966401593661}
+  Player: {fileID: 22021815}
   MaxTimeAfkBeforeEvent: 10
   PlayerNoInteractForTooLong: {fileID: 11400000, guid: f748aff028d60a540b7542036e08db20, type: 2}
   MaxTimeInteractionBeforeEvent: 30
@@ -18646,7 +18646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2330174425145312700, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.401
       objectReference: {fileID: 0}
     - target: {fileID: 2330174425145312700, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18694,7 +18694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8263351393023271591, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0.792
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263351393023271591, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.295
       objectReference: {fileID: 0}
     - target: {fileID: 8278858990721735407, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_InteractionManager
@@ -18727,11 +18731,6 @@ PrefabInstance:
       addedObject: {fileID: 444550803}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
---- !u!4 &632785966401593661 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8263351393023271591, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
-  m_PrefabInstance: {fileID: 632785966401593660}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &669593751962778826
 MeshFilter:
   m_ObjectHideFlags: 0
