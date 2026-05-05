@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: XR Origin (XR Rig)
-  - Tag: Player
-  - Layer: Ignore Raycast
+  - Name: Spot Light Balles
+  - Tag: Untagged
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
