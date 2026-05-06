@@ -8851,6 +8851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 946798418}
   - component: {fileID: 946798419}
+  - component: {fileID: 946798420}
   m_Layer: 0
   m_Name: PlaquePression
   m_TagString: Untagged
@@ -8867,8 +8868,8 @@ Transform:
   m_GameObject: {fileID: 946798417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 30.512}
-  m_LocalScale: {x: 1.7748, y: 0.30711, z: 1}
+  m_LocalPosition: {x: 0, y: 0.317, z: 30.246}
+  m_LocalScale: {x: 1.6195227, y: 0.30711, z: 0.89883}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 202429126}
@@ -8894,6 +8895,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &946798420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946798417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed29f75c2203ef6439155543a97ca52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayerPressure: {fileID: 11400000, guid: f9269659dea7e624daf2cdeb0020b536, type: 2}
 --- !u!1 &963404774
 GameObject:
   m_ObjectHideFlags: 0
@@ -18875,6 +18889,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274780575692006410, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599286722870072066, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984359868599517171, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
@@ -18889,10 +18907,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1509199635490296081, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 21476791723092740, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2832229945270983383, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 3743500867891126466, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
