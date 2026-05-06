@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8021603114547789463}
   - component: {fileID: 5230774489135359816}
   - component: {fileID: 7031367339424569588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Supports
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1384414462996064308}
   - component: {fileID: 1365418039081617580}
   - component: {fileID: 4982127996156971292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Planche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337263073905676661}
   - component: {fileID: 7340037808972004563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Etagere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.1320763, y: 0.586, z: 4.0198946}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.92045, y: 0.92045, z: 0.92045}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1384414462996064308}

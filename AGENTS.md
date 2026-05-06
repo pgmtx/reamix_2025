@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: Main Camera
-  - Tag: MainCamera
+  - Name: Menus
+  - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

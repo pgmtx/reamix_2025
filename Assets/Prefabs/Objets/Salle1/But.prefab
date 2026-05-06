@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8895739669301935338}
   - component: {fileID: 2662078462313780710}
   - component: {fileID: 964298050603831901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBox.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5699519083094094782}
-  m_Layer: 0
+  - component: {fileID: 4696268674715014217}
+  - component: {fileID: 4075598373291605422}
+  m_Layer: 9
   m_Name: But
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +173,44 @@ Transform:
   - {fileID: 5184114148216674806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &4696268674715014217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553780021332235548}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.160886, y: 1.6117212, z: 0.8583527}
+  m_Center: {x: 0.0131593365, y: -0.16463207, z: 0.53386}
+--- !u!114 &4075598373291605422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553780021332235548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcdc832b2d70b74885b19a65d3e2ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasketFullEvent: {fileID: 11400000, guid: 3c395307bbdc9c741a0c5658876e8096, type: 2}
+  BallInBasket: {fileID: 11400000, guid: 3877d1170d4a2664c95eba7df797898a, type: 2}
+  BallOutBasket: {fileID: 11400000, guid: 877232a4f981a1344bc7a294928c587d, type: 2}
+  OtherInBasket: {fileID: 11400000, guid: 6c35498b9a672914cbdda40e061e649a, type: 2}
+  BallsNeeded: 3
 --- !u!1 &2909524611161472634
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +224,7 @@ GameObject:
   - component: {fileID: 1262294461181846398}
   - component: {fileID: 1923240215593485209}
   - component: {fileID: 8760473700504489013}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBox.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +357,7 @@ GameObject:
   - component: {fileID: 4426111675142188085}
   - component: {fileID: 2348502226014630779}
   - component: {fileID: 4597171204165370770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Filet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +464,7 @@ GameObject:
   - component: {fileID: 6729888152682918590}
   - component: {fileID: 508004957618919023}
   - component: {fileID: 3782313663555419535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBox.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +598,7 @@ GameObject:
   - component: {fileID: 7890246004343104811}
   - component: {fileID: 1068816988783921418}
   - component: {fileID: 7022746922268755878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBox.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +731,7 @@ GameObject:
   - component: {fileID: 1485339340423957718}
   - component: {fileID: 7402772610626030847}
   - component: {fileID: 3627234408679778394}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Poteaux
   m_TagString: Untagged
   m_Icon: {fileID: 0}

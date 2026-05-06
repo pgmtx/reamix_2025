@@ -31,12 +31,12 @@ public class BallDistributor : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void DistributeThreeBalls()
     {
-        StartCoroutine(OnStartDistribute());
+        StartCoroutine(DistributeThreeBallsCoroutine());
     }
 
-    private IEnumerator OnStartDistribute()
+    private IEnumerator DistributeThreeBallsCoroutine()
     {
         for (int i = 0; i < 3; i++)
         {

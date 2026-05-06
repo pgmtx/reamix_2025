@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 4842136638741279823}
   - component: {fileID: 3831974749646388036}
   - component: {fileID: 627368730652643788}
+  - component: {fileID: 3161178810073382773}
   m_Layer: 10
   m_Name: Cube_B
   m_TagString: Untagged
@@ -423,7 +424,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -504,6 +505,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3161178810073382773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6157758180979668446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c0d3d9208a3594da5cc64e1a82a396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CubePickedUp: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
 --- !u!1 &8638455450795945149
 GameObject:
   m_ObjectHideFlags: 0
