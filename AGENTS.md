@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: Menus
+  - Name: BabyPark
   - Tag: Untagged
-  - Layer: Default
+  - Layer: CollideWithPlayer
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
