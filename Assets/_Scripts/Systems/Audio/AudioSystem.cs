@@ -30,6 +30,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.playOnAwake = false;
+            s.source.outputAudioMixerGroup = AudioMixer2D;
         }
         foreach (Sound s in Dialogues)
         {
@@ -40,6 +41,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.playOnAwake = false;
+            s.source.outputAudioMixerGroup = AudioMixerDialogues;
         }
     }
 
@@ -57,7 +59,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             Debug.LogWarning("Son: " + name + " introuvable !!!");
             return;
         }
-        s.source.outputAudioMixerGroup = AudioMixer2D;
+        
         s.source.Play();
     }
 
@@ -104,8 +106,25 @@ public class AudioSystem : StaticInstance<AudioSystem>
             Debug.LogWarning("Son: " + name + " introuvable !!!");
             return;
         }
-        s.source.outputAudioMixerGroup = AudioMixerDialogues;
-        s.source.Play();
+
+
+        // Check si il y a un autre dialogue en cours
+        Sound soundCurrentlyPlaying = Array.Find(Dialogues, sound => sound.source.isPlaying);
+        if (soundCurrentlyPlaying != null)
+        {
+            StartCoroutine(PlayDialogueWhenRdy(s, soundCurrentlyPlaying));
+        }
+        else
+        {
+            s.source.Play();
+        }          
+    }
+
+    IEnumerator PlayDialogueWhenRdy(Sound soundToPlay, Sound soundCurrentlyPlaying)
+    {
+        yield return new WaitWhile(() => soundCurrentlyPlaying.source.isPlaying);
+
+        soundToPlay.source.Play();
     }
 
     public void Play3DSoundRdmPitchVol(string name, Vector3 position)
