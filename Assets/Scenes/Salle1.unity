@@ -2954,6 +2954,7 @@ Transform:
   - {fileID: 1087552287}
   - {fileID: 946798418}
   - {fileID: 801168034}
+  - {fileID: 397754040}
   m_Father: {fileID: 1875276063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &211528824 stripped
@@ -4411,6 +4412,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9563d805f0ada6948823672933cbc43f, type: 3}
+--- !u!1 &397754039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 397754040}
+  - component: {fileID: 397754041}
+  - component: {fileID: 397754042}
+  m_Layer: 0
+  m_Name: PressurePlateTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &397754040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397754039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 202429126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &397754041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397754039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a75684379b46e34dbcef8643d153db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  nextSceneName: Salle2
+--- !u!114 &397754042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397754039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c02aebcbe7da77045823954e2ef3be05, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397754041}
+        m_TargetAssemblyTypeName: SceneTransitionOnPlate, Assembly-CSharp
+        m_MethodName: StartTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &402873891
 GameObject:
   m_ObjectHideFlags: 0
@@ -9091,7 +9167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed29f75c2203ef6439155543a97ca52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlayerPressure: {fileID: 11400000, guid: f9269659dea7e624daf2cdeb0020b536, type: 2}
+  onPlayerPressure: {fileID: 11400000, guid: c02aebcbe7da77045823954e2ef3be05, type: 2}
 --- !u!1 &963404774
 GameObject:
   m_ObjectHideFlags: 0
@@ -10595,7 +10671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7387997708335807169, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
@@ -19572,7 +19648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7599286722870072066, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7984359868599517171, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: poigneeBarriere
@@ -19588,13 +19664,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2330174425145312700, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       insertIndex: 1
       addedObject: {fileID: 211528824}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 21476791723092740, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3743500867891126466, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
 --- !u!4 &632785966401593661 stripped
 Transform:

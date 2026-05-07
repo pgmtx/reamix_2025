@@ -46,7 +46,7 @@ public class Menu : MonoBehaviour
     private Light lightCompPlanetarium;
 
 
-    // Etat des lumières
+    // Etat des lumiï¿½res
     private enum LightState
     {
         Idle,
@@ -71,11 +71,11 @@ public class Menu : MonoBehaviour
         deplacement.SetActive(false);
         rotation.SetActive(false);
 
-        // Pas d'interactions avec la barrière du babypark
+        // Pas d'interactions avec la barriï¿½re du babypark
         poigneeBarriereInteractable = poigneeBarriere.GetComponent<XRGrabInteractable>();
         poigneeBarriereInteractable.enabled = false;
 
-        // Setup lumières
+        // Setup lumiï¿½res
         lightCompPlanetarium = eclairagePlanetarium.GetComponent<Light>();
         lightCompPlanetarium.intensity = 0;
 
@@ -124,7 +124,7 @@ public class Menu : MonoBehaviour
         }
     }
 
-    // Lumière qui revient
+    // Lumiï¿½re qui revient
     void UpdateRestoreLights()
     {
         lightCompPlanetarium.intensity = Mathf.Min(6, lightCompPlanetarium.intensity + Time.deltaTime * 2f);
@@ -140,7 +140,7 @@ public class Menu : MonoBehaviour
         }
     }
 
-    // Lumière qui s’éteint
+    // Lumiï¿½re qui sï¿½ï¿½teint
     void UpdateDimmingLights()
     {
         lightCompPlanetarium.intensity = Mathf.Max(0, lightCompPlanetarium.intensity - Time.deltaTime * 2f);
