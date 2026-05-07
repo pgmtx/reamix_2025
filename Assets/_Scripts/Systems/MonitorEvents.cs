@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MonitorEvents : MonoBehaviour
 {
-    public GameEvent GameStarted;
-
     private bool basketGameFinished;
     private bool slutMachineFinished;
 
@@ -28,7 +26,6 @@ public class MonitorEvents : MonoBehaviour
     private void Start()
     {
         playerSpawnPos = Player.position;
-        GameStarted.TriggerEvent();
     }
 
     private void Update()

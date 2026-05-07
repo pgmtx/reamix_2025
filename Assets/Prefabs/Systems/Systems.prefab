@@ -58,13 +58,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda11dd38662efb4397b02cfa3a9ede9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameStarted: {fileID: 11400000, guid: b9756c88fce2b3c4d8e2d6552e6c6373, type: 2}
   BothGamesSalle1Finished: {fileID: 11400000, guid: f5a47f37c554005479782be8397d133b, type: 2}
   PlayerAfkForTooLong: {fileID: 11400000, guid: 2c5e78f788109244fb301e0e746f6eaf, type: 2}
   Player: {fileID: 0}
-  MaxTimeAfkBeforeEvent: 10
+  MaxTimeAfkBeforeEvent: 20
   PlayerNoInteractForTooLong: {fileID: 11400000, guid: f748aff028d60a540b7542036e08db20, type: 2}
-  MaxTimeInteractionBeforeEvent: 30
+  MaxTimeInteractionBeforeEvent: 35
 --- !u!114 &5139164950146499572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +359,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: AudioSystem, Assembly-CSharp
         m_MethodName: PlayDialogue
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: M5
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8683381422923515695}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -862,7 +873,7 @@ MonoBehaviour:
   Sounds2D:
   - name: white noise
     clip: {fileID: 8300000, guid: a06d35f9230d99449acf791fb0fb0012, type: 3}
-    volume: 0.2
+    volume: 0.15
     pitch: 0.9
     loop: 1
     source: {fileID: 0}
