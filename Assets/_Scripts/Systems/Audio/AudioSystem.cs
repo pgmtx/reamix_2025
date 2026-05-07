@@ -4,21 +4,34 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class AudioSystem : StaticInstance<AudioSystem>
 {
     public Sound[] Sounds2D;
     public Sound[] Sounds3D;
     public Sound[] Footsteps;
+    public Sound[] Dialogues;
     public AudioMixerGroup AudioMixer2D;
     public AudioMixerGroup AudioMixer3D;
     public AudioMixerGroup AudioMixerFootsteps;
+    public AudioMixerGroup AudioMixerDialogues;
 
     protected override void Awake()
     {
         base.Awake();
 
         foreach (Sound s in Sounds2D)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+            s.source.playOnAwake = false;
+        }
+        foreach (Sound s in Dialogues)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -81,6 +94,18 @@ public class AudioSystem : StaticInstance<AudioSystem>
         audioSource.pitch = s.pitch + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.Play();
         UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+    }
+
+    public void PlayDialogue(string name)
+    {
+        Sound s = Array.Find(Dialogues, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Son: " + name + " introuvable !!!");
+            return;
+        }
+        s.source.outputAudioMixerGroup = AudioMixerDialogues;
+        s.source.Play();
     }
 
     public void Play3DSoundRdmPitchVol(string name, Vector3 position)
