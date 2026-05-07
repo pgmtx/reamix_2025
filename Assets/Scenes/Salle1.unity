@@ -5670,7 +5670,7 @@ Transform:
   m_GameObject: {fileID: 502354274}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50000006, y: -0.49999994, z: 0.49999994, w: 0.50000006}
-  m_LocalPosition: {x: -0.025991384, y: 1.0000004, z: 0.89}
+  m_LocalPosition: {x: -0.025991384, y: 1, z: 0.89}
   m_LocalScale: {x: 100.00004, y: 100.00004, z: 43.839863}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10283,10 +10283,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7961789137161270948, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 502354275}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
@@ -10312,8 +10313,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087552288}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
+  m_Controller: {fileID: 9100000, guid: 20458b5940cf51744b49e3b6b760f2cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
