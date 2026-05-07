@@ -12,6 +12,7 @@ public class SceneTransitionOnPlate : MonoBehaviour
 
     public void StartTransition()
     {
+        GetComponent<AudioSource>().Play();
         StartCoroutine(TransitionRoutine());
     }
 
