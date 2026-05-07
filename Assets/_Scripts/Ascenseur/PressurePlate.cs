@@ -12,11 +12,18 @@ public class PressurePlate : MonoBehaviour
         Debug.Log("Entered by " + other.name + " with tag " + other.tag);
         if (other.CompareTag("Player"))
         {
-            if (!WhackAMoleManager.IsFinished)
-            {
-                Debug.Log("Whack-a-mole non terminé: la plaque de pression ne se déclenche pas.");
-                return;
-            }
+            /*
+                TODO(Eric-Nicolas): AVANT DE MERGE
+                - désactiver le XR Origin de la salle whack-a-mole
+                - changer le son d'ascenseur
+                - décommenter ce code
+            */
+
+            // if (!WhackAMoleManager.IsFinished)
+            // {
+            //     Debug.Log("Whack-a-mole non terminé: la plaque de pression ne se déclenche pas.");
+            //     return;
+            // }
 
             onPlayerPressure.TriggerEvent();
             gameObject.SetActive(false);

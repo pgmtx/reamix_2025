@@ -4458,8 +4458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a75684379b46e34dbcef8643d153db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 0.6
+  fadeDuration: 1.7
   nextSceneName: Salle2
+  elevatorDoorAnimator: {fileID: 1087552289}
 --- !u!114 &397754042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10255,8 +10256,16 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -6656007681728257969, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.414582
+      objectReference: {fileID: 0}
+    - target: {fileID: -6656007681728257969, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.415
+      objectReference: {fileID: 0}
+    - target: {fileID: -2109136729773340899, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2109136729773340899, guid: 0bd795c7d95160b4997741399f34a729, type: 3}
       propertyPath: m_LocalPosition.z

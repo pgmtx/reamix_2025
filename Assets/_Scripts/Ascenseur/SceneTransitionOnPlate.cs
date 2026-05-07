@@ -10,8 +10,12 @@ public class SceneTransitionOnPlate : MonoBehaviour
     [SerializeField]
     private string nextSceneName = "Salle2";
 
+    [SerializeField]
+    private Animator elevatorDoorAnimator;
+
     public void StartTransition()
     {
+        elevatorDoorAnimator.SetTrigger("openDoors");
         GetComponent<AudioSource>().Play();
         StartCoroutine(TransitionRoutine());
     }
