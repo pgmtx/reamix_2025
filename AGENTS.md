@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: Menus
+  - Name: Menu_Principal
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -61,6 +61,11 @@ public class Menu : MonoBehaviour
     [SerializeField] private XRRayInteractor rayInteractorGauche;
     [SerializeField] private XRRayInteractor rayInteractorDroite;
 
+
+    [Header("Debug")]
+    [SerializeField] private bool alwaysEnableRays = false;
+
+
     [Header("GameEvent")]
     [SerializeField] private GameEvent gameStarted;
 
@@ -278,6 +283,14 @@ public class Menu : MonoBehaviour
 
     private void setRays(bool active)
     {
+        // Mode debug : garde toujours les raycasts actifs
+        if (alwaysEnableRays)
+        {
+            rayInteractorDroite.enabled = true;
+            rayInteractorGauche.enabled = true;
+            return;
+        }
+
         rayInteractorDroite.enabled = active;
         rayInteractorGauche.enabled = active;
     }

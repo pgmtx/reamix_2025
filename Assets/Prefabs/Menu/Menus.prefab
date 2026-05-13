@@ -1195,6 +1195,7 @@ MonoBehaviour:
   rotation: {fileID: 0}
   rayInteractorGauche: {fileID: 0}
   rayInteractorDroite: {fileID: 0}
+  alwaysEnableRays: 0
   gameStarted: {fileID: 11400000, guid: b9756c88fce2b3c4d8e2d6552e6c6373, type: 2}
 --- !u!1 &6210491001787748667
 GameObject:
