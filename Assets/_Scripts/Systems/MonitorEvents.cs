@@ -12,6 +12,8 @@ public class MonitorEvents : MonoBehaviour
     public event Action<bool> OnBasketGameFinished;
     public GameEvent BothGamesSalle1Finished;
 
+    public bool HasGameStarted;
+
     public GameEvent PlayerAfkForTooLong;
     public Transform Player;
     private Vector3 playerSpawnPos;
@@ -30,6 +32,9 @@ public class MonitorEvents : MonoBehaviour
 
     private void Update()
     {
+        if (!HasGameStarted)
+            return;
+
         if (!afkEventTriggered)
         {
             if ((Player.position - playerSpawnPos).magnitude > 0.1f)
@@ -69,6 +74,12 @@ public class MonitorEvents : MonoBehaviour
     {
         timer = 0f;
         isPlayerOutBabyPark = true;
+    }
+
+    public void SetHasGameStartedTrue()
+    {
+        timer = 0f;
+        HasGameStarted = true;
     }
 
     public bool BasketGameFinished

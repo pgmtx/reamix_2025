@@ -8266,6 +8266,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1054763808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 725579849002272049, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+  m_PrefabInstance: {fileID: 9107532837998030017}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda11dd38662efb4397b02cfa3a9ede9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058416505
 GameObject:
   m_ObjectHideFlags: 0
@@ -12265,6 +12276,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1554902253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7680390824433279969, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+  m_PrefabInstance: {fileID: 9107532837998030017}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3148edc559c581f4c990ce36bbdfb99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1564534281
 GameObject:
   m_ObjectHideFlags: 0
@@ -17158,6 +17180,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274780575692006410, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599286722870072066, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7628042229996331530, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
@@ -17176,10 +17202,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1509199635490296081, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 21476791723092740, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2832229945270983383, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 3743500867891126466, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 81df7a203e80b3b46ac1303750c5e97e, type: 3}
@@ -25188,6 +25214,58 @@ PrefabInstance:
     - target: {fileID: 3465810884967342924, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
       propertyPath: m_Name
       value: Systems
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1054763808}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1554902253}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetHasGameStartedTrue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonitorEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: M1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: M2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139164950146499572, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7439801310531098852, guid: 0ffba399906b8624ba4b9845e7743381, type: 3}
       propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BothGamesSalle1Finished: {fileID: 11400000, guid: f5a47f37c554005479782be8397d133b, type: 2}
+  HasGameStarted: 0
   PlayerAfkForTooLong: {fileID: 11400000, guid: 2c5e78f788109244fb301e0e746f6eaf, type: 2}
   Player: {fileID: 0}
   MaxTimeAfkBeforeEvent: 20
@@ -80,6 +81,18 @@ MonoBehaviour:
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 725579849002272049}
+        m_TargetAssemblyTypeName: MonitorEvents, Assembly-CSharp
+        m_MethodName: SetHasGameStartedTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: M1
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7680390824433279969}
         m_TargetAssemblyTypeName: AudioSystem, Assembly-CSharp
         m_MethodName: PlayDialogue
