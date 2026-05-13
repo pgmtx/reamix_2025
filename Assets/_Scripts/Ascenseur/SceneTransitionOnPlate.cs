@@ -17,9 +17,10 @@ public class SceneTransitionOnPlate : MonoBehaviour
     {
         elevatorDoorAnimator.SetTrigger("openDoors");
         GetComponent<AudioSource>().Play();
-        StartCoroutine(TransitionRoutine());
+        //StartCoroutine(TransitionRoutine());
     }
 
+    /*
     private IEnumerator TransitionRoutine()
     {
         // Fade out
@@ -34,4 +35,5 @@ public class SceneTransitionOnPlate : MonoBehaviour
         // Load the next scene
         SceneManager.LoadScene(nextSceneName);
     }
+    */
 }

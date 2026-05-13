@@ -12,11 +12,14 @@ public class PressurePlate : MonoBehaviour
         Debug.Log("Entered by " + other.name + " with tag " + other.tag);
         if (other.CompareTag("Player"))
         {
+            // TODO: Réactiver avant de commit
+            /*
             if (!WhackAMoleManager.IsFinished)
             {
                 Debug.Log("Whack-a-mole non terminé: la plaque de pression ne se déclenche pas.");
                 return;
             }
+            */
 
             onPlayerPressure.TriggerEvent();
             gameObject.SetActive(false);
