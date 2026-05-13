@@ -17,7 +17,9 @@ public class Menu : MonoBehaviour
 
     [Header("Menu bouton main")]
     [SerializeField] private GameObject menuMain;
+
     private InputAction boutonA;
+    private InputAction triggerAction;
 
     [SerializeField] private GameObject boutonReprendreMain;
     private XRSimpleInteractable reprendreInteractableMain;
@@ -30,8 +32,25 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject poigneeBarriere;
     private XRGrabInteractable poigneeBarriereInteractable;
 
-    [SerializeField] private GameObject spotlight;
-    private Light lightCompSpotlight;
+
+    [Header("Fog VR")]
+    [SerializeField] private GameObject fogSphere;
+
+    private Material fogMaterial;
+
+    private enum FogState
+    {
+        Idle,
+        Appearing,
+        Disappearing
+    }
+
+    private FogState currentFogState = FogState.Idle;
+
+    private float currentFogAlpha = 0f;
+
+    [SerializeField] private float fogMaxAlpha = 0.75f;
+    [SerializeField] private float fogSpeed = 2f;
 
 
     [Header("GameObjects communs")]
@@ -42,30 +61,30 @@ public class Menu : MonoBehaviour
     [SerializeField] private XRRayInteractor rayInteractorGauche;
     [SerializeField] private XRRayInteractor rayInteractorDroite;
 
-    [SerializeField] private GameObject eclairagePlanetarium;
-    private Light lightCompPlanetarium;
-
-
-    // Etat des lumières
-    private enum LightState
-    {
-        Idle,
-        Restoring,
-        Dimming
-    }
-
-    private LightState currentLightState = LightState.Idle;
+    [Header("GameEvent")]
+    [SerializeField] private GameEvent gameStarted;
 
 
     void Awake()
     {
         setRays(true);
 
-        InputAction triggerAction = new InputAction("Trigger", InputActionType.Button);
+        // Trigger
+        triggerAction = new InputAction("Trigger", InputActionType.Button);
 
         triggerAction.AddBinding("<XRController>/triggerPressed");
         triggerAction.performed += OnTriggerPressed;
         triggerAction.Enable();
+
+        // Bouton pause
+        boutonA = new InputAction(
+            "BoutonA",
+            InputActionType.Button,
+            "<XRController>{RightHand}/primaryButton"
+        );
+
+        boutonA.performed += OnBoutonAPressed;
+        boutonA.Enable();
 
         // Bloquer les deplacements et la rotation du joueur
         deplacement.SetActive(false);
@@ -75,80 +94,84 @@ public class Menu : MonoBehaviour
         poigneeBarriereInteractable = poigneeBarriere.GetComponent<XRGrabInteractable>();
         poigneeBarriereInteractable.enabled = false;
 
-        // Setup lumières
-        lightCompPlanetarium = eclairagePlanetarium.GetComponent<Light>();
-        lightCompPlanetarium.intensity = 0;
+        // Setup fog
+        fogMaterial = fogSphere.GetComponent<Renderer>().material;
 
-        // Valeur defaut du spotlight -> lightCompSpotlight.intensity = 8;
-        lightCompSpotlight = spotlight.GetComponent<Light>();
-        spotlight.SetActive(true);
+        currentFogAlpha = fogMaxAlpha;
 
-        // Mettre l'interaction sur le bouton Jouer
+        SetFogAlpha(currentFogAlpha);
+
+        fogSphere.SetActive(true);
+
+        // Bouton Jouer
         jouerInteractable = boutonJouer.GetComponent<XRSimpleInteractable>();
         jouerInteractable?.activated.AddListener(OnPressedJouer);
 
-        // Mettre l'interaction sur le bouton Quitter
+        // Bouton Quitter
         quitterInteractable = boutonQuitter.GetComponent<XRSimpleInteractable>();
         quitterInteractable?.activated.AddListener(OnPressedQuitter);
 
-        // Mettre l'interaction sur le bouton Reprendre
+        // Bouton Reprendre
         reprendreInteractableMain = boutonReprendreMain.GetComponent<XRSimpleInteractable>();
         reprendreInteractableMain?.activated.AddListener(OnPressedReprendre);
 
-        // Mettre l'interaction sur le bouton Quitter du menu Main
+        // Bouton Quitter menu pause
         quitterInteractableMain = boutonQuitterMain.GetComponent<XRSimpleInteractable>();
         quitterInteractableMain?.activated.AddListener(OnPressedQuitter);
-
-        // Setup du bouton de pause ptetre mettre sur la manette gauche
-        boutonA = new InputAction(
-            "BoutonA",
-            InputActionType.Button,
-            "<XRController>{RightHand}/primaryButton"
-        );
-
-        boutonA.performed += OnBoutonAPressed;
-        boutonA.Enable();
     }
 
     void Update()
     {
-        switch (currentLightState)
+        switch (currentFogState)
         {
-            case LightState.Restoring:
-                UpdateRestoreLights();
+            case FogState.Appearing:
+                UpdateFogAppearing();
                 break;
 
-            case LightState.Dimming:
-                UpdateDimmingLights();
+            case FogState.Disappearing:
+                UpdateFogDisappearing();
                 break;
         }
     }
 
-    // Lumière qui revient
-    void UpdateRestoreLights()
+    private void SetFogAlpha(float alpha)
     {
-        lightCompPlanetarium.intensity = Mathf.Min(6, lightCompPlanetarium.intensity + Time.deltaTime * 2f);
-        lightCompSpotlight.intensity = Mathf.Max(0, lightCompSpotlight.intensity - Time.deltaTime * 2f);
+        Color c = fogMaterial.color;
+        c.a = alpha;
+        fogMaterial.color = c;
+    }
 
-        if (lightCompPlanetarium.intensity >= 6 && lightCompSpotlight.intensity <= 0)
+    void UpdateFogAppearing()
+    {
+        if (!fogSphere.activeSelf)
         {
-            if (menuPrincipal.activeSelf)
-                menuPrincipal.SetActive(false);
+            fogSphere.SetActive(true);
+        }
 
-            spotlight.SetActive(false);
-            currentLightState = LightState.Idle;
+        currentFogAlpha += Time.deltaTime * fogSpeed;
+
+        currentFogAlpha = Mathf.Min(currentFogAlpha, fogMaxAlpha);
+
+        SetFogAlpha(currentFogAlpha);
+
+        if (currentFogAlpha >= fogMaxAlpha)
+        {
+            currentFogState = FogState.Idle;
         }
     }
 
-    // Lumière qui s’éteint
-    void UpdateDimmingLights()
+    void UpdateFogDisappearing()
     {
-        lightCompPlanetarium.intensity = Mathf.Max(0, lightCompPlanetarium.intensity - Time.deltaTime * 2f);
-        lightCompSpotlight.intensity = Mathf.Min(8, lightCompSpotlight.intensity + Time.deltaTime * 2f);
+        currentFogAlpha -= Time.deltaTime * fogSpeed;
 
-        if (lightCompPlanetarium.intensity <= 0 && lightCompSpotlight.intensity >= 8)
+        currentFogAlpha = Mathf.Max(currentFogAlpha, 0f);
+
+        SetFogAlpha(currentFogAlpha);
+
+        if (currentFogAlpha <= 0f)
         {
-            currentLightState = LightState.Idle;
+            fogSphere.SetActive(false);
+            currentFogState = FogState.Idle;
         }
     }
 
@@ -179,16 +202,22 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Le bouton Jouer a ete presse !");
 
-        currentLightState = LightState.Restoring;
-
         boutonJouer.SetActive(false);
         boutonQuitter.SetActive(false);
 
+        menuPrincipal.SetActive(false);
+
         poigneeBarriereInteractable.enabled = true;
+
         deplacement.SetActive(true);
         rotation.SetActive(true);
 
+        currentFogState = FogState.Disappearing;
+
         setRays(false);
+
+        // J'active l'event de début
+        gameStarted.TriggerEvent();
     }
 
     void OnPressedQuitter(ActivateEventArgs args)
@@ -201,11 +230,12 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Le bouton Reprendre a ete presse !");
 
-        currentLightState = LightState.Restoring;
-
         deplacement.SetActive(true);
         rotation.SetActive(true);
+
         menuMain.SetActive(false);
+
+        currentFogState = FogState.Disappearing;
 
         setRays(false);
     }
@@ -214,6 +244,7 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Bouton pause presse");
 
+        // Empêche la pause tant que le menu principal est affiché
         if (menuPrincipal.activeSelf)
             return;
 
@@ -225,8 +256,9 @@ public class Menu : MonoBehaviour
             deplacement.SetActive(false);
             rotation.SetActive(false);
 
-            spotlight.SetActive(true);
-            currentLightState = LightState.Dimming;
+            fogSphere.SetActive(true);
+
+            currentFogState = FogState.Appearing;
 
             setRays(true);
         }
@@ -236,7 +268,7 @@ public class Menu : MonoBehaviour
             deplacement.SetActive(true);
             rotation.SetActive(true);
 
-            currentLightState = LightState.Restoring;
+            currentFogState = FogState.Disappearing;
 
             setRays(false);
         }
@@ -248,5 +280,14 @@ public class Menu : MonoBehaviour
     {
         rayInteractorDroite.enabled = active;
         rayInteractorGauche.enabled = active;
+    }
+
+    private void OnDestroy()
+    {
+        triggerAction?.Disable();
+        triggerAction?.Dispose();
+
+        boutonA?.Disable();
+        boutonA?.Dispose();
     }
 }
