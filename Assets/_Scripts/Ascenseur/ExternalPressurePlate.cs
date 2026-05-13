@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class PressurePlate : MonoBehaviour
+public class ExternalPressurePlate : MonoBehaviour
 {
     [SerializeField]
     private GameEvent onPlayerPressure;
 
-    // NOTE(Eric-Nicolas): PlaquePression ne touche volontairement pas le sol,
+    // NOTE(Eric-Nicolas): PlaquePressionExterne ne touche volontairement pas le sol,
     // sinon cette méthode se déclenche car en contact avec le tapis.
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered by " + other.name + " with tag " + other.tag);
+        Debug.Log($"[PlaqueExterne] Contact avec {other.name} (tag {other.tag})");
         if (other.CompareTag("Player"))
         {
             if (!WhackAMoleManager.IsFinished)
@@ -20,7 +20,7 @@ public class PressurePlate : MonoBehaviour
 
             onPlayerPressure.TriggerEvent();
             gameObject.SetActive(false);
-            Debug.Log("Transition vers l'autre salle là");
+            Debug.Log("Ouverture de l'ascenseur");
         }
     }
 }

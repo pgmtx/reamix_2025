@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class SceneTransitionOnPlate : MonoBehaviour
+public class ActionOnInternalPlate : MonoBehaviour
 {
     [SerializeField]
     private float fadeDuration = 1f;
@@ -15,23 +15,17 @@ public class SceneTransitionOnPlate : MonoBehaviour
 
     public void StartTransition()
     {
+        elevatorDoorAnimator.ResetTrigger("openDoors");
+        elevatorDoorAnimator.SetFloat("speed", -1);
         elevatorDoorAnimator.SetTrigger("openDoors");
+
         GetComponent<AudioSource>().Play();
         StartCoroutine(TransitionRoutine());
     }
 
     private IEnumerator TransitionRoutine()
     {
-        // Fade out
-        var elapsedTime = 0f;
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            //fadeCanvas.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            yield return null;
-        }
-
-        // Load the next scene
+        yield return new WaitForSeconds(fadeDuration);
         SceneManager.LoadScene(nextSceneName);
     }
 }
