@@ -9,7 +9,7 @@ public class ExternalPressurePlate : MonoBehaviour
     // sinon cette méthode se déclenche car en contact avec le tapis.
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered by " + other.name + " with tag " + other.tag);
+        Debug.Log($"[PlaqueExterne] Contact avec {other.name} (tag {other.tag})");
         if (other.CompareTag("Player"))
         {
             // TODO: Réactiver avant de merge
