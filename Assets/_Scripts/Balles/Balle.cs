@@ -13,7 +13,6 @@ public class Balle : MonoBehaviour
     bool wasSelectedLastFrame = false;
 
     [Header("Son")]
-    [SerializeField] private float minImpactSpeedToPlaySound;
     private bool soundEnabled = false;
 
     void Awake()
@@ -23,7 +22,7 @@ public class Balle : MonoBehaviour
 
     void Update()
     {
-        // Déclenché UNIQUEMENT la frame du pickup
+        // Dï¿½clenchï¿½ UNIQUEMENT la frame du pickup
         if (!wasSelectedLastFrame && grabInteractable.isSelected)
         {
             soundEnabled = true;
@@ -39,11 +38,12 @@ public class Balle : MonoBehaviour
 
         float impactSpeed = collision.relativeVelocity.magnitude;
 
-        if (!grabInteractable.isSelected && impactSpeed > minImpactSpeedToPlaySound)
+        if (!grabInteractable.isSelected)
         {
-            Debug.Log("Impact réel à vitesse: " + impactSpeed);
-            Debug.Log("Son joué volume: " + Mathf.Clamp(impactSpeed / 6, 0.05f, 0.95f));
-            AudioSystem.Instance.Play3DSoundRdmPitch("ball hit ground", transform.position, Mathf.Clamp(impactSpeed / 6, 0.05f, 0.95f));
+            float volume = 0.7f * (1 - Mathf.Exp(-impactSpeed / 6));
+            Debug.Log("Impact rï¿½el ï¿½ vitesse: " + impactSpeed);
+            Debug.Log("Son jouï¿½ volume: " + volume);
+            AudioSystem.Instance.Play3DSoundRdmPitch("ball hit ground", transform.position, volume);
         }
     }
 }

@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8459289558237658735}
   - component: {fileID: 8298081887237171121}
   - component: {fileID: 991698288130131352}
-  m_Layer: 0
+  - component: {fileID: 8595498153178647331}
+  m_Layer: 10
   m_Name: Balle (6)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -106,7 +107,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &8459289558237658735
 Rigidbody:
@@ -117,8 +118,8 @@ Rigidbody:
   m_GameObject: {fileID: 759146874734820343}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -239,7 +240,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -301,6 +302,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &8595498153178647331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759146874734820343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3275912896597934308
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +329,8 @@ GameObject:
   - component: {fileID: 4044873396862560045}
   - component: {fileID: 3374254675093609652}
   - component: {fileID: 1064216363302124075}
-  m_Layer: 0
+  - component: {fileID: 1149536989767136206}
+  m_Layer: 10
   m_Name: Balle (1)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -407,7 +421,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &4044873396862560045
 Rigidbody:
@@ -418,8 +432,8 @@ Rigidbody:
   m_GameObject: {fileID: 3275912896597934308}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -540,7 +554,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -602,6 +616,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &1149536989767136206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275912896597934308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3333712692993515761
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +643,8 @@ GameObject:
   - component: {fileID: 3561824613862067927}
   - component: {fileID: 613953350186305376}
   - component: {fileID: 5978117399903876377}
-  m_Layer: 0
+  - component: {fileID: 1296549591792476596}
+  m_Layer: 10
   m_Name: Balle (8)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -708,7 +735,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &3561824613862067927
 Rigidbody:
@@ -719,8 +746,8 @@ Rigidbody:
   m_GameObject: {fileID: 3333712692993515761}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -841,7 +868,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -903,6 +930,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &1296549591792476596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333712692993515761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3824453566293414039
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +957,8 @@ GameObject:
   - component: {fileID: 3269158303245970046}
   - component: {fileID: 1238282606579924589}
   - component: {fileID: 5431817755321048221}
-  m_Layer: 0
+  - component: {fileID: 4190799931308474717}
+  m_Layer: 10
   m_Name: Balle (3)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -1009,7 +1049,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &3269158303245970046
 Rigidbody:
@@ -1020,8 +1060,8 @@ Rigidbody:
   m_GameObject: {fileID: 3824453566293414039}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1142,7 +1182,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -1204,6 +1244,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &4190799931308474717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824453566293414039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4435653350689966298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3020261601028774284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Balles_jonglage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1312,8 @@ GameObject:
   - component: {fileID: 892318409887546468}
   - component: {fileID: 3969028906026407391}
   - component: {fileID: 5676738829653031656}
-  m_Layer: 0
+  - component: {fileID: 1751013212796473521}
+  m_Layer: 10
   m_Name: Balle (9)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -1351,7 +1404,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &892318409887546468
 Rigidbody:
@@ -1362,8 +1415,8 @@ Rigidbody:
   m_GameObject: {fileID: 5780473869921283131}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1484,7 +1537,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -1546,6 +1599,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &1751013212796473521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780473869921283131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6227259320532417608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,7 +1626,8 @@ GameObject:
   - component: {fileID: 7598209211448188760}
   - component: {fileID: 1427453010354771204}
   - component: {fileID: 3444657896789576472}
-  m_Layer: 0
+  - component: {fileID: 2654873076303046661}
+  m_Layer: 10
   m_Name: Balle (7)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -1652,7 +1718,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &7598209211448188760
 Rigidbody:
@@ -1663,8 +1729,8 @@ Rigidbody:
   m_GameObject: {fileID: 6227259320532417608}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1785,7 +1851,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -1847,6 +1913,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &2654873076303046661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227259320532417608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6596796735013074782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,13 +1940,14 @@ GameObject:
   - component: {fileID: 234869281191855478}
   - component: {fileID: 6663751947917453259}
   - component: {fileID: 8171094524774154099}
-  m_Layer: 0
+  - component: {fileID: 6787351010053747807}
+  m_Layer: 10
   m_Name: Balle
   m_TagString: Balles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2595558207684175237
 Transform:
   m_ObjectHideFlags: 0
@@ -1953,7 +2032,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &234869281191855478
 Rigidbody:
@@ -1964,8 +2043,8 @@ Rigidbody:
   m_GameObject: {fileID: 6596796735013074782}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2086,7 +2165,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -2148,6 +2227,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &6787351010053747807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596796735013074782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6961598843175216024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2254,8 @@ GameObject:
   - component: {fileID: 5062008478409772355}
   - component: {fileID: 3612692182133812199}
   - component: {fileID: 542150188690856925}
-  m_Layer: 0
+  - component: {fileID: 7584088857269051225}
+  m_Layer: 10
   m_Name: Balle (2)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -2254,7 +2346,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &5062008478409772355
 Rigidbody:
@@ -2265,8 +2357,8 @@ Rigidbody:
   m_GameObject: {fileID: 6961598843175216024}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2387,7 +2479,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -2449,6 +2541,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &7584088857269051225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961598843175216024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7194607185633736157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2568,8 @@ GameObject:
   - component: {fileID: 6644291376550454000}
   - component: {fileID: 531708675013822420}
   - component: {fileID: 1834821180075094628}
-  m_Layer: 0
+  - component: {fileID: 554788536403798340}
+  m_Layer: 10
   m_Name: Balle (4)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -2555,7 +2660,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &6644291376550454000
 Rigidbody:
@@ -2566,8 +2671,8 @@ Rigidbody:
   m_GameObject: {fileID: 7194607185633736157}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2688,7 +2793,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -2750,6 +2855,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &554788536403798340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194607185633736157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8787986982144492692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,7 +2882,8 @@ GameObject:
   - component: {fileID: 1344107856901406353}
   - component: {fileID: 8335118462759068570}
   - component: {fileID: 2202720338173309889}
-  m_Layer: 0
+  - component: {fileID: 8839208955103940311}
+  m_Layer: 10
   m_Name: Balle (5)
   m_TagString: Balles
   m_Icon: {fileID: 0}
@@ -2856,7 +2974,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008586391
+  m_Radius: 0.0084
   m_Center: {x: 0.000058488964, y: 0.000038238264, z: -0.000057075187}
 --- !u!54 &1344107856901406353
 Rigidbody:
@@ -2867,8 +2985,8 @@ Rigidbody:
   m_GameObject: {fileID: 8787986982144492692}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1.2
-  m_AngularDrag: 1.2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2989,7 +3107,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -3051,3 +3169,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlreadyInBasket: 0
   BallPickedUp: {fileID: 11400000, guid: 43b201d7c3af79246ad2fb07960ffbdf, type: 2}
+--- !u!114 &8839208955103940311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787986982144492692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

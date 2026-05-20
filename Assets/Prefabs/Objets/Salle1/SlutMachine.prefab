@@ -268,7 +268,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2950033110805622580
 Transform:
@@ -2146,7 +2146,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2708736981711971688
 Transform:
@@ -2399,7 +2399,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6595173576305443693
 Transform:
@@ -2742,7 +2742,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5358038925349515565
 Transform:
@@ -3674,7 +3674,7 @@ GameObject:
   - component: {fileID: 6526520794357472941}
   - component: {fileID: 770273885407843102}
   m_Layer: 0
-  m_Name: LAMACHINEDECLEMENTQUEERICAREFAIT
+  m_Name: SlutMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3690,7 +3690,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.69566214, z: 0, w: 0.7183691}
   m_LocalPosition: {x: -2.919, y: 0.737, z: 11.802}
-  m_LocalScale: {x: 0.16473946, y: 0.16473944, z: 0.16473946}
+  m_LocalScale: {x: 0.16473947, y: 0.16473944, z: 0.16473947}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2441167260303172567}

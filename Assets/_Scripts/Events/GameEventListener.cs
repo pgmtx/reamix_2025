@@ -1,8 +1,11 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class GameEventListener : MonoBehaviour
 {
+    [SerializeField][Multiline(3)]
+    private string description;
     public GameEvent gameEvent;
     public UnityEvent onEventTriggered;
 

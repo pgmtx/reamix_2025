@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 230312251597027758}
   - component: {fileID: 9161294618372899298}
   m_Layer: 0
-  m_Name: taupe_sans_whack (1)
+  m_Name: taupe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
