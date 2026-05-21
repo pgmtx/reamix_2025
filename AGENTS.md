@@ -8,11 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-<<<<<<< HEAD
-  - Name: EventsSystem
-=======
-  - Name: Spot Light
->>>>>>> e6cafb3cb7e2ec410d01009f934d0fe55c8114bc
+  - Name: AudioSystem
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
