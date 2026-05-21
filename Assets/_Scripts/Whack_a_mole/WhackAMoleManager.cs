@@ -11,6 +11,7 @@ public class WhackAMoleManager : MonoBehaviour
     public static int Score = 0;
     public static bool IsFinished { get; private set; }
     private bool win = false;
+    private int previousRandomIndex = -1;
 
     public GameEvent TaupeFrappe;
     [SerializeField] private GameEvent WhackTermine;
@@ -46,12 +47,22 @@ public class WhackAMoleManager : MonoBehaviour
     }
 
 
+    private int GetRandomIndex()
+    {
+        int randomIndex;
+        do {
+            randomIndex = Random.Range(0, taupes.Length);
+        } while (randomIndex == previousRandomIndex);
+        previousRandomIndex = randomIndex;
+        return randomIndex;
+    }
+
     IEnumerator MoleLoop()
     {
         while (!win)
         {
             // Choisir une taupe
-            currentTaupe = taupes[Random.Range(0, taupes.Length)];
+            currentTaupe = taupes[GetRandomIndex()];
 
             float timeUp = Random.Range(1f, 2f);
             yield return new WaitForSeconds(timeUp);
