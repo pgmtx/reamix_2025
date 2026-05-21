@@ -54,7 +54,7 @@ public class Taupe : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!canBeHit) return;
-        if (!isUp || WhackAMoleManager.Score >= 5) return;
+        if (!isUp || WhackAMoleManager.Score >= WhackAMoleManager.ScoreLimit) return;
 
         XRGrabInteractable grab = other.GetComponentInParent<XRGrabInteractable>();
         if (other.CompareTag("Marteau") && grab != null && grab.isSelected)

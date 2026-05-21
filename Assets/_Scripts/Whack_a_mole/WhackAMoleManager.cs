@@ -6,6 +6,8 @@ public class WhackAMoleManager : MonoBehaviour
 {
     private Taupe[] taupes;
     private Taupe currentTaupe;
+
+    public const int ScoreLimit = 10;
     public static int Score = 0;
     public static bool IsFinished { get; private set; }
     private bool win = false;
@@ -68,7 +70,7 @@ public class WhackAMoleManager : MonoBehaviour
 
     public void OnTaupeHit(Taupe taupe)
     {
-        if (taupe != currentTaupe || Score >= 5 || win) return;
+        if (taupe != currentTaupe || Score >= ScoreLimit || win) return;
 
         Score++;
         Debug.Log("Score : " + Score);
@@ -76,7 +78,7 @@ public class WhackAMoleManager : MonoBehaviour
         StopAllCoroutines();
 
         TaupeFrappe.TriggerEvent();
-        if (Score >= 5)
+        if (Score >= ScoreLimit)
         {
             EndGame();
             return;
