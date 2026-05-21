@@ -14,7 +14,7 @@ public class TelevisionWhackAMole : MonoBehaviour
     public void UpdateScore()
     {
         int score = WhackAMoleManager.Score;
-        if (score == 5)
+        if (score == WhackAMoleManager.ScoreLimit)
         {
             textObject.text = "Bien joue tu as gagne !";
         }
