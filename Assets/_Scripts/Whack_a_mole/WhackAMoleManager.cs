@@ -7,6 +7,7 @@ public class WhackAMoleManager : MonoBehaviour
     private Taupe[] taupes;
     private Taupe currentTaupe;
     public static int Score = 0;
+    public static bool IsFinished { get; private set; }
     private bool win = false;
 
     public GameEvent TaupeFrappe;
@@ -22,6 +23,7 @@ public class WhackAMoleManager : MonoBehaviour
     }
     void Start()
     {
+        IsFinished = false;
         taupes = GetComponentsInChildren<Taupe>();
         StartCoroutine(MoleLoop());
     }
@@ -29,6 +31,7 @@ public class WhackAMoleManager : MonoBehaviour
     private void EndGame()
     {
         win = true;
+        IsFinished = true;
         StopAllCoroutines();
 
         WhackTermine.TriggerEvent();

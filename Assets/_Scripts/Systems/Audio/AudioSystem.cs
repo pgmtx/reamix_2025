@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class AudioSystem : StaticInstance<AudioSystem>
 {
+    [SerializeField]
+    private bool mayaSTFU;
     public Sound[] Sounds2D;
     public Sound[] Sounds3D;
     public Sound[] Footsteps;
@@ -30,16 +32,22 @@ public class AudioSystem : StaticInstance<AudioSystem>
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.playOnAwake = false;
+            s.source.outputAudioMixerGroup = AudioMixer2D;
         }
         foreach (Sound s in Dialogues)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
+            if (mayaSTFU)
+                s.source.volume = 0f;
+            else
+                s.source.volume = s.volume;
+
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.playOnAwake = false;
+            s.source.outputAudioMixerGroup = AudioMixerDialogues;
         }
     }
 
@@ -57,7 +65,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             Debug.LogWarning("Son: " + name + " introuvable !!!");
             return;
         }
-        s.source.outputAudioMixerGroup = AudioMixer2D;
+        
         s.source.Play();
     }
 
@@ -83,7 +91,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
     {
         Sound s = Footsteps[UnityEngine.Random.Range(0, Footsteps.Length)];
 
-        // Copié de la fonction de unity  de base
+        // Copiï¿½ de la fonction de unity  de base
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
@@ -104,8 +112,25 @@ public class AudioSystem : StaticInstance<AudioSystem>
             Debug.LogWarning("Son: " + name + " introuvable !!!");
             return;
         }
-        s.source.outputAudioMixerGroup = AudioMixerDialogues;
-        s.source.Play();
+
+
+        // Check si il y a un autre dialogue en cours
+        Sound soundCurrentlyPlaying = Array.Find(Dialogues, sound => sound.source.isPlaying);
+        if (soundCurrentlyPlaying != null)
+        {
+            StartCoroutine(PlayDialogueWhenRdy(s, soundCurrentlyPlaying));
+        }
+        else
+        {
+            s.source.Play();
+        }
+    }
+
+    IEnumerator PlayDialogueWhenRdy(Sound soundToPlay, Sound soundCurrentlyPlaying)
+    {
+        yield return new WaitWhile(() => soundCurrentlyPlaying.source.isPlaying);
+
+        soundToPlay.source.Play();
     }
 
     public void Play3DSoundRdmPitchVol(string name, Vector3 position)
@@ -117,14 +142,17 @@ public class AudioSystem : StaticInstance<AudioSystem>
             return;
         }
 
-        // Copié de la fonction de unity  de base
+        // Copiï¿½ de la fonction de unity  de base
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
         audioSource.outputAudioMixerGroup = AudioMixer3D;
+        audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
+        audioSource.minDistance = 20f;
+        audioSource.maxDistance = 50f;
         audioSource.clip = s.clip;
         audioSource.spatialBlend = 1f;
-        audioSource.volume = s.volume + UnityEngine.Random.Range(-0.05f, 0.05f);
+        audioSource.volume = s.volume + UnityEngine.Random.Range(-s.volume / 8, s.volume / 8);
         audioSource.pitch = s.pitch + UnityEngine.Random.Range(-0.05f, 0.05f);
         audioSource.Play();
         UnityEngine.Object.Destroy(gameObject, s.clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
@@ -139,7 +167,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             return;
         }
 
-        // Copié de la fonction de unity  de base
+        // Copiï¿½ de la fonction de unity  de base
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
@@ -161,7 +189,7 @@ public class AudioSystem : StaticInstance<AudioSystem>
             return;
         }
 
-        // Copié de la fonction de unity  de base
+        // Copiï¿½ de la fonction de unity  de base
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
