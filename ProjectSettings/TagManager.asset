@@ -7,6 +7,7 @@ TagManager:
   - Balles
   - Marteau
   - Taupe
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
