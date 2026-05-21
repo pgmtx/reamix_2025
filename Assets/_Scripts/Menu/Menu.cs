@@ -53,6 +53,13 @@ public class Menu : MonoBehaviour
     [SerializeField] private float fogSpeed = 2f;
 
 
+    [Header("Cardboards physiques")]
+    [SerializeField] private Transform spawnCardboardParent;
+
+    [SerializeField] private float cardboardThrowForce = 2f;
+    [SerializeField] private float cardboardTorqueForce = 5f;
+
+
     [Header("GameObjects communs")]
     [SerializeField] private GameObject deplacement;
 
@@ -190,7 +197,7 @@ public class Menu : MonoBehaviour
     {
         if (ray.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
-            var interactable = hit.collider.GetComponent<XRSimpleInteractable>();
+            var interactable = hit.collider.GetComponentInParent<XRSimpleInteractable>();
 
             if (interactable == jouerInteractable)
                 OnPressedJouer(null);
@@ -206,6 +213,10 @@ public class Menu : MonoBehaviour
     void OnPressedJouer(ActivateEventArgs args)
     {
         Debug.Log("Le bouton Jouer a ete presse !");
+
+        // Spawn versions physiques
+        SpawnPhysicalCardboard(boutonJouer);
+        SpawnPhysicalCardboard(boutonQuitter);
 
         boutonJouer.SetActive(false);
         boutonQuitter.SetActive(false);
@@ -234,6 +245,10 @@ public class Menu : MonoBehaviour
     void OnPressedReprendre(ActivateEventArgs args)
     {
         Debug.Log("Le bouton Reprendre a ete presse !");
+
+        // Spawn versions physiques
+        SpawnPhysicalCardboard(boutonReprendreMain);
+        SpawnPhysicalCardboard(boutonQuitterMain);
 
         deplacement.SetActive(true);
         rotation.SetActive(true);
@@ -293,6 +308,97 @@ public class Menu : MonoBehaviour
 
         rayInteractorDroite.enabled = active;
         rayInteractorGauche.enabled = active;
+    }
+
+    private void SpawnPhysicalCardboard(GameObject original)
+    {
+        // Clone
+        GameObject clone = Instantiate(
+            original,
+            original.transform.position,
+            original.transform.rotation,
+            spawnCardboardParent
+        );
+
+        clone.name = original.name + "_Physical";
+
+        clone.SetActive(true);
+
+        // Désactiver tous les layers UI/raycast éventuels
+        clone.layer = LayerMask.NameToLayer("Default");
+
+        // Supprimer TOUS les XRSimpleInteractable du clone
+        XRSimpleInteractable[] interactables =
+            clone.GetComponentsInChildren<XRSimpleInteractable>(true);
+
+        foreach (XRSimpleInteractable interactable in interactables)
+        {
+            Destroy(interactable);
+        }
+
+        // Supprimer interaction UI
+        /*XRSimpleInteractable simpleInteractable =
+            clone.GetComponent<XRSimpleInteractable>();
+
+        if (simpleInteractable != null)
+        {
+            Destroy(simpleInteractable);
+        }*/
+
+        // Rigidbody
+        Rigidbody rb = clone.GetComponent<Rigidbody>();
+
+        if (rb == null)
+        {
+            rb = clone.AddComponent<Rigidbody>();
+        }
+
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+
+        // Collider
+        Collider col = clone.GetComponent<Collider>();
+
+        if (col == null)
+        {
+            BoxCollider box = clone.AddComponent<BoxCollider>();
+
+            Renderer renderer = clone.GetComponentInChildren<Renderer>();
+
+            if (renderer != null)
+            {
+                box.size = renderer.bounds.size;
+            }
+        }
+
+        // Grab interactable
+        XRGrabInteractable grab = clone.GetComponent<XRGrabInteractable>();
+
+        if (grab == null)
+        {
+            grab = clone.AddComponent<XRGrabInteractable>();
+        }
+
+        grab.useDynamicAttach = true;
+        grab.matchAttachPosition = true;
+        grab.matchAttachRotation = true;
+
+        // Petite impulsion
+        Vector3 randomDirection =
+            UnityEngine.Random.insideUnitSphere * 0.5f + Vector3.up;
+
+        rb.AddForce(
+            randomDirection * cardboardThrowForce,
+            ForceMode.Impulse
+        );
+
+        rb.AddTorque(
+            UnityEngine.Random.insideUnitSphere * cardboardTorqueForce,
+            ForceMode.Impulse
+        );
     }
 
     private void OnDestroy()
