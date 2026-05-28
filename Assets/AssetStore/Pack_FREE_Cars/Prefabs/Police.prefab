@@ -486,6 +486,7 @@ MonoBehaviour:
   triggersEvent: 0
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0.5
   soundName: car hit ground
 --- !u!114 &7593032491200939606
 MonoBehaviour:

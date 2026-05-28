@@ -1090,6 +1090,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &806301813927188415
 PrefabInstance:
@@ -1200,6 +1201,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &960428982406692791
 PrefabInstance:
@@ -1310,6 +1312,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &1228097547503325117
 PrefabInstance:
@@ -1420,6 +1423,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &1295499750742916233
 PrefabInstance:
@@ -1530,6 +1534,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &1783540007169509293
 PrefabInstance:
@@ -1640,6 +1645,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &1914118277046094512
 PrefabInstance:
@@ -1750,6 +1756,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &1977832261413944758
 PrefabInstance:
@@ -1860,6 +1867,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &2056305405719834279
 PrefabInstance:
@@ -1970,6 +1978,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &2108267084508977899
 PrefabInstance:
@@ -2076,6 +2085,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &2136621675920093340
 PrefabInstance:
@@ -2186,6 +2196,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &2262844471704702303
 PrefabInstance:
@@ -2296,6 +2307,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &2281129336796818153
 PrefabInstance:
@@ -2406,6 +2418,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &2622460803324928900
 PrefabInstance:
@@ -2511,6 +2524,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &3295922926063688898 stripped
 Transform:
@@ -2621,6 +2635,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &3185830896512502453 stripped
 Transform:
@@ -2731,6 +2746,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &2354047108725270698 stripped
 Transform:
@@ -2841,6 +2857,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &2541303153861342411 stripped
 Transform:
@@ -2951,6 +2968,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &4093469831769846019 stripped
 Transform:
@@ -3061,6 +3079,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &4475482918580892288 stripped
 Transform:
@@ -3171,6 +3190,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &3698346343384589807 stripped
 Transform:
@@ -3281,6 +3301,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &3702572781382235837 stripped
 Transform:
@@ -3346,6 +3367,10 @@ PrefabInstance:
     - target: {fileID: 2838571635346756937, guid: fdfe56f02ab08dd4aad1fe17f967387f, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781353766916072469, guid: fdfe56f02ab08dd4aad1fe17f967387f, type: 3}
+      propertyPath: maxVolume
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3466,6 +3491,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &5324993681407005713
 PrefabInstance:
@@ -3572,6 +3598,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &5386611398660659953
 PrefabInstance:
@@ -3682,6 +3709,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &5390725714475909019
 PrefabInstance:
@@ -3792,6 +3820,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &5652236186431046801
 PrefabInstance:
@@ -3902,6 +3931,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &5895539933574460273
 PrefabInstance:
@@ -4012,6 +4042,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &5989913269958068310
 PrefabInstance:
@@ -4122,6 +4153,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &6397106157232404538
 PrefabInstance:
@@ -4232,6 +4264,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &6610444983510993206
 PrefabInstance:
@@ -4342,6 +4375,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!1001 &8218153775459633395
 PrefabInstance:
@@ -4447,6 +4481,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &8923070215609677749 stripped
 Transform:
@@ -4557,6 +4592,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &8826943310841159993 stripped
 Transform:
@@ -4667,6 +4703,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &9046850258333483823 stripped
 Transform:
@@ -4777,6 +4814,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &9030156649727612543 stripped
 Transform:
@@ -4887,6 +4925,7 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 0}
   triggersSound: 1
+  maxVolume: 0
   soundName: 
 --- !u!4 &9214579902547811031 stripped
 Transform:

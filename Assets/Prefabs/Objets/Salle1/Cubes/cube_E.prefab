@@ -587,8 +587,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggersEvent: 1
-  PickedUp: {fileID: 0}
+  PickedUp: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
   triggersSound: 1
+  maxVolume: 1
+  soundName: cube hit ground
 --- !u!1 &7673132619407866114
 GameObject:
   m_ObjectHideFlags: 0

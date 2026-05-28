@@ -336,6 +336,14 @@ public class Menu : MonoBehaviour
             Destroy(interactable);
         }
 
+        MenuButtonHelper[] helpers =
+            clone.GetComponentsInChildren<MenuButtonHelper>(true);
+
+        foreach (MenuButtonHelper helper in helpers)
+        {
+            Destroy(helper);
+        }
+
         // Supprimer interaction UI
         /*XRSimpleInteractable simpleInteractable =
             clone.GetComponent<XRSimpleInteractable>();

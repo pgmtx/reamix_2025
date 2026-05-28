@@ -303,4 +303,5 @@ MonoBehaviour:
   triggersEvent: 1
   PickedUp: {fileID: 11400000, guid: b56d90987998e2c43b0706afc0956cef, type: 2}
   triggersSound: 1
+  maxVolume: 0.5
   soundName: book hit ground
