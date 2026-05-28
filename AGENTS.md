@@ -2,13 +2,13 @@
 - Project name: reamix_2025
 - Unity version: Unity 2022.3.9f1
 - Active scene:
-  - Name: Salle2
+  - Name: Salle1
   - Tags:
-    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Balles, Marteau, Taupe
+    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Balles, Marteau, Taupe, SpawnPoint
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Ground, Lever, Socle, CollideWithPlayer, DontCollideWithPlayer, Player
 - Active game object:
-  - Name: Salle
+  - Name: AudioSystem
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

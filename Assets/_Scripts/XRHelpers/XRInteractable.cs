@@ -20,6 +20,19 @@ public class XRInteractable : MonoBehaviour
 
     private bool selected = false;
 
+    [Header("Pick up event")]
+    [SerializeField]
+    private bool triggersEvent = true;
+    public GameEvent PickedUp;
+    [SerializeField]
+    private bool triggersSound = true;
+    bool wasSelectedLastFrame = false;
+
+    [Header("Son")]
+    private bool soundEnabled = false;
+    [SerializeField]
+    private string soundName;
+
     private void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
@@ -47,6 +60,35 @@ public class XRInteractable : MonoBehaviour
         // Respawn si out of bounds
         bounds = new Bounds(boundsOrigin, boundsSize);
         spawnPoint = transform.position;
+    }
+
+    void Update()
+    {
+        // Déclenché UNIQUEMENT la frame du pickup
+        if (!wasSelectedLastFrame && grabInteractable.isSelected)
+        {
+            if (triggersSound)
+                soundEnabled = true;
+            if (triggersEvent)
+                PickedUp.TriggerEvent();
+        }
+        wasSelectedLastFrame = grabInteractable.isSelected;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!soundEnabled)
+            return;
+
+        float impactSpeed = collision.relativeVelocity.magnitude;
+
+        if (!grabInteractable.isSelected)
+        {
+            float volume = 0.7f * (1 - Mathf.Exp(-impactSpeed / 6));
+            Debug.Log("Impact reel a vitesse: " + impactSpeed);
+            Debug.Log("Son joue au volume: " + volume);
+            AudioSystem.Instance.Play3DSoundRdmPitch(soundName, transform.position, volume);
+        }
     }
 
     void OnHoverEnter(HoverEnterEventArgs args)

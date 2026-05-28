@@ -406,6 +406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!4 &59263063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1337263073905676661, guid: 8894e465e47eed9429f5d4e67f7ae081, type: 3}
@@ -1023,28 +1027,28 @@ Transform:
   m_Children:
   - {fileID: 5270159350862611116}
   - {fileID: 2418038777730286447}
-  - {fileID: 3108792809473880631}
-  - {fileID: 787587417646798247}
-  - {fileID: 6954840576899616000}
-  - {fileID: 6960978684459071391}
-  - {fileID: 1191084689}
-  - {fileID: 9164362978872181192}
-  - {fileID: 1553732620423088708}
-  - {fileID: 1759246317}
-  - {fileID: 3646430195759724632}
-  - {fileID: 1844131210}
-  - {fileID: 1154187382}
-  - {fileID: 5006205585416556358}
-  - {fileID: 8920000286916470634}
-  - {fileID: 7946589443558219608}
-  - {fileID: 8099293093739832227}
-  - {fileID: 5959954661597996882}
-  - {fileID: 7618745936391717388}
-  - {fileID: 1229733432038647769}
-  - {fileID: 1171698135}
-  - {fileID: 8486264503920689795}
   - {fileID: 1671207192601307061}
+  - {fileID: 8486264503920689795}
+  - {fileID: 1229733432038647769}
   - {fileID: 2074478674}
+  - {fileID: 7618745936391717388}
+  - {fileID: 5959954661597996882}
+  - {fileID: 8099293093739832227}
+  - {fileID: 7946589443558219608}
+  - {fileID: 8920000286916470634}
+  - {fileID: 5006205585416556358}
+  - {fileID: 1844131210}
+  - {fileID: 1759246317}
+  - {fileID: 9164362978872181192}
+  - {fileID: 6960978684459071391}
+  - {fileID: 6954840576899616000}
+  - {fileID: 787587417646798247}
+  - {fileID: 3108792809473880631}
+  - {fileID: 1191084689}
+  - {fileID: 1553732620423088708}
+  - {fileID: 3646430195759724632}
+  - {fileID: 1154187382}
+  - {fileID: 1171698135}
   m_Father: {fileID: 1564534282}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &98226409
@@ -3067,6 +3071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1001 &295072800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7629,6 +7637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1001 &887467337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7712,6 +7724,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1 &921086865
 GameObject:
   m_ObjectHideFlags: 0
@@ -9588,6 +9604,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6974751654614448792, guid: 5727100c651c76e4baa2a459a2a7e8e9, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9802,6 +9822,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 20169291484080473, guid: 9e96ff7806d55f54699e5d1e60f20e69, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 7078466901864978738, guid: 9e96ff7806d55f54699e5d1e60f20e69, type: 3}
       propertyPath: m_Name
       value: cube_E
@@ -9914,6 +9938,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3562095569169700067, guid: 0dec7eceacc1c4e4d9e1fe4709530da6, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 6708217918692085685, guid: 0dec7eceacc1c4e4d9e1fe4709530da6, type: 3}
       propertyPath: m_Name
       value: cube_R
@@ -12846,6 +12874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1001 &1584804263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13796,6 +13828,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1 &1644983573
 GameObject:
   m_ObjectHideFlags: 0
@@ -13984,6 +14020,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1 &1681899514
 GameObject:
   m_ObjectHideFlags: 0
@@ -14728,6 +14768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube_P
       objectReference: {fileID: 0}
+    - target: {fileID: 3215891880139064833, guid: 6a9879fe6c4455b45aeee5824bc9722b, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 7739201984443654765, guid: 6a9879fe6c4455b45aeee5824bc9722b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.04
@@ -15273,6 +15317,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6974751654614448792, guid: 5727100c651c76e4baa2a459a2a7e8e9, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16133,6 +16181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1 &2000017327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3275912896597934308, guid: 1ca6186ce36245f42b078723e8bbe608, type: 3}
@@ -16150,6 +16202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1 &2009436589
 GameObject:
   m_ObjectHideFlags: 0
@@ -16460,6 +16516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: 
 --- !u!1 &2057926487
 GameObject:
   m_ObjectHideFlags: 0
@@ -16569,6 +16629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5920866121081445575, guid: fc521a0bb5f8b564ca97d37c73ba1097, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 6264596697058068364, guid: fc521a0bb5f8b564ca97d37c73ba1097, type: 3}
       propertyPath: m_Name
       value: cube_F
@@ -17275,6 +17339,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8697384872243174553, guid: c5f3ddde4a9c9674290dae39fa3d06f5, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17729,6 +17797,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube_A
       objectReference: {fileID: 0}
+    - target: {fileID: 7396281461442907104, guid: 4cab7bc8e5202844cbf74216e252314d, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 8687804235193363875, guid: 4cab7bc8e5202844cbf74216e252314d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.711
@@ -17900,6 +17972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube_P
       objectReference: {fileID: 0}
+    - target: {fileID: 3215891880139064833, guid: 6a9879fe6c4455b45aeee5824bc9722b, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 7739201984443654765, guid: 6a9879fe6c4455b45aeee5824bc9722b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.852
@@ -18134,6 +18210,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 675137326253524784, guid: 44608d4f037f3974b8e969108e8fd6a3, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 4334509720998974605, guid: 44608d4f037f3974b8e969108e8fd6a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.428
@@ -18832,6 +18912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube_H
       objectReference: {fileID: 0}
+    - target: {fileID: 9003620314213958091, guid: bbabcba00dce8d249831f2f63a963ff7, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19390,6 +19474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7480434302771902777, guid: 1b5162a362f9fb24cba5b665ce81edbb, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 8350206903484627381, guid: 1b5162a362f9fb24cba5b665ce81edbb, type: 3}
       propertyPath: m_Name
       value: cube_K
@@ -19596,6 +19684,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 2426429261148547462, guid: 0a07da59bab302f4dab1fc3ce52ada90, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 3960238305130974989, guid: 0a07da59bab302f4dab1fc3ce52ada90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.244
@@ -20093,6 +20185,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 1438706232649389835, guid: f3954b11f95725d4dbd79e9e961ad679, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 4872665273014074138, guid: f3954b11f95725d4dbd79e9e961ad679, type: 3}
       propertyPath: m_Name
       value: cube_C
@@ -20345,6 +20441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 20169291484080473, guid: 9e96ff7806d55f54699e5d1e60f20e69, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 7078466901864978738, guid: 9e96ff7806d55f54699e5d1e60f20e69, type: 3}
       propertyPath: m_Name
       value: cube_E
@@ -20486,6 +20586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 1233456097387196110, guid: eeceaa3a38a0a584dbd81eb472993ce8, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 5536639163955877387, guid: eeceaa3a38a0a584dbd81eb472993ce8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.715
@@ -21011,6 +21115,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 627368730652643788, guid: a70c8bb53eedecb48a43df3e0e49dced, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 6137069534080367986, guid: a70c8bb53eedecb48a43df3e0e49dced, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.593
@@ -21164,6 +21272,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 649208635782461313, guid: 93a618ea104ce904e8b99598b035cd3b, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 4503627344721183828, guid: 93a618ea104ce904e8b99598b035cd3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.868
@@ -21393,6 +21505,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6974751654614448792, guid: 5727100c651c76e4baa2a459a2a7e8e9, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21603,6 +21719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7117552684405284831, guid: 03c0055c3c7b3e1498d6bd4223005e73, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 8245334085535568927, guid: 03c0055c3c7b3e1498d6bd4223005e73, type: 3}
       propertyPath: m_Name
       value: cube_W
@@ -21659,6 +21779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94437711}
     m_Modifications:
+    - target: {fileID: 1045699940197944366, guid: 88c077af96745324e8b96def7eaff101, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 1110804244143266252, guid: 88c077af96745324e8b96def7eaff101, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.047
@@ -23146,6 +23270,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---------- SYSTEMS ----------
       objectReference: {fileID: 0}
+    - target: {fileID: 3057954554994402666, guid: cc2fab6dce811134e81eddf6411bbd70, type: 3}
+      propertyPath: Sounds3D.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057954554994402666, guid: cc2fab6dce811134e81eddf6411bbd70, type: 3}
+      propertyPath: Sounds3D.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d1db6f6f0a8ad74d842b10ecb3d2825, type: 3}
+    - target: {fileID: 3057954554994402666, guid: cc2fab6dce811134e81eddf6411bbd70, type: 3}
+      propertyPath: Sounds3D.Array.data[9].name
+      value: car hit ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057954554994402666, guid: cc2fab6dce811134e81eddf6411bbd70, type: 3}
+      propertyPath: Sounds3D.Array.data[9].pitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057954554994402666, guid: cc2fab6dce811134e81eddf6411bbd70, type: 3}
+      propertyPath: Sounds3D.Array.data[9].volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3463074073345530262, guid: cc2fab6dce811134e81eddf6411bbd70, type: 3}
       propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -23498,6 +23642,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3562095569169700067, guid: 0dec7eceacc1c4e4d9e1fe4709530da6, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 6708217918692085685, guid: 0dec7eceacc1c4e4d9e1fe4709530da6, type: 3}
       propertyPath: m_Name
       value: cube_R
@@ -23857,6 +24005,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4790767957051242267, guid: e902b1233b108ba4aac5e75e220e2b8e, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 9176520423595910322, guid: e902b1233b108ba4aac5e75e220e2b8e, type: 3}
       propertyPath: m_Name
       value: cube_Q
@@ -24360,6 +24512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube_N
       objectReference: {fileID: 0}
+    - target: {fileID: 3464358833126355462, guid: 006af3c4d40c2904dba4478c6f9b6352, type: 3}
+      propertyPath: PickedUp
+      value: 
+      objectReference: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
     - target: {fileID: 5169846032505840019, guid: 006af3c4d40c2904dba4478c6f9b6352, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.718

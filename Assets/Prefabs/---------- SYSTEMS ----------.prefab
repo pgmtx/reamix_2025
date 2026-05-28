@@ -229,6 +229,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: cube hit ground
+    clip: {fileID: 8300000, guid: ec0457933a0fe7842889097bbda5687e, type: 3}
+    volume: 0.8
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: book hit ground
+    clip: {fileID: 8300000, guid: 2f14d6a740a30e44fbc38f6e4a823181, type: 3}
+    volume: 0.8
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
   Footsteps:
   - name: 1
     clip: {fileID: 8300000, guid: 4d2cf2ec3f21af84db7b253d7350e038, type: 3}
@@ -388,6 +400,7 @@ GameObject:
   - component: {fileID: 6504497069353158762}
   - component: {fileID: 3463074073345530262}
   - component: {fileID: 8824457090883902916}
+  - component: {fileID: 8392913702652060598}
   m_Layer: 0
   m_Name: EventsSystem
   m_TagString: Untagged
@@ -1241,6 +1254,35 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionOnInternalPlate, Assembly-CSharp
         m_MethodName: StartTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8392913702652060598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649137787492402495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  gameEvent: {fileID: 11400000, guid: b56d90987998e2c43b0706afc0956cef, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1400954808204946133}
+        m_TargetAssemblyTypeName: MonitorEvents, Assembly-CSharp
+        m_MethodName: SetInteractionEventTriggeredTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
