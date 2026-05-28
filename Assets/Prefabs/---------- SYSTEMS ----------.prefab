@@ -241,6 +241,12 @@ MonoBehaviour:
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
+  - name: car hit ground
+    clip: {fileID: 8300000, guid: 9d1db6f6f0a8ad74d842b10ecb3d2825, type: 3}
+    volume: 0.8
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
   Footsteps:
   - name: 1
     clip: {fileID: 8300000, guid: 4d2cf2ec3f21af84db7b253d7350e038, type: 3}

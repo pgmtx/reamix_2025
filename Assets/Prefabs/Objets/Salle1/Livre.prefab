@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5963299347978797412}
   - component: {fileID: 639548862898986749}
   - component: {fileID: -7302850311069880599}
+  - component: {fileID: 8781353766916072469}
   m_Layer: 0
   m_Name: Livre
   m_TagString: Untagged
@@ -287,3 +288,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.002911955, y: 0.02, z: 0.02}
   m_Center: {x: 0, y: 0.004771447, z: 0}
+--- !u!114 &8781353766916072469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838571635346756937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 11400000, guid: b56d90987998e2c43b0706afc0956cef, type: 2}
+  triggersSound: 1
+  soundName: book hit ground

@@ -544,7 +544,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8141976330698161145}
         m_TargetAssemblyTypeName: Voiture, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Klaxon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -589,7 +589,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -649,6 +649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 0
+  PickedUp: {fileID: 0}
+  triggersSound: 1
+  soundName: car hit ground
 --- !u!114 &8141976330698161145
 MonoBehaviour:
   m_ObjectHideFlags: 0
