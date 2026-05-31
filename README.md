@@ -2,12 +2,12 @@
 
 # Baby Steps
 
-Un jeu en réalité virtuelle où vous incarnez un enfant dans une garderie transformée en centre de test, guidé par une intelligence artificielle.
-
 <p float="left">
     <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white">
     <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white">
 </p>
+
+Un jeu en réalité virtuelle où vous incarnez un enfant dans une garderie transformée en centre de test, guidé par une intelligence artificielle.
 
 ## Captures d'écran
 
@@ -24,6 +24,34 @@ Un jeu en réalité virtuelle où vous incarnez un enfant dans une garderie tran
 
 - Deux salles
 - Cinq mini-jeux
+
+## Structure du dépôt
+
+```
+.
+├── Assets
+│   ├── Animations  # Animation controllers et fichiers d'animations
+│   ├── AssetStore  # Ressources provenant du Unity Asset Store
+│   ├── Audio       # Sons et paramètres du mixer
+│   ├── Fonts
+│   ├── GameEvents  # Évènements utilisés dans l'éditeur et dans le code 
+│   ├── Imports     # Fichiers fbx
+│   ├── Lighting    # Fichiers concernant la veilleuse (textures)
+│   ├── Materials   # Fichiers matériaux définissant l'apparence des modèles
+│   ├── Prefabs
+│   ├── Samples     # Répertoire fourni par XR Interaction Toolkit
+│   ├── Scenes
+│   ├── _Scripts
+│   ├── Settings    # Fichiers paramètres pour la pipeline 3D
+│   ├── TextMesh Pro
+│   ├── Textures    # Images pour les modèles
+│   ├── XR          # Fichiers paramètres pour la lib XR
+│   └── XRI         # Fichiers paramètres pour la lib XR Interaction
+├── Packages        # Fichiers répertoriant les dépendances utilisées
+├── ProjectSettings # Fichiers paramètres du projet
+├── README.md
+└── screenshots     # Captures d'écran dans le README
+```
 
 ## Exécuter localement
 
