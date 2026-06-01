@@ -8,7 +8,7 @@ public class TableTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Only show the button if a game isn't already running
-        if (other.CompareTag("MainCamera"))
+        if (!gameActive && (other.CompareTag("MainCamera") || other.CompareTag("Player")))
         {
             startButton.SetActive(true);
         }
@@ -35,5 +35,11 @@ public class TableTrigger : MonoBehaviour
     {
         gameActive = true;
         startButton.SetActive(false);
+    }
+
+    // Add this to allow the game to be restarted
+    public void UnlockTrigger()
+    {
+        gameActive = false;
     }
 }
