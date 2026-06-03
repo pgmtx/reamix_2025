@@ -1,6 +1,4 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class FootstepAudio : MonoBehaviour
 {
