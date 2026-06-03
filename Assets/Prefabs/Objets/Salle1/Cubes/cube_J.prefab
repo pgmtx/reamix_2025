@@ -511,7 +511,6 @@ GameObject:
   - component: {fileID: 4978972565698199595}
   - component: {fileID: 6495922605044327454}
   - component: {fileID: 649208635782461313}
-  - component: {fileID: 5720868962393795453}
   m_Layer: 10
   m_Name: cube_J
   m_TagString: Untagged
@@ -753,19 +752,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5720868962393795453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7187671000636028682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c0d3d9208a3594da5cc64e1a82a396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CubePickedUp: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
+  triggersEvent: 1
+  PickedUp: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
+  triggersSound: 1
+  maxVolume: 1
+  soundName: cube hit ground
 --- !u!1 &7823848264739471156
 GameObject:
   m_ObjectHideFlags: 0

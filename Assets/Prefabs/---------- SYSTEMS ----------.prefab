@@ -172,11 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3148edc559c581f4c990ce36bbdfb99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mayaSTFU: 1
+  mayaSTFU: 0
   Sounds2D:
   - name: white noise
     clip: {fileID: 8300000, guid: a06d35f9230d99449acf791fb0fb0012, type: 3}
-    volume: 0.05
+    volume: 0.04
     pitch: 0.88
     loop: 1
     source: {fileID: 0}
@@ -189,8 +189,8 @@ MonoBehaviour:
   Sounds3D:
   - name: object picked up
     clip: {fileID: 8300000, guid: cb9824ccbce42654fae724cc098f52c6, type: 3}
-    volume: 0.17
-    pitch: 1
+    volume: 0.14
+    pitch: 0.95
     loop: 0
     source: {fileID: 0}
   - name: ball hit ground
@@ -207,7 +207,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: taupe hit
     clip: {fileID: 8300000, guid: 0d95244ef05d81a4ebafdc74166f3267, type: 3}
-    volume: 0.25
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: klaxon
     clip: {fileID: 8300000, guid: e2d7946d46e3eb74da93034f54c02ddd, type: 3}
-    volume: 0.1
+    volume: 0.08
     pitch: 0.95
     loop: 0
     source: {fileID: 0}
@@ -229,53 +229,71 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: cube hit ground
+    clip: {fileID: 8300000, guid: ec0457933a0fe7842889097bbda5687e, type: 3}
+    volume: 0.8
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: book hit ground
+    clip: {fileID: 8300000, guid: 2f14d6a740a30e44fbc38f6e4a823181, type: 3}
+    volume: 0.8
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: car hit ground
+    clip: {fileID: 8300000, guid: 9d1db6f6f0a8ad74d842b10ecb3d2825, type: 3}
+    volume: 0.8
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
   Footsteps:
   - name: 1
     clip: {fileID: 8300000, guid: 4d2cf2ec3f21af84db7b253d7350e038, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 2
     clip: {fileID: 8300000, guid: b964b79c23b2e0d4c8173b793ca6b87b, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 3
     clip: {fileID: 8300000, guid: 4fcbc312be2d6bc41a8bcc80e7c01908, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 4
     clip: {fileID: 8300000, guid: 0220f282bf4816d41bfa0f42684f3840, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 5
     clip: {fileID: 8300000, guid: e307cdfd3f8084f49bf17d58f07f59ac, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 6
     clip: {fileID: 8300000, guid: 71a529c0dd34a4e429239a9b1626336c, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 7
     clip: {fileID: 8300000, guid: a4452f4645d8c494382066e66fef4374, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 8
     clip: {fileID: 8300000, guid: ac09d7991b294184f926330c96d1de2d, type: 3}
     volume: 0.6
-    pitch: 0.9
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   Dialogues:
@@ -388,6 +406,7 @@ GameObject:
   - component: {fileID: 6504497069353158762}
   - component: {fileID: 3463074073345530262}
   - component: {fileID: 8824457090883902916}
+  - component: {fileID: 8392913702652060598}
   m_Layer: 0
   m_Name: EventsSystem
   m_TagString: Untagged
@@ -426,7 +445,7 @@ MonoBehaviour:
   HasGameStarted: 0
   PlayerAfkForTooLong: {fileID: 11400000, guid: 2c5e78f788109244fb301e0e746f6eaf, type: 2}
   Player: {fileID: 0}
-  MaxTimeAfkBeforeEvent: 20
+  MaxTimeAfkBeforeEvent: 35
   PlayerNoInteractForTooLong: {fileID: 11400000, guid: f748aff028d60a540b7542036e08db20, type: 2}
   MaxTimeInteractionBeforeEvent: 35
 --- !u!114 &3845518847368248005
@@ -1241,6 +1260,35 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionOnInternalPlate, Assembly-CSharp
         m_MethodName: StartTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8392913702652060598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649137787492402495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  gameEvent: {fileID: 11400000, guid: b56d90987998e2c43b0706afc0956cef, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1400954808204946133}
+        m_TargetAssemblyTypeName: MonitorEvents, Assembly-CSharp
+        m_MethodName: SetInteractionEventTriggeredTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

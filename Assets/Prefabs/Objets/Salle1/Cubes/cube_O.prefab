@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5629705299634727922}
   - component: {fileID: 8420120260035742075}
   - component: {fileID: 158315329631214203}
-  - component: {fileID: 8729508514965963015}
   - component: {fileID: 6974751654614448792}
   m_Layer: 10
   m_Name: cube_O
@@ -243,19 +242,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8729508514965963015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633043200558106389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c0d3d9208a3594da5cc64e1a82a396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CubePickedUp: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
 --- !u!114 &6974751654614448792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eed251452df7a40bab4c2dc8eb1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggersEvent: 1
+  PickedUp: {fileID: 11400000, guid: c45d85a487c6c274ea166f17f1cededa, type: 2}
+  triggersSound: 1
+  maxVolume: 1
+  soundName: cube hit ground
 --- !u!1 &1763098569959066369
 GameObject:
   m_ObjectHideFlags: 0

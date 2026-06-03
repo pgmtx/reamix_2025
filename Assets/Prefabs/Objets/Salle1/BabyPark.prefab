@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 538850694991123506}
   - component: {fileID: 6606621142173128300}
   - component: {fileID: 4391095526398334773}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Clous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,8 +480,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.035351634, y: 0.054904122, z: 0.0029163752}
-  m_Center: {x: 0.00041735652, y: -0.000038469083, z: 0.0016887168}
+  m_Size: {x: 0.035351634, y: 0.05490412, z: 0.0031940883}
+  m_Center: {x: 0.00041735728, y: -0.0000384691, z: 0.0018275738}
 --- !u!54 &4386819664489907998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 6149905876380444075}
   - component: {fileID: 3325833105551259767}
   - component: {fileID: 3855293252118472943}
+  - component: {fileID: 2049164370870012452}
   m_Layer: 0
   m_Name: BabyPark
   m_TagString: Untagged
@@ -693,6 +694,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Poignee: {fileID: 3617420064696112313}
   PlayerOutBabyPark: {fileID: 11400000, guid: 3620b77e97e216142a3cec68df9e12ca, type: 2}
+  vrController: {fileID: 7188091430110654074}
+  MayaYapSession1: {fileID: 8300000, guid: 5b6acfdfd602cfb49ab0da2030b6414b, type: 3}
+  MayaYapSession2: {fileID: 8300000, guid: b53633e0df0f26241b144facd32d0cca, type: 3}
 --- !u!54 &3855293252118472943
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -720,6 +724,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2049164370870012452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349574580403834194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb936734ca39f8a469eb8a8144096819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  gameEvent: {fileID: 11400000, guid: b9756c88fce2b3c4d8e2d6552e6c6373, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3325833105551259767}
+        m_TargetAssemblyTypeName: BabyparkLogic, Assembly-CSharp
+        m_MethodName: StartWaitForMayaStopYapping
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &2940109513143726319
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +978,7 @@ GameObject:
   - component: {fileID: 8560871525247019877}
   - component: {fileID: 3427332130830615357}
   - component: {fileID: 946140010686570065}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Poignee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,6 +1000,7 @@ Transform:
   m_Children:
   - {fileID: 538850694991123506}
   - {fileID: 3679132275562094628}
+  - {fileID: 8269998498368247269}
   m_Father: {fileID: 2046104465506102465}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!33 &4802422264437556651
@@ -1036,7 +1070,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0029327553, y: 0.009336799, z: 0.001460722}
   m_Center: {x: -0.00006293573, y: -0.00005967829, z: 0.002845447}
@@ -1521,7 +1555,7 @@ GameObject:
   - component: {fileID: 6153861284679876613}
   - component: {fileID: 1886779675254992895}
   - component: {fileID: 6576733012643857169}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,3 +1648,86 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0013798944, y: 0.060704894, z: 0.033755343}
   m_Center: {x: 0.019617634, y: -0.00016152121, z: 0.018459065}
+--- !u!1001 &2182776817337638698
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2038222699041027311}
+    m_Modifications:
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.006503555
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0065035583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.006503556
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00011
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00449
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.14820433
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.036093593
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.96023166
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.23385432
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -27.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 72.452
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046602319895490896, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_Name
+      value: ManetteGauche
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046602319895490896, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+--- !u!1 &7188091430110654074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9046602319895490896, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+  m_PrefabInstance: {fileID: 2182776817337638698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8269998498368247269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7822233730107230927, guid: e20c9ed6025531842874555dcb0f750e, type: 3}
+  m_PrefabInstance: {fileID: 2182776817337638698}
+  m_PrefabAsset: {fileID: 0}

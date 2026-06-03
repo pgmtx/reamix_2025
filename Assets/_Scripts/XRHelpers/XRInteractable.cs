@@ -20,18 +20,34 @@ public class XRInteractable : MonoBehaviour
 
     private bool selected = false;
 
+    [Header("Pick up event")]
+    [SerializeField]
+    private bool triggersEvent = true;
+    public GameEvent PickedUp;
+    [SerializeField]
+    private bool triggersSound = true;
+    bool wasSelectedLastFrame = false;
+
+    [Header("Son")]
+    [SerializeField]
+    private float maxVolume;
+    private bool soundEnabled = false;
+    [SerializeField]
+    private string soundName;
+
+
     private void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
 
-        // Recuperation du renderer ou le premier trouvé chez les enfants
+        // Recuperation du renderer ou le premier trouvï¿½ chez les enfants
         renderer = GetComponent<Renderer>();
         if (renderer == null)
         {
             renderer = GetComponentInChildren<Renderer>();
             if (renderer == null)
             {
-                Debug.Log("Material non trouvé !!!!!!!!!");
+                Debug.Log("Material non trouvï¿½ !!!!!!!!!");
                 this.enabled = false;
             }
         }
@@ -49,11 +65,40 @@ public class XRInteractable : MonoBehaviour
         spawnPoint = transform.position;
     }
 
+    void Update()
+    {
+        // Dï¿½clenchï¿½ UNIQUEMENT la frame du pickup
+        if (!wasSelectedLastFrame && grabInteractable.isSelected)
+        {
+            if (triggersSound)
+                soundEnabled = true;
+            if (triggersEvent)
+                PickedUp.TriggerEvent();
+        }
+        wasSelectedLastFrame = grabInteractable.isSelected;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!soundEnabled)
+            return;
+
+        float impactSpeed = collision.relativeVelocity.magnitude;
+
+        if (!grabInteractable.isSelected)
+        {
+            float volume = impactSpeed < 1.5f ? 0f : maxVolume * (1 - Mathf.Exp(-impactSpeed / 8f));
+            Debug.Log("Impact reel a vitesse: " + impactSpeed);
+            Debug.Log("Son joue au volume: " + volume);
+            AudioSystem.Instance.Play3DSoundRdmPitch(soundName, transform.position, volume);
+        }
+    }
+
     void OnHoverEnter(HoverEnterEventArgs args)
     {
         if (selected) return;
         material.EnableKeyword("_EMISSION");
-        material.SetColor("_EmissionColor", originalEmission * 2f);
+        material.SetColor("_EmissionColor", originalEmission * 1.5f);
     }
 
     void OnHoverExit(HoverExitEventArgs args)
